@@ -1,4 +1,7 @@
 const Task = require('../models/Task');
+const UserTask = require('../models/UserTask');
+const User = require('../models/User');
+const { uploadBase64ToCloudinary } = require('../utils/cloudinary');
 
 // @desc    Get all tasks
 // @route   GET /api/tasks
@@ -200,11 +203,96 @@ const updateTaskStatus = async (req, res) => {
     }
 };
 
+// @desc    Complete a task
+// @route   POST /api/tasks/:id/complete
+// @access  Private
+const completeTask = async (req, res) => {
+    try {
+        const taskId = req.params.id;
+        const userId = req.user._id;
+
+        const task = await Task.findById(taskId);
+        if (!task) {
+            return res.status(404).json({ success: false, message: 'Task not found' });
+        }
+
+        if (task.status !== 'Active') {
+            return res.status(400).json({ success: false, message: 'Task is not active' });
+        }
+
+        // Check if already completed
+        const existingCompletion = await UserTask.findOne({ user: userId, task: taskId });
+        if (existingCompletion) {
+            return res.status(400).json({ success: false, message: 'Task already completed' });
+        }
+
+        const { comment, proofImage } = req.body;
+        let proofImageUrl = '';
+
+        if (proofImage) {
+            try {
+                proofImageUrl = await uploadBase64ToCloudinary(proofImage, 'samajwadi-task-proofs');
+            } catch (uploadError) {
+                console.error('Failed to upload proof image:', uploadError);
+                // Optionally fail the request or continue without image
+                // return res.status(500).json({ success: false, message: 'Failed to upload proof image' });
+            }
+        }
+
+        // Create completion record
+        const userTask = await UserTask.create({
+            user: userId,
+            task: taskId,
+            pointsEarned: task.points,
+            status: 'Completed',
+            comment,
+            proofImage: proofImageUrl
+        });
+
+        // Update user points
+        await User.findByIdAndUpdate(userId, {
+            $inc: { points: task.points }
+        });
+
+        res.status(200).json({
+            success: true,
+            message: 'Task completed successfully',
+            pointsEarned: task.points,
+            data: userTask
+        });
+
+    } catch (error) {
+        console.error('Error completing task:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+// @desc    Get my completed tasks
+// @route   GET /api/tasks/my-completed
+// @access  Private
+const getMyCompletedTasks = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const completedTasks = await UserTask.find({ user: userId }).select('task');
+        const taskIds = completedTasks.map(t => t.task);
+
+        res.status(200).json({
+            success: true,
+            data: taskIds
+        });
+    } catch (error) {
+        console.error('Error fetching completed tasks:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
 module.exports = {
     getTasks,
     getTaskById,
     createTask,
     updateTask,
     deleteTask,
-    updateTaskStatus
+    updateTaskStatus,
+    completeTask,
+    getMyCompletedTasks
 };

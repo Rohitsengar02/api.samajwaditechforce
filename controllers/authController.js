@@ -15,6 +15,7 @@ const authUser = async (req, res) => {
             name: user.name,
             email: user.email,
             role: user.role,
+            points: user.points || 0,
             token: generateToken(user._id),
         });
     } else {
@@ -54,6 +55,7 @@ const registerUser = async (req, res) => {
             name: user.name,
             email: user.email,
             role: user.role,
+            points: user.points || 0,
             token: generateToken(user._id),
         });
     } else {
@@ -89,6 +91,8 @@ const getUserProfile = async (req, res) => {
             canVisitLucknow: user.canVisitLucknow,
             verificationStatus: user.verificationStatus,
             adminVerification: user.adminVerification,
+            language: user.language,
+            points: user.points || 0,
         });
     } else {
         res.status(404).json({ message: 'User not found' });
@@ -164,4 +168,35 @@ const requestVerification = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification };
+// @desc    Update user language
+// @route   PUT /api/auth/update-language
+// @access  Private
+const updateLanguage = async (req, res) => {
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+        user.language = req.body.language || user.language;
+        await user.save();
+        res.json({ message: 'Language updated', language: user.language });
+    } else {
+        res.status(404).json({ message: 'User not found' });
+    }
+};
+
+// @desc    Get leaderboard
+// @route   GET /api/auth/leaderboard
+// @access  Private
+const getLeaderboard = async (req, res) => {
+    try {
+        const users = await User.find({})
+            .sort({ points: -1 })
+            .limit(50)
+            .select('name profileImage district points');
+
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard };

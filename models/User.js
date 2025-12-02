@@ -64,6 +64,14 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    language: {
+        type: String,
+        default: 'en'
+    },
+    points: {
+        type: Number,
+        default: 0
+    },
 }, {
     timestamps: true,
 });

@@ -6,7 +6,9 @@ const {
     createTask,
     updateTask,
     deleteTask,
-    updateTaskStatus
+    updateTaskStatus,
+    completeTask,
+    getMyCompletedTasks
 } = require('../controllers/taskController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
@@ -16,13 +18,21 @@ router.route('/')
     .get(getTasks)  // Removed auth for testing
     .post(createTask);  // Removed auth for testing
 
-router.route('/:id')
-    .get(protect, admin, getTaskById)
-    .put(protect, admin, updateTask)
-    .delete(protect, admin, deleteTask);
+// Get my completed tasks
+router.route('/my-completed')
+    .get(protect, getMyCompletedTasks);
 
 // Status update route
 router.route('/:id/status')
     .patch(protect, admin, updateTaskStatus);
+
+// Complete task route
+router.route('/:id/complete')
+    .post(protect, completeTask);
+
+router.route('/:id')
+    .get(protect, getTaskById)
+    .put(protect, admin, updateTask)
+    .delete(protect, admin, deleteTask);
 
 module.exports = router;
