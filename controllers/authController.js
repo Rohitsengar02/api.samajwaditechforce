@@ -1,6 +1,11 @@
 const User = require('../models/User');
+const AdminApproval = require('../models/AdminApproval');
 const generateToken = require('../utils/generateToken');
+const bcrypt = require('bcryptjs');
 
+// @desc    Auth user & get token
+// @route   POST /api/auth/login
+// @access  Public
 // @desc    Auth user & get token
 // @route   POST /api/auth/login
 // @access  Public
@@ -10,6 +15,11 @@ const authUser = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
+        // Check for Admin Verification
+        if (user.role === 'admin' && !user.adminVerification) {
+            return res.status(403).json({ message: 'Your account is pending approval by Master Admin.' });
+        }
+
         res.json({
             _id: user._id,
             name: user.name,
@@ -27,39 +37,50 @@ const authUser = async (req, res) => {
 // @route   POST /api/auth/register
 // @access  Public (should be protected in production)
 const registerUser = async (req, res) => {
-    const { name, email, phone, password, role, gender, dob, profileImage, address, location } = req.body;
+    try {
+        const { name, email, phone, password, role, gender, dob, profileImage, address, location } = req.body;
 
-    const userExists = await User.findOne({ $or: [{ email }, { phone }] });
+        const userExists = await User.findOne({ $or: [{ email }, { phone }] });
 
-    if (userExists) {
-        res.status(400).json({ message: 'User already exists' });
-        return;
-    }
+        if (userExists) {
+            res.status(400).json({ message: 'User already exists with this email or phone' });
+            return;
+        }
 
-    const user = await User.create({
-        name,
-        email,
-        phone,
-        password,
-        role,
-        gender,
-        dob,
-        profileImage,
-        address,
-        location
-    });
+        // Default adminVerification to false for admins, true for others (or handle logic as needed)
+        // If role is admin, they need approval.
+        const adminVerification = role === 'admin' ? false : true;
+        // Note: Master Admin is seeded, so we don't register them here usually.
 
-    if (user) {
-        res.status(201).json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            role: user.role,
-            points: user.points || 0,
-            token: generateToken(user._id),
+        const user = await User.create({
+            name,
+            email,
+            phone,
+            password,
+            role,
+            gender,
+            dob,
+            profileImage,
+            address,
+            location,
+            adminVerification
         });
-    } else {
-        res.status(400).json({ message: 'Invalid user data' });
+
+        if (user) {
+            res.status(201).json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                points: user.points || 0,
+                token: generateToken(user._id),
+                message: role === 'admin' ? 'Registration successful. Please wait for Master Admin approval.' : 'Registration successful'
+            });
+        } else {
+            res.status(400).json({ message: 'Invalid user data' });
+        }
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
 };
 
@@ -199,4 +220,54 @@ const getLeaderboard = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard };
+// @desc    Register a new admin (pending approval)
+// @route   POST /api/auth/register-admin
+// @access  Public
+const registerAdmin = async (req, res) => {
+    const { name, email, phone, password } = req.body;
+    console.log('Register Admin Request:', { name, email, phone });
+
+    try {
+        // Check if user exists in User collection
+        const userExists = await User.findOne({ $or: [{ email }, { phone }] });
+        if (userExists) {
+            console.log('Register Admin Failed: User exists in User collection');
+            return res.status(400).json({ message: 'User already exists as a registered member/admin' });
+        }
+
+        // Check if user exists in AdminApproval collection
+        const approvalExists = await AdminApproval.findOne({ $or: [{ email }, { phone }] });
+        if (approvalExists) {
+            console.log('Register Admin Failed: Request exists in AdminApproval collection');
+            return res.status(400).json({ message: 'Registration request already pending' });
+        }
+
+        // Hash password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        const adminRequest = await AdminApproval.create({
+            name,
+            email,
+            phone,
+            password: hashedPassword,
+            role: 'admin'
+        });
+
+        console.log('Register Admin Success:', adminRequest._id);
+
+        res.status(201).json({
+            message: 'Registration successful. Please wait for Master Admin approval.',
+            request: {
+                _id: adminRequest._id,
+                name: adminRequest.name,
+                email: adminRequest.email
+            }
+        });
+    } catch (error) {
+        console.error('Register Admin Error:', error);
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin };

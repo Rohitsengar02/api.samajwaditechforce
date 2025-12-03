@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const AdminApproval = require('../models/AdminApproval');
 
 // @desc    Get pending verifications
 // @route   GET /api/admin/verifications
@@ -86,4 +87,78 @@ const getUserById = async (req, res) => {
     }
 };
 
-module.exports = { getPendingVerifications, verifyUser, rejectUser, getVerifiedUsers, getUserById };
+// @desc    Get pending admin approvals
+// @route   GET /api/admin/pending-admins
+// @access  Private/MasterAdmin
+const getPendingAdmins = async (req, res) => {
+    try {
+        const requests = await AdminApproval.find({}).sort({ createdAt: -1 });
+        res.json(requests);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// @desc    Approve admin
+// @route   PUT /api/admin/approve-admin/:id
+// @access  Private/MasterAdmin
+const approveAdmin = async (req, res) => {
+    try {
+        const request = await AdminApproval.findById(req.params.id);
+
+        if (!request) {
+            return res.status(404).json({ message: 'Request not found' });
+        }
+
+        // Create User
+        const user = await User.create({
+            name: request.name,
+            email: request.email,
+            phone: request.phone,
+            password: request.password, // Already hashed
+            role: 'admin',
+            adminVerification: true,
+            verificationStatus: 'Verified'
+        });
+
+        if (user) {
+            // Remove from AdminApproval
+            await AdminApproval.findByIdAndDelete(req.params.id);
+            res.json({ message: 'Admin approved successfully', user });
+        } else {
+            res.status(400).json({ message: 'Failed to create user' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// @desc    Reject admin
+// @route   DELETE /api/admin/reject-admin/:id
+// @access  Private/MasterAdmin
+const rejectAdmin = async (req, res) => {
+    try {
+        const request = await AdminApproval.findById(req.params.id);
+        if (!request) {
+            return res.status(404).json({ message: 'Request not found' });
+        }
+        await AdminApproval.findByIdAndDelete(req.params.id);
+        res.json({ message: 'Admin request rejected' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// @desc    Get approved admins
+// @route   GET /api/admin/approved-admins
+// @access  Private/MasterAdmin
+const getApprovedAdmins = async (req, res) => {
+    try {
+        const users = await User.find({ role: 'admin', adminVerification: true }).select('-password');
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { getPendingVerifications, verifyUser, rejectUser, getVerifiedUsers, getUserById, getPendingAdmins, approveAdmin, rejectAdmin, getApprovedAdmins };
