@@ -15,8 +15,8 @@ const authUser = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
-        // Check for Admin Verification
-        if (user.role === 'admin' && !user.adminVerification) {
+        // Check for Admin Verification - must be verified and approved
+        if (user.role === 'admin' && (user.verificationStatus !== 'Verified' || !user.adminVerification)) {
             return res.status(403).json({ message: 'Your account is pending approval by Master Admin.' });
         }
 
