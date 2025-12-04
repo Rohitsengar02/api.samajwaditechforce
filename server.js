@@ -24,12 +24,13 @@ connectDB();
 
 const app = express();
 
-// CORS configuration - Allow your Hostinger domains
+// CORS configuration - Allow your deployment domains
 const corsOptions = {
     origin: [
         'http://localhost:8081',
         'http://localhost:19006',
         'https://admin.samajwaditechforce.com',
+        'https://admin-samajwditechforce.vercel.app',
         'https://samajwaditechforce.com',
         'https://www.samajwaditechforce.com'
     ],
