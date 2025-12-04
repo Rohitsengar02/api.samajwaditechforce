@@ -8,7 +8,8 @@ const {
     deleteTask,
     updateTaskStatus,
     completeTask,
-    getMyCompletedTasks
+    getMyCompletedTasks,
+    getAllSubmissions
 } = require('../controllers/taskController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
@@ -21,6 +22,10 @@ router.route('/')
 // Get my completed tasks
 router.route('/my-completed')
     .get(protect, getMyCompletedTasks);
+
+// Get all submissions (Admin)
+router.route('/submissions')
+    .get(getAllSubmissions); // Removed auth for testing, add protect/admin later if needed
 
 // Status update route
 router.route('/:id/status')

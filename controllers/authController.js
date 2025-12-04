@@ -12,14 +12,33 @@ const bcrypt = require('bcryptjs');
 const authUser = async (req, res) => {
     const { email, password } = req.body;
 
+    console.log('🔐 Login attempt:', email);
+
     const user = await User.findOne({ email });
 
-    if (user && (await user.matchPassword(password))) {
+    if (!user) {
+        console.log('❌ User not found:', email);
+        return res.status(401).json({ message: 'Invalid email or password' });
+    }
+
+    console.log('✅ User found:', {
+        email: user.email,
+        role: user.role,
+        adminVerification: user.adminVerification,
+        verificationStatus: user.verificationStatus
+    });
+
+    const passwordMatch = await user.matchPassword(password);
+    console.log('🔑 Password match:', passwordMatch);
+
+    if (user && passwordMatch) {
         // Check for Admin Verification - must be verified and approved
         if (user.role === 'admin' && (user.verificationStatus !== 'Verified' || !user.adminVerification)) {
+            console.log('⏳ Admin not verified yet');
             return res.status(403).json({ message: 'Your account is pending approval by Master Admin.' });
         }
 
+        console.log('✅ Login successful for:', email);
         res.json({
             _id: user._id,
             name: user.name,
@@ -29,6 +48,7 @@ const authUser = async (req, res) => {
             token: generateToken(user._id),
         });
     } else {
+        console.log('❌ Invalid password for:', email);
         res.status(401).json({ message: 'Invalid email or password' });
     }
 };
@@ -242,15 +262,13 @@ const registerAdmin = async (req, res) => {
             return res.status(400).json({ message: 'Registration request already pending' });
         }
 
-        // Hash password
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
+        // ⚠️ IMPORTANT: Store password as PLAIN TEXT in AdminApproval
+        // It will be hashed when moved to User collection on approval
         const adminRequest = await AdminApproval.create({
             name,
             email,
             phone,
-            password: hashedPassword,
+            password: password, // Store plain password - will be hashed by User model on approval
             role: 'admin'
         });
 

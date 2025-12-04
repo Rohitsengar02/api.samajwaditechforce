@@ -154,7 +154,12 @@ const rejectAdmin = async (req, res) => {
 // @access  Private/MasterAdmin
 const getApprovedAdmins = async (req, res) => {
     try {
-        const users = await User.find({ role: 'admin', adminVerification: true }).select('-password');
+        // Get only 'admin' role users (not 'master-admin'), who are verified
+        const users = await User.find({
+            role: 'admin',
+            adminVerification: true,
+            verificationStatus: 'Verified'
+        }).select('-password');
         res.json(users);
     } catch (error) {
         res.status(500).json({ message: error.message });

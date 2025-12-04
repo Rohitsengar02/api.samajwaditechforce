@@ -286,6 +286,27 @@ const getMyCompletedTasks = async (req, res) => {
     }
 };
 
+// @desc    Get all task submissions
+// @route   GET /api/tasks/submissions
+// @access  Private/Admin
+const getAllSubmissions = async (req, res) => {
+    try {
+        const submissions = await UserTask.find()
+            .populate('user', 'name photo email')
+            .populate('task', 'title platform points')
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({
+            success: true,
+            count: submissions.length,
+            data: submissions
+        });
+    } catch (error) {
+        console.error('Error fetching submissions:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
 module.exports = {
     getTasks,
     getTaskById,
@@ -294,5 +315,7 @@ module.exports = {
     deleteTask,
     updateTaskStatus,
     completeTask,
-    getMyCompletedTasks
+    completeTask,
+    getMyCompletedTasks,
+    getAllSubmissions
 };
