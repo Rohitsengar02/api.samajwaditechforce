@@ -24,7 +24,21 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+// CORS configuration - Allow your deployment domains
+const corsOptions = {
+    origin: [
+        'http://localhost:8081',
+        'http://localhost:19006',
+        'https://admin.samajwaditechforce.com',
+        'https://admin-samajwditechforce.vercel.app',
+        'https://samajwaditechforce.com',
+        'https://www.samajwaditechforce.com'
+    ],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(morgan('dev'));
