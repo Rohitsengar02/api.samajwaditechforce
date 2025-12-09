@@ -89,6 +89,34 @@ const createTask = async (req, res) => {
             status: 'Active'
         });
 
+        // Create notification for all users
+        const Notification = require('../models/Notification');
+        const notification = await Notification.create({
+            title: 'New Task Available!',
+            message: `${title} - Earn ${points} points`,
+            type: 'task',
+            relatedItem: {
+                id: task._id.toString(),
+                model: 'Task'
+            },
+            target: 'all'
+        });
+
+        // Emit Socket.IO event to all connected clients
+        const io = req.app.get('io');
+        if (io) {
+            io.emit('new-notification', {
+                id: notification._id,
+                title: notification.title,
+                message: notification.message,
+                type: notification.type,
+                relatedItem: notification.relatedItem,
+                createdAt: notification.createdAt,
+                read: false
+            });
+            console.log('📡 Notification emitted:', notification.title);
+        }
+
         res.status(201).json({
             success: true,
             message: 'Task created successfully',
@@ -253,6 +281,40 @@ const completeTask = async (req, res) => {
         await User.findByIdAndUpdate(userId, {
             $inc: { points: task.points }
         });
+
+        // Get user details for notification
+        const user = await User.findById(userId).select('name');
+
+        // Create notification for admin
+        const Notification = require('../models/Notification');
+        const notification = await Notification.create({
+            title: 'Task Submission',
+            message: `${user?.name || 'A user'} completed: ${task.title}`,
+            type: 'task',
+            relatedItem: {
+                id: userTask._id.toString(),
+                model: 'UserTask'
+            },
+            target: 'all'
+        });
+
+        // Emit Socket.IO event to admin
+        const io = req.app.get('io');
+        if (io) {
+            io.emit('admin-notification', {
+                id: notification._id,
+                title: notification.title,
+                message: notification.message,
+                type: notification.type,
+                relatedItem: notification.relatedItem,
+                createdAt: notification.createdAt,
+                read: false,
+                userName: user?.name,
+                taskId: taskId,
+                submissionId: userTask._id
+            });
+            console.log('📡 Admin notification emitted:', notification.title);
+        }
 
         res.status(200).json({
             success: true,

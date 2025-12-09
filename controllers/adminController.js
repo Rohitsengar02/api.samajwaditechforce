@@ -166,4 +166,29 @@ const getApprovedAdmins = async (req, res) => {
     }
 };
 
-module.exports = { getPendingVerifications, verifyUser, rejectUser, getVerifiedUsers, getUserById, getPendingAdmins, approveAdmin, rejectAdmin, getApprovedAdmins };
+// @desc    Delete admin
+// @route   DELETE /api/admin/delete/:id
+// @access  Private/MasterAdmin
+const deleteAdmin = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({ message: 'Admin not found' });
+        }
+
+        // Prevent deletion of master-admin
+        if (user.role === 'master-admin') {
+            return res.status(403).json({ message: 'Cannot delete master admin' });
+        }
+
+        // Delete the user
+        await User.findByIdAndDelete(req.params.id);
+
+        res.json({ message: 'Admin deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { getPendingVerifications, verifyUser, rejectUser, getVerifiedUsers, getUserById, getPendingAdmins, approveAdmin, rejectAdmin, getApprovedAdmins, deleteAdmin };

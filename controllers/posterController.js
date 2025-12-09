@@ -135,7 +135,7 @@ exports.trackDownload = async (req, res) => {
 // Update poster
 exports.updatePoster = async (req, res) => {
     try {
-        const { title, isActive } = req.body;
+        const { title, isActive, imageBase64 } = req.body;
         const posterId = req.params.id;
 
         const poster = await Poster.findById(posterId);
@@ -146,6 +146,23 @@ exports.updatePoster = async (req, res) => {
 
         if (title) poster.title = title;
         if (typeof isActive !== 'undefined') poster.isActive = isActive;
+
+        // If new image is provided, upload to Cloudinary
+        if (imageBase64) {
+            // Delete old image from Cloudinary
+            if (poster.cloudinaryPublicId) {
+                await cloudinary.uploader.destroy(poster.cloudinaryPublicId);
+            }
+
+            // Upload new image
+            const result = await cloudinary.uploader.upload(imageBase64, {
+                folder: 'sp-posters',
+                resource_type: 'image'
+            });
+
+            poster.imageUrl = result.secure_url;
+            poster.cloudinaryPublicId = result.public_id;
+        }
 
         await poster.save();
 

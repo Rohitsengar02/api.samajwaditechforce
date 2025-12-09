@@ -72,6 +72,13 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    // OTP fields for mobile verification
+    otp: {
+        type: String,
+    },
+    otpExpiry: {
+        type: Date,
+    },
 }, {
     timestamps: true,
 });

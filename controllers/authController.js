@@ -2,10 +2,8 @@ const User = require('../models/User');
 const AdminApproval = require('../models/AdminApproval');
 const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
-// @desc    Auth user & get token
-// @route   POST /api/auth/login
-// @access  Public
 // @desc    Auth user & get token
 // @route   POST /api/auth/login
 // @access  Public
@@ -288,4 +286,183 @@ const registerAdmin = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin };
+// @desc    Send OTP to mobile number using Fast2SMS
+// @route   POST /api/auth/send-otp
+// @access  Public
+const sendOTP = async (req, res) => {
+    const { phone } = req.body;
+
+    if (!phone) {
+        return res.status(400).json({ message: 'Phone number is required' });
+    }
+
+    // Clean phone number (remove +91, spaces, etc.)
+    const cleanPhone = phone.replace(/[^0-9]/g, '');
+
+    if (cleanPhone.length !== 10) {
+        return res.status(400).json({ message: 'Invalid phone number format' });
+    }
+
+    try {
+        // Generate 6-digit OTP
+        const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+        // Set OTP expiry (5 minutes from now)
+        const otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
+
+        // Find user by phone or create temp OTP records
+        let user = await User.findOne({ phone: cleanPhone });
+
+        if (user) {
+            // Update existing user with OTP
+            user.otp = otp;
+            user.otpExpiry = otpExpiry;
+            await user.save();
+        } else {
+            // Create temporary user record with OTP (will be completed during registration)
+            // If name/email/password are provided (e.g. from Desktop Register), use them
+            user = await User.create({
+                phone: cleanPhone,
+                otp,
+                otpExpiry,
+                name: req.body.name || 'Temp User',
+                email: req.body.email || `temp_${cleanPhone}@temp.com`,
+                password: req.body.password || 'temppassword123'
+            });
+        }
+
+        // Send OTP via Fast2SMS
+        // Using dotenv config at top of file safeguards this, but we fallback just in case
+        const Fast2SMS_API_KEY = process.env.OTP_SECRET;
+
+        if (!Fast2SMS_API_KEY) {
+            console.error('❌ OTP_SECRET is missing in .env file');
+        }
+
+        console.log('Sending OTP via Fast2SMS...');
+        // console.log('Key Prefix:', Fast2SMS_API_KEY ? Fast2SMS_API_KEY.substring(0, 5) + '...' : 'None');
+
+        const message = `Your OTP for Samajwadi Tech Force registration is: ${otp}. Valid for 5 minutes.`;
+
+        const response = await fetch('https://www.fast2sms.com/dev/bulkV2', {
+            method: 'POST',
+            headers: {
+                'authorization': Fast2SMS_API_KEY,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                route: 'v3',
+                sender_id: 'TXTIND',
+                message,
+                language: 'english',
+                flash: 0,
+                numbers: cleanPhone
+            })
+        });
+
+        const responseText = await response.text();
+        console.log('Fast2SMS Raw Response:', responseText);
+
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (e) {
+            console.error('Failed to parse Fast2SMS response:', e);
+            throw new Error(`Fast2SMS returned non-JSON response: ${responseText}`);
+        }
+
+        if (data.return === true || data.status_code === '200') {
+            console.log('✅ OTP sent successfully to:', cleanPhone);
+            res.json({
+                success: true,
+                message: 'OTP sent successfully',
+                phone: cleanPhone
+            });
+        } else {
+            console.error('❌ Fast2SMS Error:', data);
+            res.status(500).json({
+                success: false,
+                message: 'Failed to send OTP. Please try again. ' + (data.message || '')
+            });
+        }
+    } catch (error) {
+        console.error('❌ Send OTP Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error sending OTP',
+            error: error.message
+        });
+    }
+};
+
+// @desc    Verify OTP
+// @route   POST /api/auth/verify-otp
+// @access  Public
+const verifyOTP = async (req, res) => {
+    const { phone, otp } = req.body;
+
+    if (!phone || !otp) {
+        return res.status(400).json({ message: 'Phone number and OTP are required' });
+    }
+
+    // Clean phone number
+    const cleanPhone = phone.replace(/[^0-9]/g, '');
+
+    try {
+        // Find user with matching phone and OTP
+        const user = await User.findOne({ phone: cleanPhone });
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found. Please request OTP first.'
+            });
+        }
+
+        // Check if OTP matches
+        if (user.otp !== otp) {
+            return res.status(401).json({
+                success: false,
+                message: 'Invalid OTP'
+            });
+        }
+
+        // Check if OTP has expired
+        if (user.otpExpiry && new Date() > new Date(user.otpExpiry)) {
+            return res.status(401).json({
+                success: false,
+                message: 'OTP has expired. Please request a new one.'
+            });
+        }
+
+        // OTP verified successfully
+        // Clear OTP from database
+        user.otp = undefined;
+        user.otpExpiry = undefined;
+        await user.save();
+
+        console.log('✅ OTP verified successfully for:', cleanPhone);
+
+        res.json({
+            success: true,
+            message: 'OTP verified successfully',
+            user: {
+                _id: user._id,
+                phone: user.phone,
+                name: user.name,
+                email: user.email,
+                isNewUser: user.email?.includes('@temp.com') // Check if user needs to complete registration
+            },
+            token: generateToken(user._id)
+        });
+    } catch (error) {
+        console.error('❌ Verify OTP Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error verifying OTP',
+            error: error.message
+        });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP };

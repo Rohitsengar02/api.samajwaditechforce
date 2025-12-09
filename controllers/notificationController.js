@@ -1,4 +1,8 @@
 const Notification = require('../models/Notification');
+const { Expo } = require('expo-server-sdk');
+
+// Create a new Expo SDK client
+const expo = new Expo();
 
 // @desc    Get all notifications (history)
 // @route   GET /api/notifications
@@ -23,9 +27,6 @@ const getNotifications = async (req, res) => {
 // @access  Public (Temporarily)
 const sendNotification = async (req, res) => {
     try {
-        // In a real app, here we would trigger the push notification service (e.g., Firebase/Expo)
-        // For now, we just save the record to history
-
         // Simulate sent count based on target
         let sentCount = 0;
         switch (req.body.target) {
@@ -40,6 +41,57 @@ const sendNotification = async (req, res) => {
             ...req.body,
             sentCount
         });
+
+        // Broadcast via Socket.IO for real-time updates
+        const io = req.app.get('io');
+        if (io) {
+            io.emit('notification', {
+                id: notification._id,
+                type: notification.type || 'update',
+                title: notification.title,
+                message: notification.message,
+                createdAt: notification.createdAt,
+                relatedItem: notification.relatedItem
+            });
+            console.log('✅ Notification broadcasted via Socket.IO');
+        }
+
+        // TODO: Send Expo Push Notifications
+        // You would need to:
+        // 1. Get push tokens from User/Member model based on target
+        // 2. Send push notifications using Expo SDK
+        // Example code (when you have push tokens):
+        /*
+        const Member = require('../models/Member');
+        let query = {};
+        if (req.body.target === 'district_heads') {
+            query = { role: 'district_head' };
+        } else if (req.body.target === 'active') {
+            query = { isActive: true };
+        } else if (req.body.target === 'youth') {
+            query = { ageGroup: 'youth' };
+        }
+        
+        const users = await Member.find(query).select('pushToken');
+        const pushTokens = users.map(u => u.pushToken).filter(Boolean);
+        
+        const messages = pushTokens.map(token => ({
+            to: token,
+            sound: 'default',
+            title: notification.title,
+            body: notification.message,
+            data: { notificationId: notification._id, type: notification.type }
+        }));
+        
+        const chunks = expo.chunkPushNotifications(messages);
+        for (const chunk of chunks) {
+            try {
+                await expo.sendPushNotificationsAsync(chunk);
+            } catch (error) {
+                console.error('Error sending push notification chunk:', error);
+            }
+        }
+        */
 
         res.status(201).json({
             success: true,

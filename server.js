@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const morgan = require('morgan');
+const http = require('http');
+const { Server } = require('socket.io');
 
 // Route files
 const authRoutes = require('./routes/authRoutes');
@@ -17,23 +19,46 @@ const newsRoutes = require('./routes/news');
 const adminRoutes = require('./routes/adminRoutes');
 const posterRoutes = require('./routes/posterRoutes');
 const bannerRoutes = require('./routes/bannerRoutes');
+const pageRoutes = require('./routes/pageRoutes');
 
 dotenv.config();
 
 connectDB();
 
 const app = express();
+const server = http.createServer(app);
 
-// CORS configuration - Allow your deployment domains
+// Socket.IO setup
+const io = new Server(server, {
+    cors: {
+        origin: true, // Allow all origins in development
+        methods: ['GET', 'POST'],
+        credentials: true
+    }
+});
+
+// Make io accessible to routes
+app.set('io', io);
+
+// Socket.IO connection handling
+io.on('connection', (socket) => {
+    console.log('✅ New client connected:', socket.id);
+
+    // Join user to their personal room
+    socket.on('join', (userId) => {
+        socket.join(`user_${userId}`);
+        console.log(`User ${userId} joined their room`);
+    });
+
+    // Handle disconnect
+    socket.on('disconnect', () => {
+        console.log('❌ Client disconnected:', socket.id);
+    });
+});
+
+// CORS configuration - Allow all origins for development
 const corsOptions = {
-    origin: [
-        'http://localhost:8081',
-        'http://localhost:19006',
-        'https://admin.samajwaditechforce.com',
-        'https://admin-samajwditechforce.vercel.app',
-        'https://samajwaditechforce.com',
-        'https://www.samajwaditechforce.com'
-    ],
+    origin: true, // Allow all origins in development
     credentials: true,
     optionsSuccessStatus: 200
 };
@@ -59,6 +84,9 @@ app.use('/api/banners', bannerRoutes);
 app.use('/api/ai', require('./routes/aiRoutes'));
 app.use('/api/ai-gemini', require('./routes/bgremove'));
 app.use('/api/onboarding', require('./routes/onboardingRoutes'));
+app.use('/api/pages', pageRoutes);
+app.use('/api/reels', require('./routes/reelRoutes'));
+app.use('/api/home-content', require('./routes/homeContentRoutes'));
 
 app.get('/', (req, res) => {
     res.send('API is running...');
@@ -66,4 +94,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📡 Socket.IO ready for connections`);
+});

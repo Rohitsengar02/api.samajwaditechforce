@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getPendingVerifications, verifyUser, rejectUser, getVerifiedUsers, getUserById, getPendingAdmins, approveAdmin, rejectAdmin, getApprovedAdmins } = require('../controllers/adminController');
+const { getPendingVerifications, verifyUser, rejectUser, getVerifiedUsers, getUserById, getPendingAdmins, approveAdmin, rejectAdmin, getApprovedAdmins, deleteAdmin } = require('../controllers/adminController');
 const { protect, admin, masterAdmin } = require('../middleware/authMiddleware');
 
 router.get('/verifications', protect, admin, getPendingVerifications);
@@ -14,5 +14,9 @@ router.get('/pending-admins', protect, masterAdmin, getPendingAdmins);
 router.put('/approve-admin/:id', protect, masterAdmin, approveAdmin);
 router.delete('/reject-admin/:id', protect, masterAdmin, rejectAdmin);
 router.get('/approved-admins', protect, masterAdmin, getApprovedAdmins);
+router.delete('/delete/:id', protect, masterAdmin, deleteAdmin);
+
+// Delete member (for all admins)
+router.delete('/delete-member/:id', protect, admin, deleteAdmin);
 
 module.exports = router;

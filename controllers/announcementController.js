@@ -1,4 +1,5 @@
 const Announcement = require('../models/Announcement');
+const Notification = require('../models/Notification');
 
 // @desc    Get all announcements
 // @route   GET /api/announcements
@@ -22,6 +23,37 @@ const getAnnouncements = async (req, res) => {
 const createAnnouncement = async (req, res) => {
     try {
         const announcement = await Announcement.create(req.body);
+
+        // Create a notification entry for this announcement
+        const notification = await Notification.create({
+            title: announcement.title,
+            message: announcement.content,
+            type: 'update',
+            target: 'all',
+            sentCount: 1250, // Simulated count
+            relatedItem: {
+                id: announcement._id,
+                model: 'Announcement'
+            }
+        });
+
+        // Broadcast via Socket.IO for real-time updates
+        const io = req.app.get('io');
+        if (io) {
+            io.emit('notification', {
+                id: notification._id,
+                type: 'update',
+                title: announcement.title,
+                message: announcement.content,
+                createdAt: announcement.createdAt,
+                relatedItem: {
+                    id: announcement._id,
+                    model: 'Announcement'
+                }
+            });
+            console.log('✅ Announcement broadcasted as notification via Socket.IO');
+        }
+
         res.status(201).json({
             success: true,
             data: announcement
