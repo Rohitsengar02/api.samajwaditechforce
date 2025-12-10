@@ -1,3 +1,17 @@
+// Polyfill for DOMMatrix to support pdf-parse in Node environment
+if (!global.DOMMatrix) {
+    global.DOMMatrix = class DOMMatrix {
+        constructor() {
+            this.a = 1; this.b = 0; this.c = 0; this.d = 1; this.e = 0; this.f = 0;
+        }
+        setMatrixValue(str) { return this; }
+        translate(x, y) { return this; }
+        scale(x, y) { return this; }
+        rotate(angle) { return this; }
+        multiply(m) { return this; }
+    };
+}
+
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -87,12 +101,13 @@ app.use('/api/onboarding', require('./routes/onboardingRoutes'));
 app.use('/api/pages', pageRoutes);
 app.use('/api/reels', require('./routes/reelRoutes'));
 app.use('/api/home-content', require('./routes/homeContentRoutes'));
+app.use('/api/feedback', require('./routes/feedbackRoutes'));
 
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 server.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
