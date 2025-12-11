@@ -465,4 +465,65 @@ const verifyOTP = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP };
+// @desc    Google Login/Register
+// @route   POST /api/auth/google
+// @access  Public
+const googleLogin = async (req, res) => {
+    const { email, name, photo, googleId } = req.body;
+
+    try {
+        // Check if user exists
+        let user = await User.findOne({ email });
+
+        if (user) {
+            // User exists - Log them in
+            console.log('✅ Google Login - User found:', email);
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                points: user.points || 0,
+                token: generateToken(user._id),
+                profileImage: user.profileImage
+            });
+        } else {
+            // User doesn't exist - Register them
+            console.log('🆕 Google Login - Creating new user:', email);
+
+            // Generate a random password for Google users
+            const randomPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+
+            user = await User.create({
+                name,
+                email,
+                phone: `G-${Date.now()}`, // Placeholder phone since it's required
+                password: randomPassword, // Secure random password
+                profileImage: photo,
+                role: 'member', // Default role matching enum
+                isGoogleUser: true, // Flag to identify google users
+                adminVerification: true // Auto-verify regular users
+            });
+
+            if (user) {
+                res.status(201).json({
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                    role: user.role,
+                    points: user.points || 0,
+                    token: generateToken(user._id),
+                    profileImage: user.profileImage,
+                    isNewUser: true // Explicitly flag as new user for frontend flow
+                });
+            } else {
+                res.status(400).json({ message: 'Invalid user data' });
+            }
+        }
+    } catch (error) {
+        console.error('❌ Google Login Error:', error);
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin };

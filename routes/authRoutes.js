@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP } = require('../controllers/authController');
+const { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin } = require('../controllers/authController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
 router.post('/login', authUser);
+router.post('/google', googleLogin);
 router.post('/register', registerUser);
 router.post('/register-admin', registerAdmin);
 router.post('/send-otp', sendOTP);
