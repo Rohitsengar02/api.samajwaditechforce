@@ -1,4 +1,5 @@
 const News = require('../models/News');
+const { deleteCachePattern } = require('../utils/cache');
 
 // @desc    Get all news
 // @route   GET /api/news
@@ -54,6 +55,9 @@ exports.createNews = async (req, res, next) => {
 
         console.log('News created successfully:', news._id);
 
+        // Invalidate news cache after creating new news
+        await deleteCachePattern('news_list');
+
         res.status(201).json({
             success: true,
             data: news
@@ -88,6 +92,9 @@ exports.updateNews = async (req, res, next) => {
             runValidators: true
         });
 
+        // Invalidate cache after updating
+        await deleteCachePattern('news_');
+
         res.status(200).json({
             success: true,
             data: news
@@ -109,6 +116,9 @@ exports.deleteNews = async (req, res, next) => {
         }
 
         await news.deleteOne();
+
+        // Invalidate cache after deleting
+        await deleteCachePattern('news_');
 
         res.status(200).json({
             success: true,
