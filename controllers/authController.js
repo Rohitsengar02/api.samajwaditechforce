@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Member = require('../models/Member');
 const AdminApproval = require('../models/AdminApproval');
 const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
@@ -182,28 +183,35 @@ const updateUserProfile = async (req, res) => {
 // @route   PUT /api/auth/verification-request
 // @access  Private
 const requestVerification = async (req, res) => {
-    const user = await User.findById(req.user._id);
+    try {
+        console.log('📝 Verification Request:', req.user._id, req.body);
+        const user = await User.findById(req.user._id);
 
-    if (user) {
-        user.district = req.body.district || user.district;
-        user.vidhanSabha = req.body.vidhanSabha || user.vidhanSabha;
-        user.isPartyMember = req.body.isPartyMember || user.isPartyMember;
-        user.partyRole = req.body.partyRole || user.partyRole;
-        user.partyJoiningDate = req.body.partyJoiningDate || user.partyJoiningDate;
-        user.socialMedia = req.body.socialMedia || user.socialMedia;
-        user.qualification = req.body.qualification || user.qualification;
-        user.canVisitLucknow = req.body.canVisitLucknow || user.canVisitLucknow;
+        if (user) {
+            user.district = req.body.district || user.district;
+            user.vidhanSabha = req.body.vidhanSabha || user.vidhanSabha;
+            user.isPartyMember = req.body.isPartyMember || user.isPartyMember;
+            user.partyRole = req.body.partyRole || user.partyRole;
+            user.partyJoiningDate = req.body.partyJoiningDate || user.partyJoiningDate;
+            user.socialMedia = req.body.socialMedia || user.socialMedia;
+            user.qualification = req.body.qualification || user.qualification;
+            user.canVisitLucknow = req.body.canVisitLucknow || user.canVisitLucknow;
 
-        user.verificationStatus = 'Pending';
+            user.verificationStatus = 'Pending';
 
-        const updatedUser = await user.save();
+            const updatedUser = await user.save();
 
-        res.json({
-            message: 'Verification request submitted',
-            user: updatedUser
-        });
-    } else {
-        res.status(404).json({ message: 'User not found' });
+            console.log('✅ Verification Saved');
+            res.json({
+                message: 'Verification request submitted',
+                user: updatedUser
+            });
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error('❌ Verification Error:', error);
+        res.status(500).json({ message: 'Server Validation Error', error: error.message });
     }
 };
 
@@ -526,4 +534,112 @@ const googleLogin = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin };
+// @desc    Get all users (Admin only)
+// @route   GET /api/auth/all
+// @access  Private/Admin
+const mongoose = require('mongoose');
+
+// @desc    Get all users (Admin only)
+// @route   GET /api/auth/all
+// @access  Private/Admin
+const getAllUsers = async (req, res) => {
+    try {
+        console.log('Fetching users and volunteers...');
+
+        // Fetch App Users
+        const users = await User.find({})
+            .sort({ createdAt: -1 })
+            .select('-password')
+            .lean();
+        console.log(`Found ${users.length} app users`);
+
+        // Fetch Volunteers from 'volunteers' collection explicitly
+        // Define model dynamically if not exists, targeting 'volunteers' collection
+        const Volunteer = mongoose.models.Volunteer || mongoose.model('Volunteer', new mongoose.Schema({}, { strict: false }), 'volunteers');
+
+        const volunteers = await Volunteer.find({}).lean();
+        console.log(`Found ${volunteers.length} volunteers in DB`);
+
+        // Normalize Volunteer data (handling various possible field names)
+        const normalizedVolunteers = volunteers.map(v => ({
+            _id: v._id,
+            name: v.name || v.fullName || v.Name || v.firstName || 'Volunteer',
+            email: v.email || '',
+            phone: v.phone || v.mobile || v.mobileNumber || v.Mobile || '',
+            role: 'Volunteer',
+            verificationStatus: v.status || (v.isVerified ? 'Verified' : 'Unverified'),
+            createdAt: v.createdAt || v.date || new Date(), // Fallback
+            profileImage: v.profileImage,
+            isVolunteer: true
+        }));
+
+        // Combine and Sort by Newest First
+        const allData = [...users, ...normalizedVolunteers].sort((a, b) => {
+            const dateA = new Date(a.createdAt);
+            const dateB = new Date(b.createdAt);
+            return dateB - dateA;
+        });
+
+        res.json(allData);
+    } catch (error) {
+        console.error('Error in getAllUsers:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// @desc    Delete user or volunteer
+// @route   DELETE /api/auth/delete/:id
+// @access  Private/Admin
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+    const { type } = req.query; // 'volunteer' or 'user' (default)
+
+    try {
+        if (type === 'volunteer') {
+            const Volunteer = mongoose.models.Volunteer || mongoose.model('Volunteer', new mongoose.Schema({}, { strict: false }), 'volunteers');
+            await Volunteer.findByIdAndDelete(id);
+        } else {
+            await User.findByIdAndDelete(id);
+        }
+        res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// @desc    Update user or volunteer
+// @route   PUT /api/auth/update/:id
+// @access  Private/Admin
+const updateUser = async (req, res) => {
+    const { id } = req.params;
+    const { type } = req.query;
+    const updates = req.body;
+
+    try {
+        let updatedUser;
+        if (type === 'volunteer') {
+            const Volunteer = mongoose.models.Volunteer || mongoose.model('Volunteer', new mongoose.Schema({}, { strict: false }), 'volunteers');
+
+            // Map frontend fields to backend fields for Volunteer
+            const dbUpdates = { ...updates };
+            if (updates.name) dbUpdates.fullName = updates.name;
+            if (updates.phone) dbUpdates.mobileNumber = updates.phone;
+            if (updates.verificationStatus) dbUpdates.status = updates.verificationStatus;
+
+            // Ensure we don't accidentally overwrite with undefined if not provided
+            // Just spreading updates is risky if keys don't match, but strict:false allows flexible keys.
+            // We explicit map common ones to ensure UI shows them correctly next fetch.
+
+            updatedUser = await Volunteer.findByIdAndUpdate(id, dbUpdates, { new: true });
+        } else {
+            updatedUser = await User.findByIdAndUpdate(id, updates, { new: true });
+        }
+        res.json(updatedUser);
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser };

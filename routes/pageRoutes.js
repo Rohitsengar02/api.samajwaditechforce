@@ -10,14 +10,13 @@ const {
     deletePage
 } = require('../controllers/pageController');
 const { protect, admin } = require('../middleware/authMiddleware');
-const { cacheMiddleware } = require('../utils/cache');
 
 // NOTE: Auth temporarily disabled for testing - enable in production!
 
-// Public routes with caching
-router.get('/', cacheMiddleware('pages_list', 20 * 60), getPages);
-router.get('/slug/:slug', cacheMiddleware('page_slug', 20 * 60), getPageBySlug);
-router.get('/:id', cacheMiddleware('page', 20 * 60), getPageById);
+// Public routes
+router.get('/', getPages);
+router.get('/slug/:slug', getPageBySlug);
+router.get('/:id', getPageById);
 
 // Admin routes
 router.post('/', createPage);

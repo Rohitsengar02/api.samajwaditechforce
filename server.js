@@ -34,16 +34,10 @@ const adminRoutes = require('./routes/adminRoutes');
 const posterRoutes = require('./routes/posterRoutes');
 const bannerRoutes = require('./routes/bannerRoutes');
 const pageRoutes = require('./routes/pageRoutes');
-const { initRedis } = require('./utils/cache');
 
 dotenv.config();
 
 connectDB();
-
-// Initialize Redis
-initRedis().catch(err => {
-    console.warn('⚠️ Redis not available, continuing without caching:', err.message);
-});
 
 const app = express();
 const server = http.createServer(app);
