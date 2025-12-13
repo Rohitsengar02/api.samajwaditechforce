@@ -239,19 +239,30 @@ const completeTask = async (req, res) => {
         const taskId = req.params.id;
         const userId = req.user._id;
 
+        console.log('📋 Task Completion Request:', {
+            taskId,
+            userId: userId.toString(),
+            body: req.body
+        });
+
         const task = await Task.findById(taskId);
         if (!task) {
+            console.log('❌ Task not found:', taskId);
             return res.status(404).json({ success: false, message: 'Task not found' });
         }
 
+        console.log('✅ Task found:', { id: task._id, title: task.title, status: task.status });
+
         if (task.status !== 'Active') {
-            return res.status(400).json({ success: false, message: 'Task is not active' });
+            console.log(`❌ Task is ${task.status}, not Active`);
+            return res.status(400).json({ success: false, message: `Task is ${task.status.toLowerCase()}, not active` });
         }
 
         // Check if already completed
         const existingCompletion = await UserTask.findOne({ user: userId, task: taskId });
         if (existingCompletion) {
-            return res.status(400).json({ success: false, message: 'Task already completed' });
+            console.log('❌ Task already completed by user:', { userId: userId.toString(), taskId });
+            return res.status(400).json({ success: false, message: 'You have already completed this task' });
         }
 
         const { comment, proofImage } = req.body;
@@ -259,9 +270,11 @@ const completeTask = async (req, res) => {
 
         if (proofImage) {
             try {
+                console.log('📸 Uploading proof image to Cloudinary...');
                 proofImageUrl = await uploadBase64ToCloudinary(proofImage, 'samajwadi-task-proofs');
+                console.log('✅ Image uploaded:', proofImageUrl);
             } catch (uploadError) {
-                console.error('Failed to upload proof image:', uploadError);
+                console.error('❌ Failed to upload proof image:', uploadError);
                 // Optionally fail the request or continue without image
                 // return res.status(500).json({ success: false, message: 'Failed to upload proof image' });
             }
@@ -277,10 +290,14 @@ const completeTask = async (req, res) => {
             proofImage: proofImageUrl
         });
 
+        console.log('✅ UserTask created:', userTask._id);
+
         // Update user points
         await User.findByIdAndUpdate(userId, {
             $inc: { points: task.points }
         });
+
+        console.log(`✅ User points updated: +${task.points} points`);
 
         // Get user details for notification
         const user = await User.findById(userId).select('name');
@@ -316,6 +333,8 @@ const completeTask = async (req, res) => {
             console.log('📡 Admin notification emitted:', notification.title);
         }
 
+        console.log('🎉 Task completion successful!');
+
         res.status(200).json({
             success: true,
             message: 'Task completed successfully',
@@ -324,7 +343,7 @@ const completeTask = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error completing task:', error);
+        console.error('❌ Error completing task:', error);
         res.status(500).json({ success: false, message: error.message });
     }
 };
@@ -376,7 +395,6 @@ module.exports = {
     updateTask,
     deleteTask,
     updateTaskStatus,
-    completeTask,
     completeTask,
     getMyCompletedTasks,
     getAllSubmissions
