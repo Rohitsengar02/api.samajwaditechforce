@@ -98,6 +98,32 @@ const homeContentSchema = new mongoose.Schema({
         selectedPageIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Page' }]
     },
 
+    // Footer Section
+    footer: {
+        columns: [{
+            id: { type: String },
+            title: { type: String, default: '' },
+            type: { type: String, default: 'links' }, // 'links', 'text', 'contact', 'social'
+            content: { type: String, default: '' }, // For 'text' type description
+            links: [{
+                label: { type: String },
+                path: { type: String }
+            }],
+            contact: {
+                address: { type: String, default: '' },
+                phone: { type: String, default: '' },
+                email: { type: String, default: '' }
+            },
+            social: {
+                facebook: { type: String, default: '' },
+                twitter: { type: String, default: '' },
+                instagram: { type: String, default: '' },
+                youtube: { type: String, default: '' }
+            }
+        }],
+        copyright: { type: String, default: '© 2024 Samajwadi Party. All rights reserved.' }
+    },
+
     // Meta
     isActive: { type: Boolean, default: true },
     updatedAt: { type: Date, default: Date.now },

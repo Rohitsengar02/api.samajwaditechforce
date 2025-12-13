@@ -56,7 +56,8 @@ app.set('io', io);
 
 // Socket.IO connection handling
 io.on('connection', (socket) => {
-    console.log('✅ New client connected:', socket.id);
+    console.log('--- Server Starting (Schema Update Applied) ---');
+    console.log('Connecting to MongoDB...', socket.id);
 
     // Join user to their personal room
     socket.on('join', (userId) => {
@@ -101,6 +102,7 @@ app.use('/api/onboarding', require('./routes/onboardingRoutes'));
 app.use('/api/pages', pageRoutes);
 app.use('/api/reels', require('./routes/reelRoutes'));
 app.use('/api/home-content', require('./routes/homeContentRoutes'));
+app.use('/api/footer', require('./routes/footerRoutes'));
 app.use('/api/feedback', require('./routes/feedbackRoutes'));
 
 app.get('/', (req, res) => {

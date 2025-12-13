@@ -67,6 +67,41 @@ const getDefaultContent = () => ({
     explorePages: {
         title: 'Explore Pages',
         selectedPageIds: []
+    },
+    footer: {
+        columns: [
+            {
+                id: 'about_col',
+                title: 'About Us',
+                type: 'text',
+                content: 'The official digital wing of Samajwadi Party, dedicated to spreading the message of development and social justice.'
+            },
+            {
+                id: 'quick_links',
+                title: 'Quick Links',
+                type: 'links',
+                links: []
+            },
+            {
+                id: 'resources',
+                title: 'Resources',
+                type: 'links',
+                links: []
+            },
+            {
+                id: 'contact_info',
+                title: 'Contact Info',
+                type: 'contact',
+                contact: { address: '', phone: '', email: '' }
+            },
+            {
+                id: 'social_media',
+                title: 'Follow Us',
+                type: 'social',
+                social: { facebook: '', twitter: '', instagram: '', youtube: '' }
+            }
+        ],
+        copyright: '© 2024 Samajwadi Party. All rights reserved.'
     }
 });
 
@@ -97,44 +132,27 @@ const getHomeContent = async (req, res) => {
 // @access  Private/Admin
 const updateHomeContent = async (req, res) => {
     try {
-        const { hero, trackRecord, president, legacy, programs, explorePages } = req.body;
+        const { hero, trackRecord, president, legacy, programs, explorePages, footer } = req.body;
 
         console.log('=== Updating Home Content ===');
         console.log('Received hero:', JSON.stringify(hero, null, 2));
 
-        let content = await HomeContent.findOne();
+        // Create update object
+        const updateData = {};
+        if (hero !== undefined) updateData.hero = hero;
+        if (trackRecord !== undefined) updateData.trackRecord = trackRecord;
+        if (president !== undefined) updateData.president = president;
+        if (legacy !== undefined) updateData.legacy = legacy;
+        if (programs !== undefined) updateData.programs = programs;
+        if (explorePages !== undefined) updateData.explorePages = explorePages;
+        if (footer !== undefined) updateData.footer = footer;
 
-        if (!content) {
-            content = new HomeContent(getDefaultContent());
-        }
-
-        // Update each section if provided
-        if (hero !== undefined) {
-            content.hero = hero;
-            content.markModified('hero');
-        }
-        if (trackRecord !== undefined) {
-            content.trackRecord = trackRecord;
-            content.markModified('trackRecord');
-        }
-        if (president !== undefined) {
-            content.president = president;
-            content.markModified('president');
-        }
-        if (legacy !== undefined) {
-            content.legacy = legacy;
-            content.markModified('legacy');
-        }
-        if (programs !== undefined) {
-            content.programs = programs;
-            content.markModified('programs');
-        }
-        if (explorePages !== undefined) {
-            content.explorePages = explorePages;
-            content.markModified('explorePages');
-        }
-
-        await content.save();
+        // Use findOneAndUpdate to ensure fields are set correctly
+        const content = await HomeContent.findOneAndUpdate(
+            {},
+            { $set: updateData },
+            { new: true, upsert: true, setDefaultsOnInsert: true }
+        );
 
         res.json({
             success: true,
