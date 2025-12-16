@@ -146,14 +146,15 @@ const updateUserProfile = async (req, res) => {
     const user = await User.findById(req.user._id);
 
     if (user) {
-        user.name = req.body.name || user.name;
-        user.email = req.body.email || user.email;
-        user.phone = req.body.phone || user.phone;
-        user.gender = req.body.gender || user.gender;
-        user.dob = req.body.dob || user.dob;
-        user.profileImage = req.body.profileImage || user.profileImage;
-        user.address = req.body.address || user.address;
-        user.location = req.body.location || user.location;
+        // Update fields (allowing empty strings if sent)
+        user.name = req.body.name !== undefined ? req.body.name : user.name;
+        user.email = req.body.email !== undefined ? req.body.email : user.email;
+        user.phone = req.body.phone !== undefined ? req.body.phone : user.phone;
+        user.gender = req.body.gender !== undefined ? req.body.gender : user.gender;
+        user.dob = req.body.dob !== undefined ? req.body.dob : user.dob;
+        user.profileImage = req.body.profileImage !== undefined ? req.body.profileImage : user.profileImage;
+        user.address = req.body.address !== undefined ? req.body.address : user.address;
+        user.location = req.body.location !== undefined ? req.body.location : user.location;
 
         if (req.body.password) {
             user.password = req.body.password;
@@ -172,6 +173,18 @@ const updateUserProfile = async (req, res) => {
             profileImage: updatedUser.profileImage,
             address: updatedUser.address,
             location: updatedUser.location,
+            district: updatedUser.district,
+            vidhanSabha: updatedUser.vidhanSabha,
+            isPartyMember: updatedUser.isPartyMember,
+            partyRole: updatedUser.partyRole,
+            partyJoiningDate: updatedUser.partyJoiningDate,
+            socialMedia: updatedUser.socialMedia,
+            qualification: updatedUser.qualification,
+            canVisitLucknow: updatedUser.canVisitLucknow,
+            verificationStatus: updatedUser.verificationStatus,
+            adminVerification: updatedUser.adminVerification,
+            language: updatedUser.language,
+            points: updatedUser.points || 0,
             token: generateToken(updatedUser._id),
         });
     } else {
