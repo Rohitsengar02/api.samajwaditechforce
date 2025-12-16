@@ -235,13 +235,37 @@ const updateLanguage = async (req, res) => {
 // @access  Private
 const getLeaderboard = async (req, res) => {
     try {
+        // Fetch Users (Members/Admins)
         const users = await User.find({})
-            .sort({ points: -1 })
-            .limit(50)
-            .select('name profileImage district points');
+            .select('name profileImage district points role')
+            .lean();
 
-        res.json(users);
+        // Fetch Volunteers
+        const mongoose = require('mongoose');
+        const Volunteer = mongoose.models.Volunteer || mongoose.model('Volunteer', new mongoose.Schema({}, { strict: false }), 'volunteers');
+
+        const volunteers = await Volunteer.find({}).lean();
+
+        // Normalize Volunteers to match Leaderboard structure
+        const normalizedVolunteers = volunteers.map(v => ({
+            _id: v._id,
+            name: v.name || v.fullName || v.Name || v.firstName || 'Volunteer',
+            profileImage: v.profileImage,
+            district: v.district || v.District || v["जिला "] || 'Unknown District',
+            points: v.points || 0,
+            role: 'Volunteer'
+        }));
+
+        // Combine
+        const allParticipants = [...users, ...normalizedVolunteers];
+
+        // Sort by Points (Descending)
+        allParticipants.sort((a, b) => (b.points || 0) - (a.points || 0));
+
+        // Return All (User requested "show all")
+        res.json(allParticipants);
     } catch (error) {
+        console.error('Leaderboard Error:', error);
         res.status(500).json({ message: 'Server Error' });
     }
 };
