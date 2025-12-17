@@ -75,6 +75,7 @@ const homeContentSchema = new mongoose.Schema({
 
     // President Section - Now supports multiple slides
     president: {
+        title: { type: String, default: 'Our Leaders' },
         slides: [presidentSlideSchema],
         autoPlayInterval: { type: Number, default: 5000 }
     },

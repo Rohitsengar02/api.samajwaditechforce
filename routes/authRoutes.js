@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser } = require('../controllers/authController');
+const { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists } = require('../controllers/authController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
 router.post('/login', authUser);
 router.post('/google', googleLogin);
+router.post('/check-exists', checkUserExists);
 router.post('/register', registerUser);
 router.post('/register-admin', registerAdmin);
 router.post('/send-otp', sendOTP);

@@ -679,4 +679,30 @@ const updateUser = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser };
+// @desc    Check if email/phone exists
+// @route   POST /api/auth/check-exists
+// @access  Public
+const checkUserExists = async (req, res) => {
+    const { email, phone } = req.body;
+    try {
+        const query = [];
+        if (email) query.push({ email });
+        if (phone) query.push({ phone });
+
+        if (query.length === 0) {
+            return res.status(400).json({ message: 'Email or Phone required' });
+        }
+
+        const user = await User.findOne({ $or: query });
+
+        if (user) {
+            res.json({ exists: true, message: 'User already exists' });
+        } else {
+            res.json({ exists: false, message: 'Available' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists };
