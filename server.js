@@ -34,6 +34,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const posterRoutes = require('./routes/posterRoutes');
 const bannerRoutes = require('./routes/bannerRoutes');
 const pageRoutes = require('./routes/pageRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 dotenv.config();
 
@@ -104,6 +105,8 @@ app.use('/api/reels', require('./routes/reelRoutes'));
 app.use('/api/home-content', require('./routes/homeContentRoutes'));
 app.use('/api/footer', require('./routes/footerRoutes'));
 app.use('/api/feedback', require('./routes/feedbackRoutes'));
+app.use('/api/events', eventRoutes);
+app.use('/api/upload', require('./routes/uploadRoutes'));
 
 app.get('/', (req, res) => {
     res.send('API is running...');

@@ -35,11 +35,7 @@ const userSchema = new mongoose.Schema({
         default: 'member',
     },
     address: {
-        street: String,
-        city: String,
-        state: String,
-        postalCode: String,
-        country: String,
+        type: mongoose.Schema.Types.Mixed,
     },
     location: {
         lat: Number,

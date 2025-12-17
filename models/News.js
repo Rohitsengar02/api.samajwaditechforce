@@ -12,6 +12,11 @@ const newsSchema = new mongoose.Schema({
         required: [true, 'Please add an excerpt'],
         maxlength: [5000, 'Excerpt cannot be more than 1000 characters']
     },
+    type: {
+        type: String,
+        enum: ['News', 'Program', 'program', 'Programs', 'programs'],
+        default: 'News'
+    },
     coverImage: {
         type: String,
         default: 'no-photo.jpg'

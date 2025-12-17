@@ -29,7 +29,7 @@ exports.getSingleNews = async (req, res, next) => {
         }
 
         // Increment views
-        news.views += 1;
+        news.views = (news.views || 0) + 1;
         await news.save();
 
         res.status(200).json({
