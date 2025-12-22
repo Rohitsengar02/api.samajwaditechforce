@@ -104,11 +104,13 @@ app.use('/api/ai-gemini', require('./routes/bgremove'));
 app.use('/api/onboarding', require('./routes/onboardingRoutes'));
 app.use('/api/pages', pageRoutes);
 app.use('/api/reels', require('./routes/reelRoutes'));
+app.use('/api/points', require('./routes/pointRoutes'));
 app.use('/api/home-content', require('./routes/homeContentRoutes'));
 app.use('/api/footer', require('./routes/footerRoutes'));
 app.use('/api/feedback', require('./routes/feedbackRoutes'));
 app.use('/api/events', eventRoutes);
 app.use('/api/upload', require('./routes/uploadRoutes'));
+app.use('/api/contact-settings', require('./routes/contactSettingsRoutes'));
 
 app.get('/', (req, res) => {
     res.send('API is running...');

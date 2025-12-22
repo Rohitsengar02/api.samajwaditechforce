@@ -6,7 +6,8 @@ const {
     updateNews,
     deleteNews,
     likeNews,
-    commentNews
+    commentNews,
+    shareNews
 } = require('../controllers/newsController');
 
 const router = express.Router();
@@ -24,5 +25,6 @@ router
 
 router.route('/:id/like').put(likeNews);
 router.route('/:id/comment').post(commentNews);
+router.route('/:id/share').post(shareNews);
 
 module.exports = router;

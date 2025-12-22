@@ -70,6 +70,42 @@ const newsSchema = new mongoose.Schema({
             default: Date.now
         }
     }],
+    // Track who liked for points (one-time)
+    likedBy: [{
+        user: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'User'
+        },
+        username: String,
+        timestamp: {
+            type: Date,
+            default: Date.now
+        }
+    }],
+    // Track who commented for points (one-time)
+    commentedBy: [{
+        user: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'User'
+        },
+        username: String,
+        timestamp: {
+            type: Date,
+            default: Date.now
+        }
+    }],
+    // Track who shared for points (one-time)
+    sharedBy: [{
+        user: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'User'
+        },
+        username: String,
+        timestamp: {
+            type: Date,
+            default: Date.now
+        }
+    }],
     author: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
