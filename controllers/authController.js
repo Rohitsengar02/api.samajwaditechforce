@@ -57,7 +57,7 @@ const authUser = async (req, res) => {
 // @access  Public (should be protected in production)
 const registerUser = async (req, res) => {
     try {
-        const { name, email, phone, password, role, gender, dob, profileImage, address, location } = req.body;
+        const { name, email, phone, password, role, gender, dob, profileImage, profileImageNoBg, address, location } = req.body;
 
         const userExists = await User.findOne({ $or: [{ email }, { phone }] });
 
@@ -80,6 +80,7 @@ const registerUser = async (req, res) => {
             gender,
             dob,
             profileImage,
+            profileImageNoBg,
             address,
             location,
             adminVerification
@@ -119,6 +120,7 @@ const getUserProfile = async (req, res) => {
             gender: user.gender,
             dob: user.dob,
             profileImage: user.profileImage,
+            profileImageNoBg: user.profileImageNoBg,
             address: user.address,
             location: user.location,
             district: user.district,
@@ -153,6 +155,7 @@ const updateUserProfile = async (req, res) => {
         user.gender = req.body.gender !== undefined ? req.body.gender : user.gender;
         user.dob = req.body.dob !== undefined ? req.body.dob : user.dob;
         user.profileImage = req.body.profileImage !== undefined ? req.body.profileImage : user.profileImage;
+        user.profileImageNoBg = req.body.profileImageNoBg !== undefined ? req.body.profileImageNoBg : user.profileImageNoBg;
         user.address = req.body.address !== undefined ? req.body.address : user.address;
         user.location = req.body.location !== undefined ? req.body.location : user.location;
 
