@@ -15,6 +15,21 @@ router.get('/', async (req, res) => {
     }
 });
 
+// @desc    Get single reel by ID
+// @route   GET /api/reels/:id
+// @access  Public
+router.get('/:id', async (req, res) => {
+    try {
+        const reel = await Reel.findById(req.params.id);
+        if (!reel) {
+            return res.status(404).json({ success: false, message: 'Reel not found' });
+        }
+        res.json({ success: true, data: reel });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Server Error', error: error.message });
+    }
+});
+
 // @desc    Add a reel
 // @route   POST /api/reels
 // @access  Private/Admin

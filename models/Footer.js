@@ -18,7 +18,11 @@ const columnSchema = new mongoose.Schema({
         facebook: { type: String, default: '' },
         twitter: { type: String, default: '' },
         instagram: { type: String, default: '' },
-        youtube: { type: String, default: '' }
+        youtube: { type: String, default: '' },
+        telegram: { type: String, default: '' },
+        linkedin: { type: String, default: '' },
+        whatsapp: { type: String, default: '' },
+        website: { type: String, default: '' }
     }
 }, { _id: true });
 
