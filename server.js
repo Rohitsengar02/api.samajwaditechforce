@@ -111,6 +111,7 @@ app.use('/api/feedback', require('./routes/feedbackRoutes'));
 app.use('/api/events', eventRoutes);
 app.use('/api/upload', require('./routes/uploadRoutes'));
 app.use('/api/contact-settings', require('./routes/contactSettingsRoutes'));
+app.use('/share', require('./routes/shareRoutes'));
 
 app.get('/', (req, res) => {
     res.send('API is running...');

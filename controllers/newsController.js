@@ -144,10 +144,42 @@ exports.likeNews = async (req, res, next) => {
         // Check if the news has already been liked
         const alreadyLiked = news.likes.some(like => like.toString() === userId);
 
+        console.log('Like request:', { userId, username, alreadyLiked, hasLikedBy: !!news.likedBy });
+
         if (alreadyLiked) {
-            // Remove like
+            //Remove like
             const removeIndex = news.likes.map(like => like.toString()).indexOf(userId);
             news.likes.splice(removeIndex, 1);
+
+            // Check if user had earned points for this like
+            const hadEarnedPoints = news.likedBy.some(l => l.user && l.user.toString() === userId);
+
+            if (hadEarnedPoints && username) {
+                // Deduct 5 points
+                const User = require('../models/User');
+                const updatedUser = await User.findByIdAndUpdate(userId, {
+                    $inc: { points: -5 }
+                }, { new: true });
+
+                console.log(`UNLIKE: Deducted 5 points from ${username}. New total: ${updatedUser.points}`);
+
+                // Remove from likedBy tracking
+                const likedByIndex = news.likedBy.findIndex(l => l.user && l.user.toString() === userId);
+                if (likedByIndex > -1) {
+                    news.likedBy.splice(likedByIndex, 1);
+                }
+
+                // Log point deduction in activity
+                const PointActivity = require('../models/PointActivity');
+                await PointActivity.create({
+                    user: userId,
+                    username: username,
+                    activityType: 'unlike',
+                    points: -5,
+                    description: `Unliked news: ${news.title.substring(0, 50)}...`,
+                    relatedId: news._id
+                });
+            }
 
             await news.save();
 
@@ -179,9 +211,11 @@ exports.likeNews = async (req, res, next) => {
 
             // Award points to user
             const User = require('../models/User');
-            await User.findByIdAndUpdate(userId, {
+            const updatedUser = await User.findByIdAndUpdate(userId, {
                 $inc: { points: points }
-            });
+            }, { new: true });
+
+            console.log(`LIKE: Awarded ${points} points to ${username}. New total: ${updatedUser.points}`);
 
             // Log in point activity
             const PointActivity = require('../models/PointActivity');
@@ -204,8 +238,9 @@ exports.likeNews = async (req, res, next) => {
             firstLike
         });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ success: false, error: 'Server Error' });
+        console.error('Error in likeNews:', err);
+        console.error('Error stack:', err.stack);
+        res.status(500).json({ success: false, error: 'Server Error', message: err.message });
     }
 };
 
