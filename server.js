@@ -14,6 +14,7 @@ if (!global.DOMMatrix) {
 
 const express = require('express');
 const dotenv = require('dotenv');
+dotenv.config(); // Load env vars immediately
 const cors = require('cors');
 const connectDB = require('./config/db');
 const morgan = require('morgan');
@@ -111,6 +112,7 @@ app.use('/api/feedback', require('./routes/feedbackRoutes'));
 app.use('/api/events', eventRoutes);
 app.use('/api/upload', require('./routes/uploadRoutes'));
 app.use('/api/contact-settings', require('./routes/contactSettingsRoutes'));
+app.use('/api/background-removal', require('./routes/backgroundRemoval'));
 app.use('/share', require('./routes/shareRoutes'));
 
 app.get('/', (req, res) => {
