@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists } = require('../controllers/authController');
+const { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists, getVerifiedMembers } = require('../controllers/authController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
 router.post('/login', authUser);
@@ -17,5 +17,8 @@ router.get('/leaderboard', protect, getLeaderboard);
 router.get('/all', protect, admin, getAllUsers);
 router.delete('/delete/:id', protect, admin, deleteUser);
 router.put('/update/:id', protect, admin, updateUser);
+
+// Public route for verified members (for volunteers page)
+router.get('/verified-members', getVerifiedMembers);
 
 module.exports = router;

@@ -707,5 +707,28 @@ const checkUserExists = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+// @desc    Get verified members (Public)
+// @route   GET /api/auth/verified-members
+// @access  Public
+const getVerifiedMembers = async (req, res) => {
+    try {
+        console.log('Fetching verified members...');
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists };
+        const users = await User.find({ verificationStatus: 'Verified' })
+            .select('name email phone profileImage address createdAt verificationStatus role district vidhanSabha')
+            .sort({ createdAt: -1 })
+            .lean();
+
+        console.log(`Found ${users.length} verified members`);
+
+        res.json({
+            success: true,
+            data: users
+        });
+    } catch (error) {
+        console.error('Error fetching verified members:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists, getVerifiedMembers };
