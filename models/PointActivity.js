@@ -12,7 +12,7 @@ const pointActivitySchema = new mongoose.Schema({
     },
     activityType: {
         type: String,
-        enum: ['like', 'unlike', 'comment', 'share', 'post_created', 'reel_upload', 'profile_complete', 'daily_login', 'news_like', 'news_comment', 'news_share', 'reel_like', 'reel_comment', 'reel_share', 'reel_download'],
+        enum: ['like', 'unlike', 'comment', 'share', 'post_created', 'poster_create', 'poster_share', 'reel_upload', 'profile_complete', 'daily_login', 'news_like', 'news_comment', 'news_share', 'reel_like', 'reel_comment', 'reel_share', 'reel_download'],
         required: true
     },
     points: {
