@@ -171,19 +171,25 @@ router.get('/poster', async (req, res) => {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${image}">
     <style>
-        body { font-family: sans-serif; background: #E30512; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; color: white; }
-        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 500px; width: 100%; text-align: center; color: #1e293b; }
-        img { width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; background: #E30512; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        body { 
+            margin: 0; 
+            background: #ffffff; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            overflow: hidden;
+        }
+        img { 
+            max-width: 100%; 
+            max-height: 100vh; 
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1 style="margin:0">Samajwadi Party</h1>
-        <img src="${image}" alt="Poster">
-        <p>This poster was created using the official Samajwadi Party Poster Editor.</p>
-        <a href="${appUrl}" class="btn">Create Your Own Poster</a>
-    </div>
+    <img src="${image}" alt="Poster">
 </body>
 </html>`;
         res.send(html);
