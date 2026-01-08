@@ -143,4 +143,53 @@ router.get('/news/:id', async (req, res) => {
     }
 });
 
+// @desc    Get shareable poster page
+// @route   GET /share/poster
+// @access  Public
+router.get('/poster', async (req, res) => {
+    try {
+        const { image, title = 'Samajwadi Party Poster' } = req.query;
+
+        if (!image) {
+            return res.status(400).send('<h1>No image provided</h1>');
+        }
+
+        const appUrl = process.env.APP_URL || 'https://samajwadiparty.in';
+        const description = 'Created using Samajwadi Party Poster Editor';
+
+        const html = `
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title}</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:image" content="${image}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="${image}">
+    <style>
+        body { font-family: sans-serif; background: #E30512; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; color: white; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 500px; width: 100%; text-align: center; color: #1e293b; }
+        img { width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; background: #E30512; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 style="margin:0">Samajwadi Party</h1>
+        <img src="${image}" alt="Poster">
+        <p>This poster was created using the official Samajwadi Party Poster Editor.</p>
+        <a href="${appUrl}" class="btn">Create Your Own Poster</a>
+    </div>
+</body>
+</html>`;
+        res.send(html);
+    } catch (error) {
+        res.status(500).send('Error');
+    }
+});
+
 module.exports = router;

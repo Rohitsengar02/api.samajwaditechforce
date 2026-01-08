@@ -45,6 +45,49 @@ const uploadImage = async (req, res) => {
     }
 };
 
+// @desc    Upload poster for sharing (public)
+// @route   POST /api/upload/poster-share
+// @access  Public
+const uploadPosterForShare = async (req, res) => {
+    try {
+        const { image } = req.body;
+
+        if (!image) {
+            return res.status(400).json({
+                success: false,
+                message: 'No image provided'
+            });
+        }
+
+        // Upload to Cloudinary with a specific folder for shared posters
+        const result = await cloudinary.uploader.upload(image, {
+            folder: 'samajwadi-party/shared-posters',
+            resource_type: 'image',
+            transformation: [
+                { quality: 'auto:good' },
+                { fetch_format: 'auto' }
+            ]
+        });
+
+        res.json({
+            success: true,
+            message: 'Poster uploaded for sharing',
+            data: {
+                url: result.secure_url,
+                publicId: result.public_id
+            }
+        });
+    } catch (error) {
+        console.error('Error uploading poster for share:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error uploading poster',
+            error: error.message
+        });
+    }
+};
+
 module.exports = {
-    uploadImage
+    uploadImage,
+    uploadPosterForShare
 };
