@@ -181,9 +181,9 @@ router.get('/poster', async (req, res) => {
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${image}">
     <meta property="og:image:secure_url" content="${image}">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="1200">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="3000">
+    <meta property="og:image:height" content="3000">
     <meta property="og:image:alt" content="${title}">
     <meta property="og:site_name" content="Samajwadi Tech Force">
     
