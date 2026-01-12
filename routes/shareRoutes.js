@@ -168,7 +168,7 @@ router.get('/poster', async (req, res) => {
         // Resize to 1200x630 (Standard social size) and compress
         let previewImage = image;
         if (image.includes('cloudinary.com') && image.includes('/upload/')) {
-            previewImage = image.replace('/upload/', '/upload/c_fill,g_auto,w_1200,h_630,q_auto,f_jpg/');
+            previewImage = image.replace('/upload/', '/upload/c_limit,w_1000,h_1000,q_auto,f_jpg/');
         }
 
         const html = `
@@ -191,8 +191,8 @@ router.get('/poster', async (req, res) => {
     <meta property="og:image" content="${previewImage}">
     <meta property="og:image:secure_url" content="${previewImage}">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="1000">
     <meta property="og:image:alt" content="${title}">
     <meta property="og:site_name" content="Samajwadi Tech Force">
     
