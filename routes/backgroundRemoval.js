@@ -11,111 +11,119 @@ router.post('/remove', async (req, res) => {
     try {
         const { imageUrl, imageBase64 } = req.body;
 
-        if (!imageUrl) {
+        if (!imageUrl && !imageBase64) {
             return res.status(400).json({
                 success: false,
-                message: 'Image URL is required'
+                message: 'Image data is required'
             });
         }
 
-        // Check for Remove.bg Key first (Higher reliability)
-        const REMOVE_BG_API_KEY = process.env.REMOVE_BG_API_KEY;
-
-        if (REMOVE_BG_API_KEY) {
-            console.log('🎨 Using Remove.bg API...');
-            const formData = new FormData();
-            if (imageBase64) {
-                formData.append('image_file_b64', imageBase64);
-            } else {
-                formData.append('image_url', imageUrl);
-            }
-
-            const removeBgResponse = await fetch('https://api.remove.bg/v1.0/removebg', {
-                method: 'POST',
-                headers: {
-                    'X-Api-Key': REMOVE_BG_API_KEY
-                },
-                body: formData
-            });
-
-            if (!removeBgResponse.ok) {
-                const err = await removeBgResponse.text();
-                throw new Error(`Remove.bg Error: ${removeBgResponse.status} - ${err}`);
-            }
-
-            const buffer = await removeBgResponse.arrayBuffer();
-            const base64Image = `data:image/png;base64,${Buffer.from(buffer).toString('base64')}`;
-
-            return res.json({
-                success: true,
-                message: 'Background removed with Remove.bg',
-                imageUrl: base64Image
-            });
-        }
-
-        // Fallback to Hugging Face
-        const HF_API_TOKEN = process.env.HUGGING_FACE_API_KEY || process.env.EXPO_PUBLIC_REMOVE_BG_API_KEY;
-        console.log('🔑 HF Key Check:', HF_API_TOKEN ? 'Loaded' : 'Missing');
-
-        if (!HF_API_TOKEN || !HF_API_TOKEN.startsWith('hf_')) {
-            // ... existing HF error handling ...
-            if (!REMOVE_BG_API_KEY) {
-                return res.status(500).json({
-                    success: false,
-                    message: 'No Background Removal API Key configured (Add REMOVE_BG_API_KEY)'
-                });
-            }
-        }
-
-        console.log('🎨 Using Hugging Face API (Fallback)...');
-
-        // Prepare image buffer (from Base64 or URL)
+        // Prepare image buffer
         let imageBuffer;
         if (imageBase64) {
-            imageBuffer = Buffer.from(imageBase64, 'base64');
+            imageBuffer = Buffer.from(imageBase64.includes(',') ? imageBase64.split(',')[1] : imageBase64, 'base64');
         } else {
-            // Fetch the image from URL
             const imageResponse = await fetch(imageUrl);
             const arrayBuffer = await imageResponse.arrayBuffer();
             imageBuffer = Buffer.from(arrayBuffer);
         }
 
-        // Call Hugging Face API
-        const hfResponse = await fetch(
-            'https://router.huggingface.co/hf-inference/models/briaai/RMBG-1.4',
-            {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${HF_API_TOKEN}`,
-                    'Content-Type': 'application/octet-stream'
-                },
-                body: imageBuffer,
+        // Optional: Resize if too large (to avoid 413 on downstream APIs)
+        // For now, we rely on the APIs themselves or the frontend resizing.
+
+        // 1. Check for Remove.bg Key (Commercial Grade)
+        const REMOVE_BG_API_KEY = process.env.REMOVE_BG_API_KEY;
+        if (REMOVE_BG_API_KEY) {
+            try {
+                console.log('🎨 Using Remove.bg API...');
+                const formData = new FormData();
+                formData.append('image_file_b64', imageBuffer.toString('base64'));
+
+                const removeBgResponse = await fetch('https://api.remove.bg/v1.0/removebg', {
+                    method: 'POST',
+                    headers: { 'X-Api-Key': REMOVE_BG_API_KEY },
+                    body: formData
+                });
+
+                if (removeBgResponse.ok) {
+                    const buffer = await removeBgResponse.arrayBuffer();
+                    const base64Image = `data:image/png;base64,${Buffer.from(buffer).toString('base64')}`;
+                    return res.json({
+                        success: true,
+                        message: 'Background removed with Remove.bg',
+                        imageUrl: base64Image
+                    });
+                }
+                console.warn('Remove.bg failed, falling back...');
+            } catch (err) {
+                console.error('Remove.bg Error:', err);
             }
-        );
-
-        if (!hfResponse.ok) {
-            const errorText = await hfResponse.text();
-            console.error('Hugging Face API error:', hfResponse.status, errorText);
-            throw new Error(`Hugging Face Error: ${hfResponse.status} (Try adding REMOVE_BG_API_KEY)`);
         }
 
-        // Get the result as buffer
-        const resultArgs = await hfResponse.arrayBuffer();
-        const resultBuffer = Buffer.from(resultArgs);
+        // 2. Try Buildora API (User Service)
+        try {
+            console.log('🎨 Using Buildora API...');
+            const buildoraFormData = new FormData();
 
-        if (resultBuffer.length === 0) {
-            throw new Error('Received empty image from API');
+            // Convert buffer to Blob for multipart upload
+            const blob = new Blob([imageBuffer], { type: 'image/jpeg' });
+            buildoraFormData.append('image', blob, 'upload.jpg');
+
+            const buildoraResponse = await fetch('https://api.buildora.cloud/api/remove-bg', {
+                method: 'POST',
+                body: buildoraFormData
+            });
+
+            if (buildoraResponse.ok) {
+                const bData = await buildoraResponse.json();
+                if (bData.success && bData.image) {
+                    const finalImage = bData.image.startsWith('data:') ? bData.image : `data:image/png;base64,${bData.image}`;
+                    return res.json({
+                        success: true,
+                        message: 'Background removed with Buildora',
+                        imageUrl: finalImage
+                    });
+                }
+            }
+            console.warn('Buildora failed or returned error, falling back...');
+        } catch (bError) {
+            console.error('Buildora API Error:', bError);
         }
 
-        // Convert to base64 to send to frontend
-        const base64Image = `data:image/png;base64,${resultBuffer.toString('base64')}`;
+        // 3. Fallback to Hugging Face
+        const HF_API_TOKEN = process.env.HUGGING_FACE_API_KEY || process.env.EXPO_PUBLIC_REMOVE_BG_API_KEY;
+        if (HF_API_TOKEN && HF_API_TOKEN.startsWith('hf_')) {
+            try {
+                console.log('🎨 Using Hugging Face API...');
+                const hfResponse = await fetch(
+                    'https://router.huggingface.co/hf-inference/models/briaai/RMBG-1.4',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${HF_API_TOKEN}`,
+                            'Content-Type': 'application/octet-stream'
+                        },
+                        body: imageBuffer,
+                    }
+                );
 
-        console.log('✅ Background removed successfully');
-        res.json({
-            success: true,
-            message: 'Background removed successfully',
-            imageUrl: base64Image
-        });
+                if (hfResponse.ok) {
+                    const resultArgs = await hfResponse.arrayBuffer();
+                    const resultBuffer = Buffer.from(resultArgs);
+                    if (resultBuffer.length > 0) {
+                        return res.json({
+                            success: true,
+                            message: 'Background removed with Hugging Face',
+                            imageUrl: `data:image/png;base64,${resultBuffer.toString('base64')}`
+                        });
+                    }
+                }
+            } catch (hfErr) {
+                console.error('Hugging Face Error:', hfErr);
+            }
+        }
+
+        throw new Error('All background removal services failed or are unconfigured');
 
     } catch (error) {
         console.error('❌ Background removal failed:', error);
