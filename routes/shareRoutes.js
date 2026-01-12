@@ -256,4 +256,106 @@ router.get('/poster', async (req, res) => {
     }
 });
 
+
+// @desc    Get shareable reel page
+// @route   GET /share/reels/:id
+// @access  Public
+router.get('/reels/:id', async (req, res) => {
+    try {
+        // Need to require Reel model here since it wasn't imported at top level in original file
+        const Reel = require('../models/Reel');
+        const reel = await Reel.findById(req.params.id);
+
+        if (!reel) {
+            return res.status(404).send('<h1>Reel not found</h1>');
+        }
+
+        const appUrl = process.env.APP_URL || 'https://samajwaditechforce.com';
+        // Redirect to the reels page with the ID so the frontend can open it
+        const redirectUrl = `${appUrl}/reels?id=${reel._id}`;
+
+        // STF Logo URL (Served from backend public folder or similar)
+        // Since we copied it to backend/public/stf-logo.png, we can serve it.
+        // Assuming backend serves 'public' folder statically or we use a known URL
+        const backendUrl = `https://${req.get('host')}`;
+        const imageUrl = `${backendUrl}/stf-logo.png`;
+
+        const title = reel.title || 'Samajwadi Tech Force Reel';
+        const description = reel.description || 'Watch this reel on Samajwadi Tech Force';
+
+        const html = `
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>${title}</title>
+    <meta name="title" content="${title}">
+    <meta name="description" content="${description}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="video.other">
+    <meta property="og:url" content="${backendUrl}${req.originalUrl}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:image" content="${imageUrl}">
+    <meta property="og:image:secure_url" content="${imageUrl}">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:site_name" content="Samajwadi Tech Force">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="${backendUrl}${req.originalUrl}">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="${imageUrl}">
+
+    <!-- Redirect to app -->
+    <meta http-equiv="refresh" content="0;url=${redirectUrl}">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .loader {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid #E30512;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <p>Opening Reel...</p>
+    <script>
+        window.location.href = "${redirectUrl}";
+    </script>
+</body>
+</html>
+        `;
+
+        res.send(html);
+
+    } catch (error) {
+        console.error('Error generating reel share page:', error);
+        res.status(500).send('<h1>Error loading reel</h1>');
+    }
+});
+
 module.exports = router;
