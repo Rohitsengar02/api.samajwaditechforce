@@ -165,33 +165,77 @@ router.get('/poster', async (req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>${title}</title>
+    <meta name="title" content="${title}">
+    <meta name="description" content="${description}">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${image}">
+    <meta property="og:image:secure_url" content="${image}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="${title}">
+    <meta property="og:site_name" content="Samajwadi Tech Force">
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${image}">
+    
     <style>
         body { 
             margin: 0; 
-            background: #ffffff; 
+            background: linear-gradient(135deg, #E30512 0%, #009933 100%);
             display: flex; 
             align-items: center; 
             justify-content: center; 
             min-height: 100vh; 
             overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
         }
         img { 
             max-width: 100%; 
-            max-height: 100vh; 
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            max-height: 80vh; 
+            border-radius: 12px;
             display: block;
+        }
+        h1 {
+            color: #1e293b;
+            margin: 16px 0 8px;
+            font-size: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        p {
+            color: #64748b;
+            font-size: 14px;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
     </style>
 </head>
 <body>
-    <img src="${image}" alt="Poster">
+    <div class="container">
+        <img src="${image}" alt="${title}">
+        <h1>${title}</h1>
+        <p>${description}</p>
+    </div>
 </body>
 </html>`;
         res.send(html);
