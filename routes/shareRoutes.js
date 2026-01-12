@@ -164,6 +164,13 @@ router.get('/poster', async (req, res) => {
         // Force HTTPS for production (Render uses reverse proxy)
         const pageUrl = `https://${req.get('host')}${req.originalUrl}`;
 
+        // Optimize image for social media preview (Cloudinary only)
+        // Resize to 1200x630 (Standard social size) and compress
+        let previewImage = image;
+        if (image.includes('cloudinary.com') && image.includes('/upload/')) {
+            previewImage = image.replace('/upload/', '/upload/c_fill,g_auto,w_1200,h_630,q_auto,f_jpg/');
+        }
+
         const html = `
 <!DOCTYPE html>
 <html lang="hi">
@@ -177,15 +184,15 @@ router.get('/poster', async (req, res) => {
     <meta name="description" content="${description}">
     
     <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="${pageUrl}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
-    <meta property="og:image" content="${image}">
-    <meta property="og:image:secure_url" content="${image}">
+    <meta property="og:image" content="${previewImage}">
+    <meta property="og:image:secure_url" content="${previewImage}">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="3000">
-    <meta property="og:image:height" content="3000">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="${title}">
     <meta property="og:site_name" content="Samajwadi Tech Force">
     
@@ -194,7 +201,7 @@ router.get('/poster', async (req, res) => {
     <meta name="twitter:url" content="${pageUrl}">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
-    <meta name="twitter:image" content="${image}">
+    <meta name="twitter:image" content="${previewImage}">
     
     <style>
         body { 
