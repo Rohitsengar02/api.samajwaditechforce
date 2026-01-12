@@ -159,6 +159,9 @@ router.get('/poster', async (req, res) => {
         const appUrl = process.env.APP_URL || 'https://samajwadiparty.in';
         const description = 'Created using Samajwadi Party Poster Editor';
 
+        // Force HTTPS for production (Render uses reverse proxy)
+        const pageUrl = `https://${req.get('host')}${req.originalUrl}`;
+
         const html = `
 <!DOCTYPE html>
 <html lang="hi">
@@ -173,7 +176,7 @@ router.get('/poster', async (req, res) => {
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
+    <meta property="og:url" content="${pageUrl}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${image}">
@@ -186,7 +189,7 @@ router.get('/poster', async (req, res) => {
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
+    <meta name="twitter:url" content="${pageUrl}">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${image}">
