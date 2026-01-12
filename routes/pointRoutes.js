@@ -8,20 +8,43 @@ const User = require('../models/User');
 // @access  Public
 router.post('/award', async (req, res) => {
     try {
-        const { username, activityType, points, description, relatedId } = req.body;
+        const { username, userId, activityType, points, description, relatedId } = req.body;
 
-        if (!username || !activityType || !points) {
+        if ((!username && !userId) || !activityType || !points) {
             return res.status(400).json({
                 success: false,
-                message: 'Please provide username, activityType, and points'
+                message: 'Please provide userId or username, activityType, and points'
             });
         }
 
-        // Find user by username
-        const user = await User.findOne({ name: username });
+        // Find user by userId (Preferred) or username
+        let user;
+        if (userId) {
+            user = await User.findById(userId);
+        } else {
+            user = await User.findOne({ name: username });
+        }
 
         if (!user) {
-            return res.status(404).json({ success: false, message: 'User not found' });
+            return res.status(404).json({ success: false, message: `User not found (ID: ${userId}, Name: ${username})` });
+        }
+
+        // --- ENFORCE DAILY LIMIT FOR POSTER CREATION ---
+        if (activityType === 'poster_create') {
+            const startOfDay = new Date();
+            startOfDay.setHours(0, 0, 0, 0);
+            const dailyCount = await PointActivity.countDocuments({
+                user: user._id,
+                activityType: 'poster_create',
+                timestamp: { $gte: startOfDay }
+            });
+
+            if (dailyCount >= 4) {
+                return res.status(429).json({
+                    success: false,
+                    message: 'Daily limit reached. You can only create 4 posters per day.'
+                });
+            }
         }
 
         // Create point activity record
@@ -115,6 +138,54 @@ router.get('/leaderboard', async (req, res) => {
         });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Server Error', error: error.message });
+    }
+});
+
+// @desc    Check daily limit status
+// @route   GET /api/points/check-limit
+// @access  Public
+router.get('/check-limit', async (req, res) => {
+    try {
+        const { userId, activityType } = req.query;
+        if (!userId || !activityType) {
+            return res.status(400).json({ success: false, message: 'Missing userId or activityType' });
+        }
+
+        const startOfDay = new Date();
+        startOfDay.setHours(0, 0, 0, 0);
+
+        // Check combined limit for Create and Share
+        const isPosterActivity = ['poster_create', 'poster_share'].includes(activityType);
+
+        let count = 0;
+        let limit = 999;
+
+        if (isPosterActivity) {
+            count = await PointActivity.countDocuments({
+                user: userId,
+                activityType: { $in: ['poster_create', 'poster_share'] },
+                timestamp: { $gte: startOfDay }
+            });
+            limit = 4;
+        } else {
+            count = await PointActivity.countDocuments({
+                user: userId,
+                activityType: activityType,
+                timestamp: { $gte: startOfDay }
+            });
+        }
+
+        const remaining = Math.max(0, limit - count);
+
+        res.json({
+            success: true,
+            count,
+            limit,
+            remaining,
+            hasReachedLimit: count >= limit
+        });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Server Error' });
     }
 });
 

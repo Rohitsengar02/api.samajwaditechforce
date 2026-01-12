@@ -14,6 +14,8 @@ router.get('/news/:id', async (req, res) => {
         }
 
         const appUrl = process.env.APP_URL || 'https://samajwaditechforce.com';
+        const redirectUrl = `${appUrl}/news/${news._id}`;
+
         const shareUrl = `${appUrl}/share/news/${news._id}`;
         const imageUrl = news.coverImage || `${appUrl}/default-news-image.jpg`;
         const title = news.title || 'Samajwadi Tech Force News';
@@ -53,7 +55,7 @@ router.get('/news/:id', async (req, res) => {
     <meta property="og:image:alt" content="${title}">
     
     <!-- Redirect to app -->
-    <meta http-equiv="refresh" content="3;url=${appUrl}">
+    <meta http-equiv="refresh" content="3;url=${redirectUrl}">
     
     <style>
         body {
@@ -129,7 +131,7 @@ router.get('/news/:id', async (req, res) => {
         <h1>${title}</h1>
         ${news.coverImage ? `<img src="${news.coverImage}" alt="${title}" class="image">` : ''}
         <p>${description}</p>
-        <a href="${appUrl}" class="btn">Open in App</a>
+        <a href="${redirectUrl}" class="btn">Open in App</a>
         <p class="redirect-msg">Redirecting to app...</p>
     </div>
 </body>

@@ -1,5 +1,7 @@
 const Poster = require('../models/Poster');
 const cloudinary = require('cloudinary').v2;
+const PointActivity = require('../models/PointActivity');
+const User = require('../models/User');
 
 // Configure Cloudinary (if not already configured in your main app)
 cloudinary.config({
@@ -117,6 +119,22 @@ exports.trackDownload = async (req, res) => {
                 userId: userId,
                 downloadedAt: new Date()
             });
+
+            // Award Points for Download
+            try {
+                await User.findByIdAndUpdate(userId, { $inc: { points: 10 } });
+                await PointActivity.create({
+                    user: userId,
+                    username: req.user.name || 'User',
+                    activityType: 'poster_download',
+                    points: 10,
+                    description: `Downloaded poster: ${poster.title}`,
+                    timestamp: new Date(),
+                    relatedId: poster._id
+                });
+            } catch (err) {
+                console.error('Error awarding download points:', err);
+            }
         }
 
         poster.downloadCount += 1;
@@ -124,7 +142,9 @@ exports.trackDownload = async (req, res) => {
 
         res.status(200).json({
             message: 'Download tracked successfully',
-            downloadCount: poster.downloadCount
+            downloadCount: poster.downloadCount,
+            pointsAwarded: !alreadyDownloaded,
+            points: !alreadyDownloaded ? 10 : 0
         });
     } catch (error) {
         console.error('Track download error:', error);

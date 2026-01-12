@@ -1,10 +1,31 @@
 const puppeteer = require('puppeteer');
 const cloudinary = require('cloudinary').v2;
+const PointActivity = require('../models/PointActivity');
+const User = require('../models/User');
 
 exports.renderPoster = async (req, res) => {
     let browser;
     try {
         const { designData } = req.body;
+        const userId = req.user ? req.user._id : null;
+
+        // --- RATE LIMIT CHECK ---
+        if (userId) {
+            const startOfDay = new Date();
+            startOfDay.setHours(0, 0, 0, 0);
+
+            const dailyCount = await PointActivity.countDocuments({
+                user: userId,
+                activityType: 'poster_create',
+                timestamp: { $gte: startOfDay }
+            });
+
+            if (dailyCount >= 4) {
+                return res.status(429).json({
+                    message: 'Daily limit reached. You can only create 4 posters per day.'
+                });
+            }
+        }
 
         if (!designData) {
             return res.status(400).json({ message: 'Design data is required' });
@@ -56,6 +77,26 @@ exports.renderPoster = async (req, res) => {
             imageUrl: uploadResult.secure_url,
             message: 'Master Render Generated Successfully'
         });
+
+        // --- AWARD POINTS ---
+        if (userId) {
+            try {
+                // Award 10 Points
+                await User.findByIdAndUpdate(userId, { $inc: { points: 10 } });
+
+                await PointActivity.create({
+                    user: userId,
+                    username: req.user.name || 'User',
+                    activityType: 'poster_create',
+                    points: 10,
+                    description: 'Created a new poster',
+                    timestamp: new Date()
+                });
+            } catch (pointError) {
+                console.error('Error awarding points:', pointError);
+                // Non-blocking
+            }
+        }
 
     } catch (error) {
         console.error('Render error:', error);
