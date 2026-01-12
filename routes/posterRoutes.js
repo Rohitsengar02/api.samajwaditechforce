@@ -13,5 +13,6 @@ router.post('/upload', protect, posterController.uploadPoster);
 router.post('/:id/download', protect, posterController.trackDownload);
 router.put('/:id', protect, posterController.updatePoster);
 router.delete('/:id', protect, posterController.deletePoster);
+router.get('/:id/downloads', protect, posterController.getPosterDownloads);
 
 module.exports = router;

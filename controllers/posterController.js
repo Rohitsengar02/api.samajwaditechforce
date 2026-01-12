@@ -244,3 +244,24 @@ exports.getPosterStats = async (req, res) => {
         res.status(500).json({ message: 'Error fetching statistics', error: error.message });
     }
 };
+
+// Get list of users who downloaded a specific poster
+exports.getPosterDownloads = async (req, res) => {
+    try {
+        const poster = await Poster.findById(req.params.id)
+            .populate('usersWhoDownloaded.userId', 'name phone profileImage');
+
+        if (!poster) {
+            return res.status(404).json({ message: 'Poster not found' });
+        }
+
+        res.status(200).json({
+            posterTitle: poster.title,
+            downloadCount: poster.downloadCount,
+            downloads: poster.usersWhoDownloaded
+        });
+    } catch (error) {
+        console.error('Get poster downloads error:', error);
+        res.status(500).json({ message: 'Error fetching downloads', error: error.message });
+    }
+};
