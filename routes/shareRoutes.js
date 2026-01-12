@@ -158,7 +158,7 @@ router.get('/poster', async (req, res) => {
             return res.status(400).send('<h1>No image provided</h1>');
         }
 
-        const appUrl = process.env.APP_URL || 'https://samajwadiparty.in';
+        const appUrl = process.env.APP_URL || 'https://samajwaditechforce.com';
         const description = 'Created using Samajwadi Party Poster Editor';
 
         // Force HTTPS for production (Render uses reverse proxy)
@@ -185,7 +185,7 @@ router.get('/poster', async (req, res) => {
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="${pageUrl}">
+    <meta property="og:url" content="https://api-samajwaditechforce.onrender.com${req.originalUrl}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${previewImage}">
@@ -198,7 +198,7 @@ router.get('/poster', async (req, res) => {
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="${pageUrl}">
+    <meta name="twitter:url" content="https://api-samajwaditechforce.onrender.com${req.originalUrl}">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${previewImage}">

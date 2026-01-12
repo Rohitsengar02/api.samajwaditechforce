@@ -18,7 +18,7 @@ const contactPageSettingsSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        default: 'contact@samajwadiparty.in'
+        default: 'contact@samajwaditechforce.com'
     },
     phone: {
         type: String,

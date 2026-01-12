@@ -34,7 +34,7 @@ const getDefaultFooter = () => ({
             id: 'contact_info',
             title: 'Contact Info',
             type: 'contact',
-            contact: { address: 'Samajwadi Party HQ\n19, Vikramaditya Marg\nLucknow, Uttar Pradesh', phone: '', email: 'contact@samajwadiparty.in' }
+            contact: { address: 'Samajwadi Party HQ\n19, Vikramaditya Marg\nLucknow, Uttar Pradesh', phone: '', email: 'contact@samajwaditechforce.com' }
         },
         {
             id: 'social_media',
