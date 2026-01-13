@@ -1,9 +1,53 @@
 const User = require('../models/User');
 const Member = require('../models/Member');
 const AdminApproval = require('../models/AdminApproval');
+const PointActivity = require('../models/PointActivity');
 const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
+
+// Helper to handle referral points
+const handleReferral = async (newUser, referralCode) => {
+    if (!referralCode) return;
+
+    try {
+        // Find the referrer using the code
+        const referrer = await User.findOne({ referralCode: referralCode.toUpperCase() });
+
+        if (referrer && referrer._id.toString() !== newUser._id.toString()) {
+            console.log(`🎁 Referral success: ${referrer.name} referred ${newUser.name}`);
+
+            // 1. Reward Referrer (+20 points)
+            referrer.points = (referrer.points || 0) + 20;
+            await referrer.save();
+
+            await PointActivity.create({
+                user: referrer._id,
+                username: referrer.name,
+                activityType: 'referral_bonus',
+                points: 20,
+                description: `Referral bonus for inviting ${newUser.name}`,
+                relatedId: newUser._id
+            });
+
+            // 2. Reward New User (+10 points)
+            newUser.points = (newUser.points || 0) + 10;
+            newUser.referredBy = referralCode.toUpperCase();
+            // newUser.save() will be called by the parent function
+
+            await PointActivity.create({
+                user: newUser._id,
+                username: newUser.name,
+                activityType: 'referral_bonus',
+                points: 10,
+                description: `Signup bonus for using referral code: ${referralCode}`,
+                relatedId: referrer._id
+            });
+        }
+    } catch (error) {
+        console.error('❌ Referral process error:', error);
+    }
+};
 
 // @desc    Auth user & get token
 // @route   POST /api/auth/login
@@ -71,7 +115,7 @@ const registerUser = async (req, res) => {
         const adminVerification = role === 'admin' ? false : true;
         // Note: Master Admin is seeded, so we don't register them here usually.
 
-        const user = await User.create({
+        const user = new User({
             name,
             email,
             phone,
@@ -85,6 +129,13 @@ const registerUser = async (req, res) => {
             location,
             adminVerification
         });
+
+        // Handle referral points if code exists
+        if (req.body.referralCode) {
+            await handleReferral(user, req.body.referralCode);
+        }
+
+        await user.save();
 
         if (user) {
             res.status(201).json({
@@ -161,6 +212,11 @@ const updateUserProfile = async (req, res) => {
 
         if (req.body.password) {
             user.password = req.body.password;
+        }
+
+        // Handle referral points for Google users on first profile completion
+        if (req.body.referralCode && !user.referredBy) {
+            await handleReferral(user, req.body.referralCode);
         }
 
         const updatedUser = await user.save();

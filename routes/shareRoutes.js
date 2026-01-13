@@ -16,15 +16,28 @@ router.get('/news/:id', async (req, res) => {
         const appUrl = process.env.APP_URL || 'https://samajwaditechforce.com';
         const redirectUrl = `${appUrl}/news/${news._id}`;
 
-        const shareUrl = `${appUrl}/share/news/${news._id}`;
-        const imageUrl = news.coverImage || `${appUrl}/default-news-image.jpg`;
+        const currentHost = req.get('host');
+        // Force https to satisfy Facebook's strict security requirements for og:url
+        const shareUrl = `https://${currentHost}${req.originalUrl}`;
+
+        let imageUrl = news.coverImage || `${appUrl}/assets/images/logo.png`;
+        if (imageUrl.startsWith('/')) {
+            imageUrl = `https://${currentHost}${imageUrl}`;
+        }
+
+        // Optimize Cloudinary images for Facebook (Standard: 1200x630)
+        if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
+            imageUrl = imageUrl.replace('/upload/', '/upload/c_fill,w_1200,h_630,q_auto,f_jpg/');
+        } else if (!imageUrl.startsWith('http')) {
+            imageUrl = `https://${currentHost}/${imageUrl}`;
+        }
+
         const title = news.title || 'Samajwadi Tech Force News';
         const description = news.excerpt || news.description || 'Stay updated with latest news from Samajwadi Tech Force';
 
-        // Generate HTML with Open Graph meta tags
         const html = `
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,8 +69,7 @@ router.get('/news/:id', async (req, res) => {
     <!-- WhatsApp -->
     <meta property="og:image:alt" content="${title}">
     
-    <!-- Redirect to app -->
-    <meta http-equiv="refresh" content="3;url=${redirectUrl}">
+    <!-- Redirect handling moved to bottom of body -->
     
     <style>
         body {
@@ -134,8 +146,20 @@ router.get('/news/:id', async (req, res) => {
         ${news.coverImage ? `<img src="${news.coverImage}" alt="${title}" class="image">` : ''}
         <p>${description}</p>
         <a href="${redirectUrl}" class="btn">Open in App</a>
-        <p class="redirect-msg">Redirecting to app...</p>
+        <p class="redirect-msg">Redirecting to app in a few seconds...</p>
     </div>
+
+    <script>
+        // Check if the user is a bot/crawler
+        const isBot = /bot|facebookexternalhit|whatsapp|googlebot|twitterbot|bingbot|linkedinbot/i.test(navigator.userAgent);
+        
+        if (!isBot) {
+            // Only redirect real users
+            setTimeout(() => {
+                window.location.href = "${redirectUrl}";
+            }, 3000); // 3-second delay to ensure smooth transition
+        }
+    </script>
 </body>
 </html>
         `;
@@ -313,8 +337,7 @@ router.get('/reels/:id', async (req, res) => {
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${imageUrl}">
 
-    <!-- Redirect to app -->
-    <meta http-equiv="refresh" content="0;url=${redirectUrl}">
+    <!-- Redirect handling moved to bottom of body -->
     
     <style>
         body {
@@ -343,8 +366,17 @@ router.get('/reels/:id', async (req, res) => {
 <body>
     <div class="loader"></div>
     <p>Opening Reel...</p>
+    
     <script>
-        window.location.href = "${redirectUrl}";
+        // Check if the user is a bot/crawler
+        const isBot = /bot|facebookexternalhit|whatsapp|googlebot|twitterbot|bingbot|linkedinbot/i.test(navigator.userAgent);
+        
+        if (!isBot) {
+            // Only redirect real users
+            setTimeout(() => {
+                window.location.href = "${redirectUrl}";
+            }, 1000); // Short delay for reels
+        }
     </script>
 </body>
 </html>
