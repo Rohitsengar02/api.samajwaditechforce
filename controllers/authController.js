@@ -6,46 +6,49 @@ const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
 require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
-// Helper to handle referral points
+// Helper to handle referral points for the REFERRER
 const handleReferral = async (newUser, referralCode) => {
-    if (!referralCode) return;
+    if (!referralCode) return null;
+    let cleanCode = referralCode.trim().toUpperCase();
+
+    // Auto-fix: If user entered 6 chars without SP, add it
+    if (cleanCode.length === 6 && !cleanCode.startsWith('SP')) {
+        cleanCode = 'SP' + cleanCode;
+    }
+
+    console.log(`🔍 Processing referral: ${cleanCode} for new user: ${newUser.name}`);
 
     try {
-        // Find the referrer using the code
-        const referrer = await User.findOne({ referralCode: referralCode.toUpperCase() });
+        const referrer = await User.findOne({ referralCode: cleanCode });
 
-        if (referrer && referrer._id.toString() !== newUser._id.toString()) {
-            console.log(`🎁 Referral success: ${referrer.name} referred ${newUser.name}`);
-
-            // 1. Reward Referrer (+20 points)
-            referrer.points = (referrer.points || 0) + 20;
-            await referrer.save();
-
-            await PointActivity.create({
-                user: referrer._id,
-                username: referrer.name,
-                activityType: 'referral_bonus',
-                points: 20,
-                description: `Referral bonus for inviting ${newUser.name}`,
-                relatedId: newUser._id
-            });
-
-            // 2. Reward New User (+10 points)
-            newUser.points = (newUser.points || 0) + 10;
-            newUser.referredBy = referralCode.toUpperCase();
-            // newUser.save() will be called by the parent function
-
-            await PointActivity.create({
-                user: newUser._id,
-                username: newUser.name,
-                activityType: 'referral_bonus',
-                points: 10,
-                description: `Signup bonus for using referral code: ${referralCode}`,
-                relatedId: referrer._id
-            });
+        if (!referrer) {
+            console.log(`⚠️ Referral failed: No user found with code ${cleanCode}`);
+            return null;
         }
+
+        if (referrer._id.toString() === newUser._id.toString()) {
+            console.log(`🚫 Referral failed: Self-referral detected.`);
+            return null;
+        }
+
+        // 1. Reward Referrer (+20 points)
+        referrer.points = (referrer.points || 0) + 20;
+        await referrer.save();
+
+        await PointActivity.create({
+            user: referrer._id,
+            username: referrer.name,
+            activityType: 'referral_bonus',
+            points: 20,
+            description: `Referral bonus for inviting ${newUser.name}`,
+            relatedId: newUser._id
+        });
+
+        console.log(`🎁 Success: ${referrer.name} earned 20 points for referring ${newUser.name}`);
+        return cleanCode; // Return the valid code used
     } catch (error) {
-        console.error('❌ Referral process error:', error);
+        console.error('❌ Referral helper error:', error);
+        return null;
     }
 };
 
@@ -136,12 +139,28 @@ const registerUser = async (req, res) => {
             adminVerification
         });
 
+        // Initial save to ensure user has an ID and exists in DB
+        await user.save();
+
         // Handle referral points if code exists
         if (req.body.referralCode) {
-            await handleReferral(user, req.body.referralCode);
-        }
+            const validCode = await handleReferral(user, req.body.referralCode);
+            if (validCode) {
+                // Reward the NEW USER (+10 points)
+                user.points = (user.points || 0) + 10;
+                user.referredBy = validCode;
+                await user.save(); // Save the points and referral info
 
-        await user.save();
+                await PointActivity.create({
+                    user: user._id,
+                    username: user.name,
+                    activityType: 'referral_bonus',
+                    points: 10,
+                    description: `Welcome bonus for using referral code: ${validCode}`
+                });
+                console.log(`✨ New user ${user.name} rewarded with 10 bonus points!`);
+            }
+        }
 
         if (user) {
             res.status(201).json({
@@ -230,7 +249,20 @@ const updateUserProfile = async (req, res) => {
 
         // Handle referral points for Google users on first profile completion
         if (req.body.referralCode && !user.referredBy) {
-            await handleReferral(user, req.body.referralCode);
+            const validCode = await handleReferral(user, req.body.referralCode);
+            if (validCode) {
+                user.points = (user.points || 0) + 10;
+                user.referredBy = validCode;
+
+                await PointActivity.create({
+                    user: user._id,
+                    username: user.name,
+                    activityType: 'referral_bonus',
+                    points: 10,
+                    description: `Welcome bonus for using referral code: ${validCode}`
+                });
+                console.log(`✨ Google user ${user.name} rewarded with 10 bonus points!`);
+            }
         }
 
         const updatedUser = await user.save();
@@ -597,7 +629,7 @@ const googleLogin = async (req, res) => {
         if (user) {
             // User exists - Log them in
             console.log('✅ Google Login - User found:', email);
-            res.json({
+            const loginResp = {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
@@ -606,12 +638,20 @@ const googleLogin = async (req, res) => {
                 referralCode: user.referralCode || `SP${user._id.toString().substring(0, 6).toUpperCase()}`,
                 token: generateToken(user._id),
                 profileImage: user.profileImage
-            });
+            };
+            console.log('📤 Sending Login Response');
+            res.json(loginResp);
 
             // Background save if code was missing
             if (!user.referralCode) {
-                user.referralCode = `SP${user._id.toString().substring(0, 6).toUpperCase()}`;
-                await user.save();
+                try {
+                    console.log('ℹ️ Generating missing referral code');
+                    user.referralCode = `SP${user._id.toString().substring(0, 6).toUpperCase()}`;
+                    await user.save();
+                    console.log('✅ Referral code saved');
+                } catch (err) {
+                    console.error('⚠️ Background referral save failed:', err.message);
+                }
             }
         } else {
             // User doesn't exist - Register them
@@ -631,8 +671,10 @@ const googleLogin = async (req, res) => {
                 adminVerification: true // Auto-verify regular users
             });
 
+            console.log('👤 User created:', user._id);
+
             if (user) {
-                res.status(201).json({
+                const regResp = {
                     _id: user._id,
                     name: user.name,
                     email: user.email,
@@ -642,7 +684,9 @@ const googleLogin = async (req, res) => {
                     token: generateToken(user._id),
                     profileImage: user.profileImage,
                     isNewUser: true // Explicitly flag as new user for frontend flow
-                });
+                };
+                console.log('📤 Sending Registration Response');
+                res.status(201).json(regResp);
             } else {
                 res.status(400).json({ message: 'Invalid user data' });
             }

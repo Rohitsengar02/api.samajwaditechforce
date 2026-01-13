@@ -94,18 +94,17 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password);
 };
 
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function () {
     // Generate referral code if it doesn't exist
     if (!this.referralCode) {
         this.referralCode = `SP${this._id.toString().substring(0, 6).toUpperCase()}`;
     }
 
     if (!this.isModified('password')) {
-        return next();
+        return;
     }
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
-    next();
 });
 
 const User = mongoose.model('User', userSchema);
