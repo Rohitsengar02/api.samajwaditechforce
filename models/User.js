@@ -74,7 +74,7 @@ const userSchema = new mongoose.Schema({
     referralCode: {
         type: String,
         unique: true,
-        lazy: true,
+        sparse: true,
     },
     referredBy: {
         type: String,

@@ -81,6 +81,11 @@ const authUser = async (req, res) => {
             return res.status(403).json({ message: 'Your account is pending approval by Master Admin.' });
         }
 
+        if (!user.referralCode) {
+            user.referralCode = `SP${user._id.toString().substring(0, 6).toUpperCase()}`;
+            await user.save();
+        }
+
         console.log('✅ Login successful for:', email);
         res.json({
             _id: user._id,
@@ -88,6 +93,7 @@ const authUser = async (req, res) => {
             email: user.email,
             role: user.role,
             points: user.points || 0,
+            referralCode: user.referralCode,
             token: generateToken(user._id),
         });
     } else {
@@ -144,6 +150,7 @@ const registerUser = async (req, res) => {
                 email: user.email,
                 role: user.role,
                 points: user.points || 0,
+                referralCode: user.referralCode,
                 token: generateToken(user._id),
                 message: role === 'admin' ? 'Registration successful. Please wait for Master Admin approval.' : 'Registration successful'
             });
@@ -186,7 +193,14 @@ const getUserProfile = async (req, res) => {
             adminVerification: user.adminVerification,
             language: user.language,
             points: user.points || 0,
+            referralCode: user.referralCode || `SP${user._id.toString().substring(0, 6).toUpperCase()}`,
         });
+
+        // Background save if code was missing
+        if (!user.referralCode) {
+            user.referralCode = `SP${user._id.toString().substring(0, 6).toUpperCase()}`;
+            await user.save();
+        }
     } else {
         res.status(404).json({ message: 'User not found' });
     }
@@ -244,6 +258,7 @@ const updateUserProfile = async (req, res) => {
             adminVerification: updatedUser.adminVerification,
             language: updatedUser.language,
             points: updatedUser.points || 0,
+            referralCode: updatedUser.referralCode,
             token: generateToken(updatedUser._id),
         });
     } else {
@@ -588,9 +603,16 @@ const googleLogin = async (req, res) => {
                 email: user.email,
                 role: user.role,
                 points: user.points || 0,
+                referralCode: user.referralCode || `SP${user._id.toString().substring(0, 6).toUpperCase()}`,
                 token: generateToken(user._id),
                 profileImage: user.profileImage
             });
+
+            // Background save if code was missing
+            if (!user.referralCode) {
+                user.referralCode = `SP${user._id.toString().substring(0, 6).toUpperCase()}`;
+                await user.save();
+            }
         } else {
             // User doesn't exist - Register them
             console.log('🆕 Google Login - Creating new user:', email);
@@ -616,6 +638,7 @@ const googleLogin = async (req, res) => {
                     email: user.email,
                     role: user.role,
                     points: user.points || 0,
+                    referralCode: user.referralCode,
                     token: generateToken(user._id),
                     profileImage: user.profileImage,
                     isNewUser: true // Explicitly flag as new user for frontend flow
