@@ -973,11 +973,6 @@ const forgotPassword = async (req, res) => {
         // Determining frontend URL based on origin or default
         const frontendUrl = req.headers.origin || 'http://localhost:8081';
 
-        // Explicitly reload env vars to be sure
-        const path = require('path');
-        const envPath = path.resolve(__dirname, '../.env');
-        require('dotenv').config({ path: envPath, override: true });
-
         const resetUrl = `${frontendUrl}/reset-password?token=${resetToken}`;
 
         console.log('---------------------------------------------------');
