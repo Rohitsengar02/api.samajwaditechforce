@@ -31,20 +31,20 @@ const handleReferral = async (newUser, referralCode) => {
             return null;
         }
 
-        // 1. Reward Referrer (+20 points)
-        referrer.points = (referrer.points || 0) + 20;
+        // 1. Reward Referrer (+50 points)
+        referrer.points = (referrer.points || 0) + 50;
         await referrer.save();
 
         await PointActivity.create({
             user: referrer._id,
             username: referrer.name,
             activityType: 'referral_bonus',
-            points: 20,
+            points: 50,
             description: `Referral bonus for inviting ${newUser.name}`,
             relatedId: newUser._id
         });
 
-        console.log(`🎁 Success: ${referrer.name} earned 20 points for referring ${newUser.name}`);
+        console.log(`🎁 Success: ${referrer.name} earned 50 points for referring ${newUser.name}`);
         return cleanCode; // Return the valid code used
     } catch (error) {
         console.error('❌ Referral helper error:', error);
@@ -315,6 +315,7 @@ const requestVerification = async (req, res) => {
             user.socialMedia = req.body.socialMedia || user.socialMedia;
             user.qualification = req.body.qualification || user.qualification;
             user.canVisitLucknow = req.body.canVisitLucknow || user.canVisitLucknow;
+            user.electionPreparation = req.body.electionPreparation || user.electionPreparation;
 
             user.verificationStatus = 'Pending';
 
@@ -854,4 +855,90 @@ const getVerifiedMembers = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists, getVerifiedMembers };
+// @desc    Get referral statistics (Admin)
+// @route   GET /api/auth/referral-stats
+// @access  Private/Admin
+const getReferralStats = async (req, res) => {
+    try {
+        console.log('Fetching referral statistics...');
+
+        // Get all users who have referred someone (referrers)
+        // A user is a referrer if someone else has their referralCode as referredBy
+        const allUsers = await User.find({})
+            .select('name email phone profileImage referralCode referredBy points createdAt')
+            .lean();
+
+        // Build referrer stats
+        const referrerMap = {};
+        const referredUsers = [];
+
+        allUsers.forEach(user => {
+            // Track referred users (users who came via referral)
+            if (user.referredBy) {
+                referredUsers.push({
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                    phone: user.phone,
+                    referredBy: user.referredBy,
+                    joinedAt: user.createdAt
+                });
+
+                // Count referrals for the referrer
+                if (!referrerMap[user.referredBy]) {
+                    referrerMap[user.referredBy] = {
+                        referralCode: user.referredBy,
+                        referralCount: 0,
+                        referredNames: []
+                    };
+                }
+                referrerMap[user.referredBy].referralCount++;
+                referrerMap[user.referredBy].referredNames.push(user.name);
+            }
+        });
+
+        // Build referrers list with user details
+        const referrers = [];
+        for (const code of Object.keys(referrerMap)) {
+            const referrer = allUsers.find(u => u.referralCode === code);
+            if (referrer) {
+                referrers.push({
+                    _id: referrer._id,
+                    name: referrer.name,
+                    email: referrer.email,
+                    phone: referrer.phone,
+                    referralCode: referrer.referralCode,
+                    points: referrer.points || 0,
+                    totalReferrals: referrerMap[code].referralCount,
+                    pointsEarned: referrerMap[code].referralCount * 50, // 50 points per referral
+                    referredNames: referrerMap[code].referredNames
+                });
+            }
+        }
+
+        // Sort referrers by total referrals (descending)
+        referrers.sort((a, b) => b.totalReferrals - a.totalReferrals);
+
+        // Sort referred users by join date (newest first)
+        referredUsers.sort((a, b) => new Date(b.joinedAt) - new Date(a.joinedAt));
+
+        console.log(`Found ${referrers.length} referrers and ${referredUsers.length} referred users`);
+
+        res.json({
+            success: true,
+            referrers,
+            referredUsers,
+            stats: {
+                totalReferrers: referrers.length,
+                totalReferred: referredUsers.length,
+                totalPointsAwarded: referrers.reduce((sum, r) => sum + r.pointsEarned, 0)
+            }
+        });
+    } catch (error) {
+        console.error('Error fetching referral stats:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists, getVerifiedMembers, getReferralStats };
+

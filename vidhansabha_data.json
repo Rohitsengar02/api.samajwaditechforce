@@ -1,2904 +1,2906 @@
-
- {
-  "Constituency\nnumber": 1,
-  "Constituency\nname": "Behat",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 372305,
-  "District[7]": "Saharanpur",
-  "Lok Sabha\nconstituency": "Saharanpur"
- },
- {
-  "Constituency\nnumber": 2,
-  "Constituency\nname": "Nakur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355632,
-  "Lok Sabha\nconstituency": "Kairana"
- },
- {
-  "Constituency\nnumber": 3,
-  "Constituency\nname": "Saharanpur Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 443592,
-  "Lok Sabha\nconstituency": "Saharanpur"
- },
- {
-  "Constituency\nnumber": 4,
-  "Constituency\nname": "Saharanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 359546,
-  "Lok Sabha\nconstituency": "Saharanpur"
- },
- {
-  "Constituency\nnumber": 5,
-  "Constituency\nname": "Deoband",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 348944,
-  "Lok Sabha\nconstituency": "Saharanpur"
- },
- {
-  "Constituency\nnumber": 6,
-  "Constituency\nname": "Rampur Maniharan",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 323830,
-  "Lok Sabha\nconstituency": "Saharanpur"
- },
- {
-  "Constituency\nnumber": 7,
-  "Constituency\nname": "Gangoh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 386148,
-  "Lok Sabha\nconstituency": "Kairana"
- },
- {
-  "Constituency\nnumber": 8,
-  "Constituency\nname": "Kairana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 322423,
-  "District[7]": "Shamli",
-  "Lok Sabha\nconstituency": "Kairana"
- },
- {
-  "Constituency\nnumber": 9,
-  "Constituency\nname": "Thana Bhawan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 326817,
-  "Lok Sabha\nconstituency": "Kairana"
- },
- {
-  "Constituency\nnumber": 10,
-  "Constituency\nname": "Shamli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 311974,
-  "Lok Sabha\nconstituency": "Kairana"
- },
- {
-  "Constituency\nnumber": 11,
-  "Constituency\nname": "Budhana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 377680,
-  "District[7]": "Muzaffarnagar",
-  "Lok Sabha\nconstituency": "Muzaffarnagar"
- },
- {
-  "Constituency\nnumber": 12,
-  "Constituency\nname": "Charthawal",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 331171,
-  "Lok Sabha\nconstituency": "Muzaffarnagar"
- },
- {
-  "Constituency\nnumber": 13,
-  "Constituency\nname": "Purqazi",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 329110,
-  "Lok Sabha\nconstituency": "Bijnor"
- },
- {
-  "Constituency\nnumber": 14,
-  "Constituency\nname": "Muzaffarnagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 358658,
-  "Lok Sabha\nconstituency": "Muzaffarnagar"
- },
- {
-  "Constituency\nnumber": 15,
-  "Constituency\nname": "Khatauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 318047,
-  "Lok Sabha\nconstituency": "Muzaffarnagar"
- },
- {
-  "Constituency\nnumber": 16,
-  "Constituency\nname": "Meerapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 314587,
-  "Lok Sabha\nconstituency": "Bijnor"
- },
- {
-  "Constituency\nnumber": 17,
-  "Constituency\nname": "Najibabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 346687,
-  "District[7]": "Bijnor",
-  "Lok Sabha\nconstituency": "Nagina"
- },
- {
-  "Constituency\nnumber": 18,
-  "Constituency\nname": "Nagina",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 346910,
-  "Lok Sabha\nconstituency": "Nagina"
- },
- {
-  "Constituency\nnumber": 19,
-  "Constituency\nname": "Barhapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 359056,
-  "Lok Sabha\nconstituency": "Moradabad"
- },
- {
-  "Constituency\nnumber": 20,
-  "Constituency\nname": "Dhampur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 302357,
-  "Lok Sabha\nconstituency": "Nagina"
- },
- {
-  "Constituency\nnumber": 21,
-  "Constituency\nname": "Nehtaur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 303720,
-  "Lok Sabha\nconstituency": "Nagina"
- },
- {
-  "Constituency\nnumber": 22,
-  "Constituency\nname": "Bijnor",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 390546,
-  "Lok Sabha\nconstituency": "Bijnor"
- },
- {
-  "Constituency\nnumber": 23,
-  "Constituency\nname": "Chandpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 325858,
-  "Lok Sabha\nconstituency": "Bijnor"
- },
- {
-  "Constituency\nnumber": 24,
-  "Constituency\nname": "Noorpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 324486,
-  "Lok Sabha\nconstituency": "Nagina"
- },
- {
-  "Constituency\nnumber": 25,
-  "Constituency\nname": "Kanth",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 390562,
-  "District[7]": "Moradabad",
-  "Lok Sabha\nconstituency": "Moradabad"
- },
- {
-  "Constituency\nnumber": 26,
-  "Constituency\nname": "Thakurdwara",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 372490,
-  "Lok Sabha\nconstituency": "Moradabad"
- },
- {
-  "Constituency\nnumber": 27,
-  "Constituency\nname": "Moradabad Rural",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 389729,
-  "Lok Sabha\nconstituency": "Moradabad"
- },
- {
-  "Constituency\nnumber": 28,
-  "Constituency\nname": "Moradabad Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 529243,
-  "Lok Sabha\nconstituency": "Moradabad"
- },
- {
-  "Constituency\nnumber": 29,
-  "Constituency\nname": "Kundarki",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 380673,
-  "Lok Sabha\nconstituency": "Sambhal"
- },
- {
-  "Constituency\nnumber": 30,
-  "Constituency\nname": "Bilari[a]",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 359209,
-  "Lok Sabha\nconstituency": "Sambhal"
- },
- {
-  "Constituency\nnumber": 31,
-  "Constituency\nname": "Chandausi",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 383406,
-  "District[7]": "Sambhal",
-  "Lok Sabha\nconstituency": "Sambhal"
- },
- {
-  "Constituency\nnumber": 32,
-  "Constituency\nname": "Asmoli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 379352,
-  "Lok Sabha\nconstituency": "Sambhal"
- },
- {
-  "Constituency\nnumber": 33,
-  "Constituency\nname": "Sambhal",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 379786,
-  "Lok Sabha\nconstituency": "Sambhal"
- },
- {
-  "Constituency\nnumber": 34,
-  "Constituency\nname": "Suar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 307421,
-  "District[7]": "Rampur",
-  "Lok Sabha\nconstituency": "Rampur"
- },
- {
-  "Constituency\nnumber": 35,
-  "Constituency\nname": "Chamraua",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 307984,
-  "Lok Sabha\nconstituency": "Rampur"
- },
- {
-  "Constituency\nnumber": 36,
-  "Constituency\nname": "Bilaspur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 345202,
-  "Lok Sabha\nconstituency": "Rampur"
- },
- {
-  "Constituency\nnumber": 37,
-  "Constituency\nname": "Rampur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 388175,
-  "Lok Sabha\nconstituency": "Rampur"
- },
- {
-  "Constituency\nnumber": 38,
-  "Constituency\nname": "Milak",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 357452,
-  "Lok Sabha\nconstituency": "Rampur"
- },
- {
-  "Constituency\nnumber": 39,
-  "Constituency\nname": "Dhanaura",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 346449,
-  "District[7]": "Amroha",
-  "Lok Sabha\nconstituency": "Amroha"
- },
- {
-  "Constituency\nnumber": 40,
-  "Constituency\nname": "Naugawan Sadat",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 328672,
-  "Lok Sabha\nconstituency": "Amroha"
- },
- {
-  "Constituency\nnumber": 41,
-  "Constituency\nname": "Amroha",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 313755,
-  "Lok Sabha\nconstituency": "Amroha"
- },
- {
-  "Constituency\nnumber": 42,
-  "Constituency\nname": "Hasanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 364215,
-  "Lok Sabha\nconstituency": "Amroha"
- },
- {
-  "Constituency\nnumber": 43,
-  "Constituency\nname": "Siwalkhas",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 339738,
-  "District[7]": "Meerut",
-  "Lok Sabha\nconstituency": "Bagpat"
- },
- {
-  "Constituency\nnumber": 44,
-  "Constituency\nname": "Sardhana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 361816,
-  "Lok Sabha\nconstituency": "Muzaffarnagar"
- },
- {
-  "Constituency\nnumber": 45,
-  "Constituency\nname": "Hastinapur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 344527,
-  "Lok Sabha\nconstituency": "Bijnor"
- },
- {
-  "Constituency\nnumber": 46,
-  "Constituency\nname": "Kithore",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 365516,
-  "Lok Sabha\nconstituency": "Meerut"
- },
- {
-  "Constituency\nnumber": 47,
-  "Constituency\nname": "Meerut Cantt.",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 430144,
-  "Lok Sabha\nconstituency": "Meerut"
- },
- {
-  "Constituency\nnumber": 48,
-  "Constituency\nname": "Meerut",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 312368,
-  "Lok Sabha\nconstituency": "Meerut"
- },
- {
-  "Constituency\nnumber": 49,
-  "Constituency\nname": "Meerut South",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 481365,
-  "Lok Sabha\nconstituency": "Meerut"
- },
- {
-  "Constituency\nnumber": 50,
-  "Constituency\nname": "Chhaprauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 337033,
-  "District[7]": "Bagpat",
-  "Lok Sabha\nconstituency": "Bagpat"
- },
- {
-  "Constituency\nnumber": 51,
-  "Constituency\nname": "Baraut",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 304200,
-  "Lok Sabha\nconstituency": "Bagpat"
- },
- {
-  "Constituency\nnumber": 52,
-  "Constituency\nname": "Bagpat",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 316266,
-  "Lok Sabha\nconstituency": "Bagpat"
- },
- {
-  "Constituency\nnumber": 53,
-  "Constituency\nname": "Loni",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 513114,
-  "District[7]": "Ghaziabad",
-  "Lok Sabha\nconstituency": "Ghaziabad"
- },
- {
-  "Constituency\nnumber": 54,
-  "Constituency\nname": "Muradnagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 457759,
-  "Lok Sabha\nconstituency": "Ghaziabad"
- },
- {
-  "Constituency\nnumber": 55,
-  "Constituency\nname": "Sahibabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 1020386,
-  "Lok Sabha\nconstituency": "Ghaziabad"
- },
- {
-  "Constituency\nnumber": 56,
-  "Constituency\nname": "Ghaziabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 473009,
-  "Lok Sabha\nconstituency": "Ghaziabad"
- },
- {
-  "Constituency\nnumber": 57,
-  "Constituency\nname": "Modinagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 332327,
-  "Lok Sabha\nconstituency": "Bagpat"
- },
- {
-  "Constituency\nnumber": 58,
-  "Constituency\nname": "Dhaulana[b]",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 413156,
-  "District[7]": "Hapur",
-  "Lok Sabha\nconstituency": "Ghaziabad"
- },
- {
-  "Constituency\nnumber": 59,
-  "Constituency\nname": "Hapur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 368481,
-  "Lok Sabha\nconstituency": "Meerut"
- },
- {
-  "Constituency\nnumber": 60,
-  "Constituency\nname": "Garhmukteshwar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 348800,
-  "Lok Sabha\nconstituency": "Amroha"
- },
- {
-  "Constituency\nnumber": 61,
-  "Constituency\nname": "Noida",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 714072,
-  "District[7]": "Gautam Budh Nagar",
-  "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
- },
- {
-  "Constituency\nnumber": 62,
-  "Constituency\nname": "Dadri",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 606316,
-  "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
- },
- {
-  "Constituency\nnumber": 63,
-  "Constituency\nname": "Jewar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 352164,
-  "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
- },
- {
-  "Constituency\nnumber": 64,
-  "Constituency\nname": "Sikandrabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 399747,
-  "District[7]": "Bulandshahr",
-  "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
- },
- {
-  "Constituency\nnumber": 65,
-  "Constituency\nname": "Bulandshahr",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 399775,
-  "Lok Sabha\nconstituency": "Bulandshahr"
- },
- {
-  "Constituency\nnumber": 66,
-  "Constituency\nname": "Syana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 387326,
-  "Lok Sabha\nconstituency": "Bulandshahr"
- },
- {
-  "Constituency\nnumber": 67,
-  "Constituency\nname": "Anupshahr",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 379496,
-  "Lok Sabha\nconstituency": "Bulandshahr"
- },
- {
-  "Constituency\nnumber": 68,
-  "Constituency\nname": "Debai",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 348309,
-  "Lok Sabha\nconstituency": "Bulandshahr"
- },
- {
-  "Constituency\nnumber": 69,
-  "Constituency\nname": "Shikarpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 334480,
-  "Lok Sabha\nconstituency": "Bulandshahr"
- },
- {
-  "Constituency\nnumber": 70,
-  "Constituency\nname": "Khurja",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 389211,
-  "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
- },
- {
-  "Constituency\nnumber": 71,
-  "Constituency\nname": "Khair",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 407399,
-  "District[7]": "Aligarh",
-  "Lok Sabha\nconstituency": "Aligarh"
- },
- {
-  "Constituency\nnumber": 72,
-  "Constituency\nname": "Barauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 380035,
-  "Lok Sabha\nconstituency": "Aligarh"
- },
- {
-  "Constituency\nnumber": 73,
-  "Constituency\nname": "Atrauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 402493,
-  "Lok Sabha\nconstituency": "Aligarh"
- },
- {
-  "Constituency\nnumber": 74,
-  "Constituency\nname": "Chharra",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 387108,
-  "Lok Sabha\nconstituency": "Hathras"
- },
- {
-  "Constituency\nnumber": 75,
-  "Constituency\nname": "Koil",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 404885,
-  "Lok Sabha\nconstituency": "Aligarh"
- },
- {
-  "Constituency\nnumber": 76,
-  "Constituency\nname": "Aligarh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 395352,
-  "Lok Sabha\nconstituency": "Aligarh"
- },
- {
-  "Constituency\nnumber": 77,
-  "Constituency\nname": "Iglas",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 396755,
-  "Lok Sabha\nconstituency": "Hathras"
- },
- {
-  "Constituency\nnumber": 78,
-  "Constituency\nname": "Hathras",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 416253,
-  "District[7]": "Hathras",
-  "Lok Sabha\nconstituency": "Hathras"
- },
- {
-  "Constituency\nnumber": 79,
-  "Constituency\nname": "Sadabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 376981,
-  "Lok Sabha\nconstituency": "Hathras"
- },
- {
-  "Constituency\nnumber": 80,
-  "Constituency\nname": "Sikandra Rao",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 377684,
-  "Lok Sabha\nconstituency": "Hathras"
- },
- {
-  "Constituency\nnumber": 81,
-  "Constituency\nname": "Chhata",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 364870,
-  "District[7]": "Mathura",
-  "Lok Sabha\nconstituency": "Mathura"
- },
- {
-  "Constituency\nnumber": 82,
-  "Constituency\nname": "Mant",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 346386,
-  "Lok Sabha\nconstituency": "Mathura"
- },
- {
-  "Constituency\nnumber": 83,
-  "Constituency\nname": "Goverdhan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 334234,
-  "Lok Sabha\nconstituency": "Mathura"
- },
- {
-  "Constituency\nnumber": 84,
-  "Constituency\nname": "Mathura",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 459369,
-  "Lok Sabha\nconstituency": "Mathura"
- },
- {
-  "Constituency\nnumber": 85,
-  "Constituency\nname": "Baldev",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 376964,
-  "Lok Sabha\nconstituency": "Mathura"
- },
- {
-  "Constituency\nnumber": 86,
-  "Constituency\nname": "Etmadpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 444849,
-  "District[7]": "Agra",
-  "Lok Sabha\nconstituency": "Agra"
- },
- {
-  "Constituency\nnumber": 87,
-  "Constituency\nname": "Agra Cantt.",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 467201,
-  "Lok Sabha\nconstituency": "Agra"
- },
- {
-  "Constituency\nnumber": 88,
-  "Constituency\nname": "Agra South",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 367502,
-  "Lok Sabha\nconstituency": "Agra"
- },
- {
-  "Constituency\nnumber": 89,
-  "Constituency\nname": "Agra North",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 435557,
-  "Lok Sabha\nconstituency": "Agra"
- },
- {
-  "Constituency\nnumber": 90,
-  "Constituency\nname": "Agra Rural",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 427896,
-  "Lok Sabha\nconstituency": "Fatehpur Sikri"
- },
- {
-  "Constituency\nnumber": 91,
-  "Constituency\nname": "Fatehpur Sikri",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 359005,
-  "Lok Sabha\nconstituency": "Fatehpur Sikri"
- },
- {
-  "Constituency\nnumber": 92,
-  "Constituency\nname": "Kheragarh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 328680,
-  "Lok Sabha\nconstituency": "Fatehpur Sikri"
- },
- {
-  "Constituency\nnumber": 93,
-  "Constituency\nname": "Fatehabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 322495,
-  "Lok Sabha\nconstituency": "Fatehpur Sikri"
- },
- {
-  "Constituency\nnumber": 94,
-  "Constituency\nname": "Bah",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 334525,
-  "Lok Sabha\nconstituency": "Fatehpur Sikri"
- },
- {
-  "Constituency\nnumber": 95,
-  "Constituency\nname": "Tundla",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 372750,
-  "District[7]": "Firozabad",
-  "Lok Sabha\nconstituency": "Firozabad"
- },
- {
-  "Constituency\nnumber": 96,
-  "Constituency\nname": "Jasrana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 367280,
-  "Lok Sabha\nconstituency": "Firozabad"
- },
- {
-  "Constituency\nnumber": 97,
-  "Constituency\nname": "Firozabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 439689,
-  "Lok Sabha\nconstituency": "Firozabad"
- },
- {
-  "Constituency\nnumber": 98,
-  "Constituency\nname": "Shikohabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 357741,
-  "Lok Sabha\nconstituency": "Firozabad"
- },
- {
-  "Constituency\nnumber": 99,
-  "Constituency\nname": "Sirsaganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 321298,
-  "Lok Sabha\nconstituency": "Firozabad"
- },
- {
-  "Constituency\nnumber": 100,
-  "Constituency\nname": "Kasganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 364023,
-  "District[7]": "Kasganj",
-  "Lok Sabha\nconstituency": "Etah"
- },
- {
-  "Constituency\nnumber": 101,
-  "Constituency\nname": "Amanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 310854,
-  "Lok Sabha\nconstituency": "Etah"
- },
- {
-  "Constituency\nnumber": 102,
-  "Constituency\nname": "Patiyali",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 359278,
-  "Lok Sabha\nconstituency": "Etah"
- },
- {
-  "Constituency\nnumber": 103,
-  "Constituency\nname": "Aliganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 342212,
-  "District[7]": "Etah",
-  "Lok Sabha\nconstituency": "Farrukhabad"
- },
- {
-  "Constituency\nnumber": 104,
-  "Constituency\nname": "Etah",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 337616,
-  "Lok Sabha\nconstituency": "Etah"
- },
- {
-  "Constituency\nnumber": 105,
-  "Constituency\nname": "Marhara",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 309883,
-  "Lok Sabha\nconstituency": "Etah"
- },
- {
-  "Constituency\nnumber": 106,
-  "Constituency\nname": "Jalesar",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 297452,
-  "Lok Sabha\nconstituency": "Agra"
- },
- {
-  "Constituency\nnumber": 107,
-  "Constituency\nname": "Mainpuri",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 345335,
-  "District[7]": "Mainpuri",
-  "Lok Sabha\nconstituency": "Mainpuri"
- },
- {
-  "Constituency\nnumber": 108,
-  "Constituency\nname": "Bhongaon",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 343606,
-  "Lok Sabha\nconstituency": "Mainpuri"
- },
- {
-  "Constituency\nnumber": 109,
-  "Constituency\nname": "Kishni",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 310906,
-  "Lok Sabha\nconstituency": "Mainpuri"
- },
- {
-  "Constituency\nnumber": 110,
-  "Constituency\nname": "Karhal",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 373351,
-  "Lok Sabha\nconstituency": "Mainpuri"
- },
- {
-  "Constituency\nnumber": 111,
-  "Constituency\nname": "Gunnaur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 411191,
-  "District[7]": "Sambhal",
-  "Lok Sabha\nconstituency": "Badaun"
- },
- {
-  "Constituency\nnumber": 112,
-  "Constituency\nname": "Bisauli",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 421258,
-  "District[7]": "Budaun",
-  "Lok Sabha\nconstituency": "Badaun"
- },
- {
-  "Constituency\nnumber": 113,
-  "Constituency\nname": "Sahaswan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 426207,
-  "Lok Sabha\nconstituency": "Badaun"
- },
- {
-  "Constituency\nnumber": 114,
-  "Constituency\nname": "Bilsi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355234,
-  "Lok Sabha\nconstituency": "Badaun"
- },
- {
-  "Constituency\nnumber": 115,
-  "Constituency\nname": "Badaun",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 376111,
-  "Lok Sabha\nconstituency": "Badaun"
- },
- {
-  "Constituency\nnumber": 116,
-  "Constituency\nname": "Shekhupur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 403347,
-  "Lok Sabha\nconstituency": "Aonla"
- },
- {
-  "Constituency\nnumber": 117,
-  "Constituency\nname": "Dataganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 407118,
-  "Lok Sabha\nconstituency": "Aonla"
- },
- {
-  "Constituency\nnumber": 118,
-  "Constituency\nname": "Baheri",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366445,
-  "District[7]": "Bareilly",
-  "Lok Sabha\nconstituency": "Pilibhit"
- },
- {
-  "Constituency\nnumber": 119,
-  "Constituency\nname": "Meerganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 339587,
-  "Lok Sabha\nconstituency": "Bareilly"
- },
- {
-  "Constituency\nnumber": 120,
-  "Constituency\nname": "Bhojipura",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 378098,
-  "Lok Sabha\nconstituency": "Bareilly"
- },
- {
-  "Constituency\nnumber": 121,
-  "Constituency\nname": "Nawabganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 339503,
-  "Lok Sabha\nconstituency": "Bareilly"
- },
- {
-  "Constituency\nnumber": 122,
-  "Constituency\nname": "Faridpur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 328070,
-  "Lok Sabha\nconstituency": "Aonla"
- },
- {
-  "Constituency\nnumber": 123,
-  "Constituency\nname": "Bithari Chainpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 394190,
-  "Lok Sabha\nconstituency": "Aonla"
- },
- {
-  "Constituency\nnumber": 124,
-  "Constituency\nname": "Bareilly",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 457691,
-  "Lok Sabha\nconstituency": "Bareilly"
- },
- {
-  "Constituency\nnumber": 125,
-  "Constituency\nname": "Bareilly Cantt.",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 378743,
-  "Lok Sabha\nconstituency": "Bareilly"
- },
- {
-  "Constituency\nnumber": 126,
-  "Constituency\nname": "Aonla",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 315035,
-  "Lok Sabha\nconstituency": "Aonla"
- },
- {
-  "Constituency\nnumber": 127,
-  "Constituency\nname": "Pilibhit",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 378862,
-  "District[7]": "Pilibhit",
-  "Lok Sabha\nconstituency": "Pilibhit"
- },
- {
-  "Constituency\nnumber": 128,
-  "Constituency\nname": "Barkhera",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 323808,
-  "Lok Sabha\nconstituency": "Pilibhit"
- },
- {
-  "Constituency\nnumber": 129,
-  "Constituency\nname": "Puranpur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 385107,
-  "Lok Sabha\nconstituency": "Pilibhit"
- },
- {
-  "Constituency\nnumber": 130,
-  "Constituency\nname": "Bisalpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 360883,
-  "Lok Sabha\nconstituency": "Pilibhit"
- },
- {
-  "Constituency\nnumber": 131,
-  "Constituency\nname": "Katra",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338784,
-  "District[7]": "Shahjahanpur",
-  "Lok Sabha\nconstituency": "Shahjahanpur"
- },
- {
-  "Constituency\nnumber": 132,
-  "Constituency\nname": "Jalalabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 367002,
-  "Lok Sabha\nconstituency": "Shahjahanpur"
- },
- {
-  "Constituency\nnumber": 133,
-  "Constituency\nname": "Tilhar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355825,
-  "Lok Sabha\nconstituency": "Shahjahanpur"
- },
- {
-  "Constituency\nnumber": 134,
-  "Constituency\nname": "Powayan",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 386868,
-  "Lok Sabha\nconstituency": "Shahjahanpur"
- },
- {
-  "Constituency\nnumber": 135,
-  "Constituency\nname": "Shahjahanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 411329,
-  "Lok Sabha\nconstituency": "Shahjahanpur"
- },
- {
-  "Constituency\nnumber": 136,
-  "Constituency\nname": "Dadraul",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355882,
-  "Lok Sabha\nconstituency": "Shahjahanpur"
- },
- {
-  "Constituency\nnumber": 137,
-  "Constituency\nname": "Palia",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 360503,
-  "District[7]": "Lakhimpur Kheri",
-  "Lok Sabha\nconstituency": "Kheri"
- },
- {
-  "Constituency\nnumber": 138,
-  "Constituency\nname": "Nighasan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 340374,
-  "Lok Sabha\nconstituency": "Kheri"
- },
- {
-  "Constituency\nnumber": 139,
-  "Constituency\nname": "Gola Gokrannath",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 396212,
-  "Lok Sabha\nconstituency": "Kheri"
- },
- {
-  "Constituency\nnumber": 140,
-  "Constituency\nname": "Sri Nagar",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 319314,
-  "Lok Sabha\nconstituency": "Kheri"
- },
- {
-  "Constituency\nnumber": 141,
-  "Constituency\nname": "Dhaurahra",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 332131,
-  "Lok Sabha\nconstituency": "Dhaurahra"
- },
- {
-  "Constituency\nnumber": 142,
-  "Constituency\nname": "Lakhimpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 411807,
-  "Lok Sabha\nconstituency": "Kheri"
- },
- {
-  "Constituency\nnumber": 143,
-  "Constituency\nname": "Kasta",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 309700,
-  "Lok Sabha\nconstituency": "Dhaurahra"
- },
- {
-  "Constituency\nnumber": 144,
-  "Constituency\nname": "Mohammdi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338672,
-  "Lok Sabha\nconstituency": "Dhaurahra"
- },
- {
-  "Constituency\nnumber": 145,
-  "Constituency\nname": "Maholi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 378908,
-  "District[7]": "Sitapur",
-  "Lok Sabha\nconstituency": "Dhaurahra"
- },
- {
-  "Constituency\nnumber": 146,
-  "Constituency\nname": "Sitapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 399285,
-  "Lok Sabha\nconstituency": "Sitapur"
- },
- {
-  "Constituency\nnumber": 147,
-  "Constituency\nname": "Hargaon",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 326771,
-  "Lok Sabha\nconstituency": "Dhaurahra"
- },
- {
-  "Constituency\nnumber": 148,
-  "Constituency\nname": "Laharpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 354502,
-  "Lok Sabha\nconstituency": "Sitapur"
- },
- {
-  "Constituency\nnumber": 149,
-  "Constituency\nname": "Biswan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 337785,
-  "Lok Sabha\nconstituency": "Sitapur"
- },
- {
-  "Constituency\nnumber": 150,
-  "Constituency\nname": "Sevata",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 314101,
-  "Lok Sabha\nconstituency": "Sitapur"
- },
- {
-  "Constituency\nnumber": 151,
-  "Constituency\nname": "Mahmoodabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 315617,
-  "Lok Sabha\nconstituency": "Sitapur"
- },
- {
-  "Constituency\nnumber": 152,
-  "Constituency\nname": "Sidhauli",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 355182,
-  "Lok Sabha\nconstituency": "Mohanlalganj"
- },
- {
-  "Constituency\nnumber": 153,
-  "Constituency\nname": "Misrikh",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 359505,
-  "Lok Sabha\nconstituency": "Misrikh"
- },
- {
-  "Constituency\nnumber": 154,
-  "Constituency\nname": "Sawayazpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 403324,
-  "District[7]": "Hardoi",
-  "Lok Sabha\nconstituency": "Hardoi"
- },
- {
-  "Constituency\nnumber": 155,
-  "Constituency\nname": "Shahabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355083,
-  "Lok Sabha\nconstituency": "Hardoi"
- },
- {
-  "Constituency\nnumber": 156,
-  "Constituency\nname": "Hardoi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 414295,
-  "Lok Sabha\nconstituency": "Hardoi"
- },
- {
-  "Constituency\nnumber": 157,
-  "Constituency\nname": "Gopamau",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 343678,
-  "Lok Sabha\nconstituency": "Hardoi"
- },
- {
-  "Constituency\nnumber": 158,
-  "Constituency\nname": "Sandi",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 332011,
-  "Lok Sabha\nconstituency": "Hardoi"
- },
- {
-  "Constituency\nnumber": 159,
-  "Constituency\nname": "Bilgram-Mallanwan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 381886,
-  "Lok Sabha\nconstituency": "Misrikh"
- },
- {
-  "Constituency\nnumber": 160,
-  "Constituency\nname": "Balamau",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 347218,
-  "Lok Sabha\nconstituency": "Misrikh"
- },
- {
-  "Constituency\nnumber": 161,
-  "Constituency\nname": "Sandila",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 341211,
-  "Lok Sabha\nconstituency": "Misrikh"
- },
- {
-  "Constituency\nnumber": 162,
-  "Constituency\nname": "Bangarmau",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 357452,
-  "District[7]": "Unnao",
-  "Lok Sabha\nconstituency": "Unnao"
- },
- {
-  "Constituency\nnumber": 163,
-  "Constituency\nname": "Safipur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 346258,
-  "Lok Sabha\nconstituency": "Unnao"
- },
- {
-  "Constituency\nnumber": 164,
-  "Constituency\nname": "Mohan",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 342858,
-  "Lok Sabha\nconstituency": "Unnao"
- },
- {
-  "Constituency\nnumber": 165,
-  "Constituency\nname": "Unnao",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 409927,
-  "Lok Sabha\nconstituency": "Unnao"
- },
- {
-  "Constituency\nnumber": 166,
-  "Constituency\nname": "Bhagwantnagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 417945,
-  "Lok Sabha\nconstituency": "Unnao"
- },
- {
-  "Constituency\nnumber": 167,
-  "Constituency\nname": "Purwa",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 415472,
-  "Lok Sabha\nconstituency": "Unnao"
- },
- {
-  "Constituency\nnumber": 168,
-  "Constituency\nname": "Malihabad",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 360275,
-  "District[7]": "Lucknow",
-  "Lok Sabha\nconstituency": "Mohanlalganj"
- },
- {
-  "Constituency\nnumber": 169,
-  "Constituency\nname": "Bakshi Kaa Talab",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 456965,
-  "Lok Sabha\nconstituency": "Mohanlalganj"
- },
- {
-  "Constituency\nnumber": 170,
-  "Constituency\nname": "Sarojini Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 567252,
-  "Lok Sabha\nconstituency": "Mohanlalganj"
- },
- {
-  "Constituency\nnumber": 171,
-  "Constituency\nname": "Lucknow West",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 443178,
-  "Lok Sabha\nconstituency": "Lucknow"
- },
- {
-  "Constituency\nnumber": 172,
-  "Constituency\nname": "Lucknow North",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 463839,
-  "Lok Sabha\nconstituency": "Lucknow"
- },
- {
-  "Constituency\nnumber": 173,
-  "Constituency\nname": "Lucknow East",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 457521,
-  "Lok Sabha\nconstituency": "Lucknow"
- },
- {
-  "Constituency\nnumber": 174,
-  "Constituency\nname": "Lucknow Central",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 370629,
-  "Lok Sabha\nconstituency": "Lucknow"
- },
- {
-  "Constituency\nnumber": 175,
-  "Constituency\nname": "Lucknow Cantonment",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 368156,
-  "Lok Sabha\nconstituency": "Lucknow"
- },
- {
-  "Constituency\nnumber": 176,
-  "Constituency\nname": "Mohanlalganj",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 363044,
-  "Lok Sabha\nconstituency": "Mohanlalganj"
- },
- {
-  "Constituency\nnumber": 177,
-  "Constituency\nname": "Bachhrawan",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 337025,
-  "District[7]": "Raebareli",
-  "Lok Sabha\nconstituency": "Rae Bareli"
- },
- {
-  "Constituency\nnumber": 178,
-  "Constituency\nname": "Tiloi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 351462,
-  "District[7]": "Amethi",
-  "Lok Sabha\nconstituency": "Amethi"
- },
- {
-  "Constituency\nnumber": 179,
-  "Constituency\nname": "Harchandpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 319603,
-  "District[7]": "Raebareli",
-  "Lok Sabha\nconstituency": "Rae Bareli"
- },
- {
-  "Constituency\nnumber": 180,
-  "Constituency\nname": "Rae Bareli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366267,
-  "Lok Sabha\nconstituency": "Rae Bareli"
- },
- {
-  "Constituency\nnumber": 181,
-  "Constituency\nname": "Salon",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 349294,
-  "District[7]": "Amethi",
-  "Lok Sabha\nconstituency": "Amethi"
- },
- {
-  "Constituency\nnumber": 182,
-  "Constituency\nname": "Sareni",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 371469,
-  "Lok Sabha\nconstituency": "Amethi"
- },
- {
-  "Constituency\nnumber": 183,
-  "Constituency\nname": "Unchahar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 339043,
-  "Lok Sabha\nconstituency": "Rae Bareli"
- },
- {
-  "Constituency\nnumber": 184,
-  "Constituency\nname": "Jagdishpur[c]",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 378415,
-  "Lok Sabha\nconstituency": "Amethi"
- },
- {
-  "Constituency\nnumber": 185,
-  "Constituency\nname": "Gauriganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 350093,
-  "District[7]": "Amethi",
-  "Lok Sabha\nconstituency": "Amethi"
- },
- {
-  "Constituency\nnumber": 186,
-  "Constituency\nname": "Amethi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 349837,
-  "District[7]": "Amethi",
-  "Lok Sabha\nconstituency": "Amethi"
- },
- {
-  "Constituency\nnumber": 187,
-  "Constituency\nname": "Isauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 358604,
-  "District[7]": "Sultanpur",
-  "Lok Sabha\nconstituency": "Sultanpur"
- },
- {
-  "Constituency\nnumber": 188,
-  "Constituency\nname": "Sultanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 380581,
-  "Lok Sabha\nconstituency": "Sultanpur"
- },
- {
-  "Constituency\nnumber": 189,
-  "Constituency\nname": "Sadar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 344326,
-  "Lok Sabha\nconstituency": "Sultanpur"
- },
- {
-  "Constituency\nnumber": 190,
-  "Constituency\nname": "Lambhua",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 369085,
-  "Lok Sabha\nconstituency": "Sultanpur"
- },
- {
-  "Constituency\nnumber": 191,
-  "Constituency\nname": "Kadipur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 379507,
-  "Lok Sabha\nconstituency": "Sultanpur"
- },
- {
-  "Constituency\nnumber": 192,
-  "Constituency\nname": "Kaimganj",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 392514,
-  "District[7]": "Farrukhabad",
-  "Lok Sabha\nconstituency": "Farrukhabad"
- },
- {
-  "Constituency\nnumber": 193,
-  "Constituency\nname": "Amritpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 314663,
-  "Lok Sabha\nconstituency": "Farrukhabad"
- },
- {
-  "Constituency\nnumber": 194,
-  "Constituency\nname": "Farrukhabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 372555,
-  "Lok Sabha\nconstituency": "Farrukhabad"
- },
- {
-  "Constituency\nnumber": 195,
-  "Constituency\nname": "Bhojpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 319917,
-  "Lok Sabha\nconstituency": "Farrukhabad"
- },
- {
-  "Constituency\nnumber": 196,
-  "Constituency\nname": "Chhibramau",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 463433,
-  "District[7]": "Kannauj",
-  "Lok Sabha\nconstituency": "Kannauj"
- },
- {
-  "Constituency\nnumber": 197,
-  "Constituency\nname": "Tirwa",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 380571,
-  "Lok Sabha\nconstituency": "Kannauj"
- },
- {
-  "Constituency\nnumber": 198,
-  "Constituency\nname": "Kannauj",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 428851,
-  "Lok Sabha\nconstituency": "Kannauj"
- },
- {
-  "Constituency\nnumber": 199,
-  "Constituency\nname": "Jaswantnagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 392072,
-  "District[7]": "Etawah",
-  "Lok Sabha\nconstituency": "Mainpuri"
- },
- {
-  "Constituency\nnumber": 200,
-  "Constituency\nname": "Etawah",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 406509,
-  "Lok Sabha\nconstituency": "Etawah"
- },
- {
-  "Constituency\nnumber": 201,
-  "Constituency\nname": "Bharthana",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 407642,
-  "Lok Sabha\nconstituency": "Etawah"
- },
- {
-  "Constituency\nnumber": 202,
-  "Constituency\nname": "Bidhuna",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 364682,
-  "District[7]": "Auraiya",
-  "Lok Sabha\nconstituency": "Kannauj"
- },
- {
-  "Constituency\nnumber": 203,
-  "Constituency\nname": "Dibiyapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 323150,
-  "Lok Sabha\nconstituency": "Etawah"
- },
- {
-  "Constituency\nnumber": 204,
-  "Constituency\nname": "Auraiya",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 332885,
-  "Lok Sabha\nconstituency": "Etawah"
- },
- {
-  "Constituency\nnumber": 205,
-  "Constituency\nname": "Rasulabad",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 323657,
-  "District[7]": "Kanpur Dehat",
-  "Lok Sabha\nconstituency": "Kannauj"
- },
- {
-  "Constituency\nnumber": 206,
-  "Constituency\nname": "Akbarpur-Raniya",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 327275,
-  "Lok Sabha\nconstituency": "Akbarpur"
- },
- {
-  "Constituency\nnumber": 207,
-  "Constituency\nname": "Sikandra",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 331601,
-  "Lok Sabha\nconstituency": "Etawah"
- },
- {
-  "Constituency\nnumber": 208,
-  "Constituency\nname": "Bhognipur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 350293,
-  "Lok Sabha\nconstituency": "Jalaun"
- },
- {
-  "Constituency\nnumber": 209,
-  "Constituency\nname": "Bilhaur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 392993,
-  "District[7]": "Kanpur Nagar",
-  "Lok Sabha\nconstituency": "Misrikh"
- },
- {
-  "Constituency\nnumber": 210,
-  "Constituency\nname": "Bithoor",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 368419,
-  "Lok Sabha\nconstituency": "Akbarpur"
- },
- {
-  "Constituency\nnumber": 211,
-  "Constituency\nname": "Kalyanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355100,
-  "Lok Sabha\nconstituency": "Akbarpur"
- },
- {
-  "Constituency\nnumber": 212,
-  "Constituency\nname": "Govind Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 351663,
-  "Lok Sabha\nconstituency": "Kanpur"
- },
- {
-  "Constituency\nnumber": 213,
-  "Constituency\nname": "Sishamau",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 274888,
-  "Lok Sabha\nconstituency": "Kanpur"
- },
- {
-  "Constituency\nnumber": 214,
-  "Constituency\nname": "Arya Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 298520,
-  "Lok Sabha\nconstituency": "Kanpur"
- },
- {
-  "Constituency\nnumber": 215,
-  "Constituency\nname": "Kidwai Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 348846,
-  "Lok Sabha\nconstituency": "Kanpur"
- },
- {
-  "Constituency\nnumber": 216,
-  "Constituency\nname": "Kanpur Cantonment",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 361855,
-  "Lok Sabha\nconstituency": "Kanpur"
- },
- {
-  "Constituency\nnumber": 217,
-  "Constituency\nname": "Maharajpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 448458,
-  "Lok Sabha\nconstituency": "Akbarpur"
- },
- {
-  "Constituency\nnumber": 218,
-  "Constituency\nname": "Ghatampur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 324443,
-  "Lok Sabha\nconstituency": "Akbarpur"
- },
- {
-  "Constituency\nnumber": 219,
-  "Constituency\nname": "Madhogarh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 445421,
-  "District[7]": "Jalaun",
-  "Lok Sabha\nconstituency": "Jalaun"
- },
- {
-  "Constituency\nnumber": 220,
-  "Constituency\nname": "Kalpi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 394653,
-  "Lok Sabha\nconstituency": "Jalaun"
- },
- {
-  "Constituency\nnumber": 221,
-  "Constituency\nname": "Orai",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 444977,
-  "Lok Sabha\nconstituency": "Jalaun"
- },
- {
-  "Constituency\nnumber": 222,
-  "Constituency\nname": "Babina",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 331743,
-  "District[7]": "Jhansi",
-  "Lok Sabha\nconstituency": "Jhansi"
- },
- {
-  "Constituency\nnumber": 223,
-  "Constituency\nname": "Jhansi Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 422164,
-  "Lok Sabha\nconstituency": "Jhansi"
- },
- {
-  "Constituency\nnumber": 224,
-  "Constituency\nname": "Mauranipur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 413770,
-  "Lok Sabha\nconstituency": "Jhansi"
- },
- {
-  "Constituency\nnumber": 225,
-  "Constituency\nname": "Garautha",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 351859,
-  "Lok Sabha\nconstituency": "Jalaun"
- },
- {
-  "Constituency\nnumber": 226,
-  "Constituency\nname": "Lalitpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 487976,
-  "District[7]": "Lalitpur",
-  "Lok Sabha\nconstituency": "Jhansi"
- },
- {
-  "Constituency\nnumber": 227,
-  "Constituency\nname": "Mehroni",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 449905,
-  "Lok Sabha\nconstituency": "Jhansi"
- },
- {
-  "Constituency\nnumber": 228,
-  "Constituency\nname": "Hamirpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 412700,
-  "District[7]": "Hamirpur",
-  "Lok Sabha\nconstituency": "Hamirpur"
- },
- {
-  "Constituency\nnumber": 229,
-  "Constituency\nname": "Rath",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 399594,
-  "Lok Sabha\nconstituency": "Hamirpur"
- },
- {
-  "Constituency\nnumber": 230,
-  "Constituency\nname": "Mahoba",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 316799,
-  "District[7]": "Mahoba",
-  "Lok Sabha\nconstituency": "Hamirpur"
- },
- {
-  "Constituency\nnumber": 231,
-  "Constituency\nname": "Charkhari",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 346471,
-  "Lok Sabha\nconstituency": "Hamirpur"
- },
- {
-  "Constituency\nnumber": 232,
-  "Constituency\nname": "Tindwari",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 318385,
-  "District[7]": "Banda",
-  "Lok Sabha\nconstituency": "Hamirpur"
- },
- {
-  "Constituency\nnumber": 233,
-  "Constituency\nname": "Baberu",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338211,
-  "Lok Sabha\nconstituency": "Banda"
- },
- {
-  "Constituency\nnumber": 234,
-  "Constituency\nname": "Naraini",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 342361,
-  "Lok Sabha\nconstituency": "Banda"
- },
- {
-  "Constituency\nnumber": 235,
-  "Constituency\nname": "Banda",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 310282,
-  "Lok Sabha\nconstituency": "Banda"
- },
- {
-  "Constituency\nnumber": 236,
-  "Constituency\nname": "Chitrakoot",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 375123,
-  "District[7]": "Chitrakoot",
-  "Lok Sabha\nconstituency": "Banda"
- },
- {
-  "Constituency\nnumber": 237,
-  "Constituency\nname": "Manikpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338989,
-  "Lok Sabha\nconstituency": "Banda"
- },
- {
-  "Constituency\nnumber": 238,
-  "Constituency\nname": "Jahanabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 311482,
-  "District[7]": "Fatehpur",
-  "Lok Sabha\nconstituency": "Fatehpur"
- },
- {
-  "Constituency\nnumber": 239,
-  "Constituency\nname": "Bindki",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 312930,
-  "Lok Sabha\nconstituency": "Fatehpur"
- },
- {
-  "Constituency\nnumber": 240,
-  "Constituency\nname": "Fatehpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 357518,
-  "Lok Sabha\nconstituency": "Fatehpur"
- },
- {
-  "Constituency\nnumber": 241,
-  "Constituency\nname": "Ayah Shah",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 274485,
-  "Lok Sabha\nconstituency": "Fatehpur"
- },
- {
-  "Constituency\nnumber": 242,
-  "Constituency\nname": "Husainganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 304518,
-  "Lok Sabha\nconstituency": "Fatehpur"
- },
- {
-  "Constituency\nnumber": 243,
-  "Constituency\nname": "Khaga",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 342812,
-  "Lok Sabha\nconstituency": "Fatehpur"
- },
- {
-  "Constituency\nnumber": 244,
-  "Constituency\nname": "Rampur Khas",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 320772,
-  "District[7]": "Pratapgarh",
-  "Lok Sabha\nconstituency": "Pratapgarh"
- },
- {
-  "Constituency\nnumber": 245,
-  "Constituency\nname": "Babaganj",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 319665,
-  "Lok Sabha\nconstituency": "Kaushambi"
- },
- {
-  "Constituency\nnumber": 246,
-  "Constituency\nname": "Kunda",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 357938,
-  "Lok Sabha\nconstituency": "Kaushambi"
- },
- {
-  "Constituency\nnumber": 247,
-  "Constituency\nname": "Vishwanathganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 399623,
-  "Lok Sabha\nconstituency": "Pratapgarh"
- },
- {
-  "Constituency\nnumber": 248,
-  "Constituency\nname": "Pratapgarh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355158,
-  "Lok Sabha\nconstituency": "Pratapgarh"
- },
- {
-  "Constituency\nnumber": 249,
-  "Constituency\nname": "Patti",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366452,
-  "Lok Sabha\nconstituency": "Pratapgarh"
- },
- {
-  "Constituency\nnumber": 250,
-  "Constituency\nname": "Raniganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 336072,
-  "Lok Sabha\nconstituency": "Pratapgarh"
- },
- {
-  "Constituency\nnumber": 251,
-  "Constituency\nname": "Sirathu",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 381662,
-  "District[7]": "Kaushambi",
-  "Lok Sabha\nconstituency": "Kaushambi"
- },
- {
-  "Constituency\nnumber": 252,
-  "Constituency\nname": "Manjhanpur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 416731,
-  "Lok Sabha\nconstituency": "Kaushambi"
- },
- {
-  "Constituency\nnumber": 253,
-  "Constituency\nname": "Chail",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 387838,
-  "Lok Sabha\nconstituency": "Kaushambi"
- },
- {
-  "Constituency\nnumber": 254,
-  "Constituency\nname": "Phaphamau",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366164,
-  "District[7]": "Prayagraj",
-  "Lok Sabha\nconstituency": "Phulpur"
- },
- {
-  "Constituency\nnumber": 255,
-  "Constituency\nname": "Soraon",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 380283,
-  "Lok Sabha\nconstituency": "Phulpur"
- },
- {
-  "Constituency\nnumber": 256,
-  "Constituency\nname": "Phulpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 408793,
-  "Lok Sabha\nconstituency": "Phulpur"
- },
- {
-  "Constituency\nnumber": 257,
-  "Constituency\nname": "Pratappur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 406567,
-  "Lok Sabha\nconstituency": "Bhadohi"
- },
- {
-  "Constituency\nnumber": 258,
-  "Constituency\nname": "Handia",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 401042,
-  "Lok Sabha\nconstituency": "Bhadohi"
- },
- {
-  "Constituency\nnumber": 259,
-  "Constituency\nname": "Meja",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 325904,
-  "Lok Sabha\nconstituency": "Prayagraj"
- },
- {
-  "Constituency\nnumber": 260,
-  "Constituency\nname": "Karachhana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 349959,
-  "Lok Sabha\nconstituency": "Prayagraj"
- },
- {
-  "Constituency\nnumber": 261,
-  "Constituency\nname": "Prayagraj West",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 459599,
-  "Lok Sabha\nconstituency": "Phulpur"
- },
- {
-  "Constituency\nnumber": 262,
-  "Constituency\nname": "Prayagraj North",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 442351,
-  "Lok Sabha\nconstituency": "Phulpur"
- },
- {
-  "Constituency\nnumber": 263,
-  "Constituency\nname": "Prayagraj South",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 408293,
-  "Lok Sabha\nconstituency": "Prayagraj"
- },
- {
-  "Constituency\nnumber": 264,
-  "Constituency\nname": "Bara",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 334880,
-  "Lok Sabha\nconstituency": "Prayagraj"
- },
- {
-  "Constituency\nnumber": 265,
-  "Constituency\nname": "Koraon",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 351637,
-  "Lok Sabha\nconstituency": "Prayagraj"
- },
- {
-  "Constituency\nnumber": 266,
-  "Constituency\nname": "Kursi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 395071,
-  "District[7]": "Barabanki",
-  "Lok Sabha\nconstituency": "Barabanki"
- },
- {
-  "Constituency\nnumber": 267,
-  "Constituency\nname": "Ram Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338326,
-  "Lok Sabha\nconstituency": "Barabanki"
- },
- {
-  "Constituency\nnumber": 268,
-  "Constituency\nname": "Barabanki",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 392184,
-  "Lok Sabha\nconstituency": "Barabanki"
- },
- {
-  "Constituency\nnumber": 269,
-  "Constituency\nname": "Zaidpur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 396995,
-  "Lok Sabha\nconstituency": "Barabanki"
- },
- {
-  "Constituency\nnumber": 270,
-  "Constituency\nname": "Dariyabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 412472,
-  "Lok Sabha\nconstituency": "Ayodhya"
- },
- {
-  "Constituency\nnumber": 271,
-  "Constituency\nname": "Rudauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 356678,
-  "District[7]": "Ayodhya",
-  "Lok Sabha\nconstituency": "Ayodhya"
- },
- {
-  "Constituency\nnumber": 272,
-  "Constituency\nname": "Haidergarh",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 349784,
-  "District[7]": "Barabanki",
-  "Lok Sabha\nconstituency": "Barabanki"
- },
- {
-  "Constituency\nnumber": 273,
-  "Constituency\nname": "Milkipur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 358203,
-  "District[7]": "Ayodhya",
-  "Lok Sabha\nconstituency": "Ayodhya"
- },
- {
-  "Constituency\nnumber": 274,
-  "Constituency\nname": "Bikapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 380107,
-  "Lok Sabha\nconstituency": "Ayodhya"
- },
- {
-  "Constituency\nnumber": 275,
-  "Constituency\nname": "Ayodhya",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 382056,
-  "Lok Sabha\nconstituency": "Ayodhya"
- },
- {
-  "Constituency\nnumber": 276,
-  "Constituency\nname": "Goshainganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 395118,
-  "Lok Sabha\nconstituency": "Ambedkar Nagar"
- },
- {
-  "Constituency\nnumber": 277,
-  "Constituency\nname": "Katehari",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 394267,
-  "District[7]": "Ambedkar Nagar",
-  "Lok Sabha\nconstituency": "Ambedkar Nagar"
- },
- {
-  "Constituency\nnumber": 278,
-  "Constituency\nname": "Tanda",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 329754,
-  "Lok Sabha\nconstituency": "Ambedkar Nagar"
- },
- {
-  "Constituency\nnumber": 279,
-  "Constituency\nname": "Alapur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 339969,
-  "Lok Sabha\nconstituency": "Sant Kabir Nagar"
- },
- {
-  "Constituency\nnumber": 280,
-  "Constituency\nname": "Jalalpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 407064,
-  "Lok Sabha\nconstituency": "Ambedkar Nagar"
- },
- {
-  "Constituency\nnumber": 281,
-  "Constituency\nname": "Akbarpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 332577,
-  "Lok Sabha\nconstituency": "Ambedkar Nagar"
- },
- {
-  "Constituency\nnumber": 282,
-  "Constituency\nname": "Balha",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 362718,
-  "District[7]": "Bahraich",
-  "Lok Sabha\nconstituency": "Bahraich"
- },
- {
-  "Constituency\nnumber": 283,
-  "Constituency\nname": "Nanpara",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 343881,
-  "Lok Sabha\nconstituency": "Bahraich"
- },
- {
-  "Constituency\nnumber": 284,
-  "Constituency\nname": "Matera",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 342204,
-  "Lok Sabha\nconstituency": "Bahraich"
- },
- {
-  "Constituency\nnumber": 285,
-  "Constituency\nname": "Mahasi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 339363,
-  "Lok Sabha\nconstituency": "Bahraich"
- },
- {
-  "Constituency\nnumber": 286,
-  "Constituency\nname": "Bahraich",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 391794,
-  "Lok Sabha\nconstituency": "Bahraich"
- },
- {
-  "Constituency\nnumber": 287,
-  "Constituency\nname": "Payagpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 390097,
-  "Lok Sabha\nconstituency": "Kaiserganj"
- },
- {
-  "Constituency\nnumber": 288,
-  "Constituency\nname": "Kaiserganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 390653,
-  "Lok Sabha\nconstituency": "Kaiserganj"
- },
- {
-  "Constituency\nnumber": 289,
-  "Constituency\nname": "Bhinga",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 393315,
-  "District[7]": "Shrawasti",
-  "Lok Sabha\nconstituency": "Shrawasti"
- },
- {
-  "Constituency\nnumber": 290,
-  "Constituency\nname": "Shrawasti",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 416147,
-  "Lok Sabha\nconstituency": "Shrawasti"
- },
- {
-  "Constituency\nnumber": 291,
-  "Constituency\nname": "Tulsipur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 383960,
-  "District[7]": "Balrampur",
-  "Lok Sabha\nconstituency": "Shrawasti"
- },
- {
-  "Constituency\nnumber": 292,
-  "Constituency\nname": "Gainsari",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 365598,
-  "Lok Sabha\nconstituency": "Shrawasti"
- },
- {
-  "Constituency\nnumber": 293,
-  "Constituency\nname": "Utraula",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 435310,
-  "Lok Sabha\nconstituency": "Gonda"
- },
- {
-  "Constituency\nnumber": 294,
-  "Constituency\nname": "Balrampur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 428009,
-  "Lok Sabha\nconstituency": "Shrawasti"
- },
- {
-  "Constituency\nnumber": 295,
-  "Constituency\nname": "Mehnaun",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366079,
-  "District[7]": "Gonda",
-  "Lok Sabha\nconstituency": "Gonda"
- },
- {
-  "Constituency\nnumber": 296,
-  "Constituency\nname": "Gonda",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 347946,
-  "Lok Sabha\nconstituency": "Gonda"
- },
- {
-  "Constituency\nnumber": 297,
-  "Constituency\nname": "Katra Bazar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 387612,
-  "Lok Sabha\nconstituency": "Kaiserganj"
- },
- {
-  "Constituency\nnumber": 298,
-  "Constituency\nname": "Colonelganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 330403,
-  "Lok Sabha\nconstituency": "Kaiserganj"
- },
- {
-  "Constituency\nnumber": 299,
-  "Constituency\nname": "Tarabganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 367243,
-  "Lok Sabha\nconstituency": "Kaiserganj"
- },
- {
-  "Constituency\nnumber": 300,
-  "Constituency\nname": "Mankapur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 331841,
-  "Lok Sabha\nconstituency": "Gonda"
- },
- {
-  "Constituency\nnumber": 301,
-  "Constituency\nname": "Gaura",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 320821,
-  "Lok Sabha\nconstituency": "Gonda"
- },
- {
-  "Constituency\nnumber": 302,
-  "Constituency\nname": "Shohratgarh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 359244,
-  "District[7]": "Siddharthnagar",
-  "Lok Sabha\nconstituency": "Domariyaganj"
- },
- {
-  "Constituency\nnumber": 303,
-  "Constituency\nname": "Kapilvastu",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 452988,
-  "Lok Sabha\nconstituency": "Domariyaganj"
- },
- {
-  "Constituency\nnumber": 304,
-  "Constituency\nname": "Bansi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 381240,
-  "Lok Sabha\nconstituency": "Domariyaganj"
- },
- {
-  "Constituency\nnumber": 305,
-  "Constituency\nname": "Itwa",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 336392,
-  "Lok Sabha\nconstituency": "Domariyaganj"
- },
- {
-  "Constituency\nnumber": 306,
-  "Constituency\nname": "Domariyaganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 409760,
-  "Lok Sabha\nconstituency": "Domariyaganj"
- },
- {
-  "Constituency\nnumber": 307,
-  "Constituency\nname": "Harraiya",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 388924,
-  "District[7]": "Basti",
-  "Lok Sabha\nconstituency": "Basti"
- },
- {
-  "Constituency\nnumber": 308,
-  "Constituency\nname": "Kaptanganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 365410,
-  "Lok Sabha\nconstituency": "Basti"
- },
- {
-  "Constituency\nnumber": 309,
-  "Constituency\nname": "Rudhauli",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 430608,
-  "Lok Sabha\nconstituency": "Basti"
- },
- {
-  "Constituency\nnumber": 310,
-  "Constituency\nname": "Basti Sadar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 371546,
-  "Lok Sabha\nconstituency": "Basti"
- },
- {
-  "Constituency\nnumber": 311,
-  "Constituency\nname": "Mahadewa",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 360632,
-  "Lok Sabha\nconstituency": "Basti"
- },
- {
-  "Constituency\nnumber": 312,
-  "Constituency\nname": "Menhdawal",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 457864,
-  "District[7]": "Sant Kabir Nagar",
-  "Lok Sabha\nconstituency": "Sant Kabir Nagar"
- },
- {
-  "Constituency\nnumber": 313,
-  "Constituency\nname": "Khalilabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 457995,
-  "Lok Sabha\nconstituency": "Sant Kabir Nagar"
- },
- {
-  "Constituency\nnumber": 314,
-  "Constituency\nname": "Dhanghata",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 387446,
-  "Lok Sabha\nconstituency": "Sant Kabir Nagar"
- },
- {
-  "Constituency\nnumber": 315,
-  "Constituency\nname": "Pharenda",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 351362,
-  "District[7]": "Maharajganj",
-  "Lok Sabha\nconstituency": "Maharajganj"
- },
- {
-  "Constituency\nnumber": 316,
-  "Constituency\nname": "Nautanwa",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366588,
-  "Lok Sabha\nconstituency": "Maharajganj"
- },
- {
-  "Constituency\nnumber": 317,
-  "Constituency\nname": "Siswa",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 389369,
-  "Lok Sabha\nconstituency": "Maharajganj"
- },
- {
-  "Constituency\nnumber": 318,
-  "Constituency\nname": "Maharajganj",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 413958,
-  "Lok Sabha\nconstituency": "Maharajganj"
- },
- {
-  "Constituency\nnumber": 319,
-  "Constituency\nname": "Paniyara",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 423585,
-  "Lok Sabha\nconstituency": "Maharajganj"
- },
- {
-  "Constituency\nnumber": 320,
-  "Constituency\nname": "Caimpiyarganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 383702,
-  "District[7]": "Gorakhpur",
-  "Lok Sabha\nconstituency": "Gorakhpur"
- },
- {
-  "Constituency\nnumber": 321,
-  "Constituency\nname": "Pipraich",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 406778,
-  "Lok Sabha\nconstituency": "Gorakhpur"
- },
- {
-  "Constituency\nnumber": 322,
-  "Constituency\nname": "Gorakhpur Urban",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 464784,
-  "Lok Sabha\nconstituency": "Gorakhpur"
- },
- {
-  "Constituency\nnumber": 323,
-  "Constituency\nname": "Gorakhpur Rural",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 419269,
-  "Lok Sabha\nconstituency": "Gorakhpur"
- },
- {
-  "Constituency\nnumber": 324,
-  "Constituency\nname": "Sahajanwa",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 379627,
-  "Lok Sabha\nconstituency": "Gorakhpur"
- },
- {
-  "Constituency\nnumber": 325,
-  "Constituency\nname": "Khajani",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 380081,
-  "Lok Sabha\nconstituency": "Sant Kabir Nagar"
- },
- {
-  "Constituency\nnumber": 326,
-  "Constituency\nname": "Chauri-Chaura",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 355127,
-  "Lok Sabha\nconstituency": "Bansgaon"
- },
- {
-  "Constituency\nnumber": 327,
-  "Constituency\nname": "Bansgaon",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 381065,
-  "Lok Sabha\nconstituency": "Bansgaon"
- },
- {
-  "Constituency\nnumber": 328,
-  "Constituency\nname": "Chillupar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 429908,
-  "Lok Sabha\nconstituency": "Bansgaon"
- },
- {
-  "Constituency\nnumber": 329,
-  "Constituency\nname": "Khadda",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 340053,
-  "District[7]": "Kushinagar",
-  "Lok Sabha\nconstituency": "Kushi Nagar"
- },
- {
-  "Constituency\nnumber": 330,
-  "Constituency\nname": "Padrauna",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 382530,
-  "Lok Sabha\nconstituency": "Kushi Nagar"
- },
- {
-  "Constituency\nnumber": 331,
-  "Constituency\nname": "Tamkuhi Raj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 400300,
-  "Lok Sabha\nconstituency": "Deoria"
- },
- {
-  "Constituency\nnumber": 332,
-  "Constituency\nname": "Fazilnagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 400053,
-  "Lok Sabha\nconstituency": "Deoria"
- },
- {
-  "Constituency\nnumber": 333,
-  "Constituency\nname": "Kushinagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 373232,
-  "Lok Sabha\nconstituency": "Kushi Nagar"
- },
- {
-  "Constituency\nnumber": 334,
-  "Constituency\nname": "Hata",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 373470,
-  "Lok Sabha\nconstituency": "Kushi Nagar"
- },
- {
-  "Constituency\nnumber": 335,
-  "Constituency\nname": "Ramkola",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 371916,
-  "Lok Sabha\nconstituency": "Kushi Nagar"
- },
- {
-  "Constituency\nnumber": 336,
-  "Constituency\nname": "Rudrapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 321349,
-  "District[7]": "Deoria",
-  "Lok Sabha\nconstituency": "Bansgaon"
- },
- {
-  "Constituency\nnumber": 337,
-  "Constituency\nname": "Deoria",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 351651,
-  "Lok Sabha\nconstituency": "Deoria"
- },
- {
-  "Constituency\nnumber": 338,
-  "Constituency\nname": "Pathardeva",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338872,
-  "Lok Sabha\nconstituency": "Deoria"
- },
- {
-  "Constituency\nnumber": 339,
-  "Constituency\nname": "Rampur Karkhana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 356278,
-  "Lok Sabha\nconstituency": "Deoria"
- },
- {
-  "Constituency\nnumber": 340,
-  "Constituency\nname": "Bhatpar Rani",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 338287,
-  "Lok Sabha\nconstituency": "Salempur"
- },
- {
-  "Constituency\nnumber": 341,
-  "Constituency\nname": "Salempur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 344224,
-  "Lok Sabha\nconstituency": "Salempur"
- },
- {
-  "Constituency\nnumber": 342,
-  "Constituency\nname": "Barhaj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 318521,
-  "Lok Sabha\nconstituency": "Bansgaon"
- },
- {
-  "Constituency\nnumber": 343,
-  "Constituency\nname": "Atrauliya",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 380092,
-  "District[7]": "Azamgarh",
-  "Lok Sabha\nconstituency": "Lalganj"
- },
- {
-  "Constituency\nnumber": 344,
-  "Constituency\nname": "Gopalpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 350363,
-  "Lok Sabha\nconstituency": "Azamgarh"
- },
- {
-  "Constituency\nnumber": 345,
-  "Constituency\nname": "Sagri",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 336378,
-  "Lok Sabha\nconstituency": "Azamgarh"
- },
- {
-  "Constituency\nnumber": 346,
-  "Constituency\nname": "Mubarakpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 354153,
-  "Lok Sabha\nconstituency": "Azamgarh"
- },
- {
-  "Constituency\nnumber": 347,
-  "Constituency\nname": "Azamgarh",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 396271,
-  "Lok Sabha\nconstituency": "Azamgarh"
- },
- {
-  "Constituency\nnumber": 348,
-  "Constituency\nname": "Nizamabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 327480,
-  "Lok Sabha\nconstituency": "Lalganj"
- },
- {
-  "Constituency\nnumber": 349,
-  "Constituency\nname": "Phoolpur Pawai",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 328807,
-  "Lok Sabha\nconstituency": "Lalganj"
- },
- {
-  "Constituency\nnumber": 350,
-  "Constituency\nname": "Didarganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 365522,
-  "Lok Sabha\nconstituency": "Lalganj"
- },
- {
-  "Constituency\nnumber": 351,
-  "Constituency\nname": "Lalganj",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 407539,
-  "Lok Sabha\nconstituency": "Lalganj"
- },
- {
-  "Constituency\nnumber": 352,
-  "Constituency\nname": "Mehnagar",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 404280,
-  "Lok Sabha\nconstituency": "Azamgarh"
- },
- {
-  "Constituency\nnumber": 353,
-  "Constituency\nname": "Madhuban",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 403798,
-  "District[7]": "Mau",
-  "Lok Sabha\nconstituency": "Ghosi"
- },
- {
-  "Constituency\nnumber": 354,
-  "Constituency\nname": "Ghosi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 438832,
-  "Lok Sabha\nconstituency": "Ghosi"
- },
- {
-  "Constituency\nnumber": 355,
-  "Constituency\nname": "Muhammadabad-Gohna",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 380470,
-  "Lok Sabha\nconstituency": "Ghosi"
- },
- {
-  "Constituency\nnumber": 356,
-  "Constituency\nname": "Mau",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 481715,
-  "Lok Sabha\nconstituency": "Ghosi"
- },
- {
-  "Constituency\nnumber": 357,
-  "Constituency\nname": "Belthara Road",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 358231,
-  "District[7]": "Ballia",
-  "Lok Sabha\nconstituency": "Salempur"
- },
- {
-  "Constituency\nnumber": 358,
-  "Constituency\nname": "Rasara",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 356377,
-  "Lok Sabha\nconstituency": "Ghosi"
- },
- {
-  "Constituency\nnumber": 359,
-  "Constituency\nname": "Sikanderpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 307974,
-  "Lok Sabha\nconstituency": "Salempur"
- },
- {
-  "Constituency\nnumber": 360,
-  "Constituency\nname": "Phephana",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 331153,
-  "Lok Sabha\nconstituency": "Ballia"
- },
- {
-  "Constituency\nnumber": 361,
-  "Constituency\nname": "Ballia Nagar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 375300,
-  "Lok Sabha\nconstituency": "Ballia"
- },
- {
-  "Constituency\nnumber": 362,
-  "Constituency\nname": "Bansdih",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 408263,
-  "Lok Sabha\nconstituency": "Salempur"
- },
- {
-  "Constituency\nnumber": 363,
-  "Constituency\nname": "Bairia",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 367176,
-  "Lok Sabha\nconstituency": "Ballia"
- },
- {
-  "Constituency\nnumber": 364,
-  "Constituency\nname": "Badlapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 351356,
-  "District[7]": "Jaunpur",
-  "Lok Sabha\nconstituency": "Jaunpur"
- },
- {
-  "Constituency\nnumber": 365,
-  "Constituency\nname": "Shahganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 407439,
-  "Lok Sabha\nconstituency": "Jaunpur"
- },
- {
-  "Constituency\nnumber": 366,
-  "Constituency\nname": "Jaunpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 435634,
-  "Lok Sabha\nconstituency": "Jaunpur"
- },
- {
-  "Constituency\nnumber": 367,
-  "Constituency\nname": "Malhani",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 379389,
-  "Lok Sabha\nconstituency": "Jaunpur"
- },
- {
-  "Constituency\nnumber": 368,
-  "Constituency\nname": "Mungra Badshahpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 386422,
-  "Lok Sabha\nconstituency": "Jaunpur"
- },
- {
-  "Constituency\nnumber": 369,
-  "Constituency\nname": "Machhlishahr",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 402078,
-  "Lok Sabha\nconstituency": "Machhlishahr"
- },
- {
-  "Constituency\nnumber": 370,
-  "Constituency\nname": "Mariyahu",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 337483,
-  "Lok Sabha\nconstituency": "Machhlishahr"
- },
- {
-  "Constituency\nnumber": 371,
-  "Constituency\nname": "Zafrabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 398511,
-  "Lok Sabha\nconstituency": "Machhlishahr"
- },
- {
-  "Constituency\nnumber": 372,
-  "Constituency\nname": "Kerakat",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 416720,
-  "Lok Sabha\nconstituency": "Machhlishahr"
- },
- {
-  "Constituency\nnumber": 373,
-  "Constituency\nname": "Jakhanian",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 432337,
-  "District[7]": "Ghazipur",
-  "Lok Sabha\nconstituency": "Ghazipur"
- },
- {
-  "Constituency\nnumber": 374,
-  "Constituency\nname": "Saidpur",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 400659,
-  "Lok Sabha\nconstituency": "Ghazipur"
- },
- {
-  "Constituency\nnumber": 375,
-  "Constituency\nname": "Ghazipur Sadar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 365238,
-  "Lok Sabha\nconstituency": "Ghazipur"
- },
- {
-  "Constituency\nnumber": 376,
-  "Constituency\nname": "Jangipur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 376819,
-  "Lok Sabha\nconstituency": "Ghazipur"
- },
- {
-  "Constituency\nnumber": 377,
-  "Constituency\nname": "Zahoorabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 407091,
-  "Lok Sabha\nconstituency": "Ballia"
- },
- {
-  "Constituency\nnumber": 378,
-  "Constituency\nname": "Mohammadabad",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 424837,
-  "Lok Sabha\nconstituency": "Ballia"
- },
- {
-  "Constituency\nnumber": 379,
-  "Constituency\nname": "Zamania",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 425978,
-  "Lok Sabha\nconstituency": "Ghazipur"
- },
- {
-  "Constituency\nnumber": 380,
-  "Constituency\nname": "Mughalsarai",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 400830,
-  "District[7]": "Chandauli",
-  "Lok Sabha\nconstituency": "Chandauli"
- },
- {
-  "Constituency\nnumber": 381,
-  "Constituency\nname": "Sakaldiha",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 335828,
-  "Lok Sabha\nconstituency": "Chandauli"
- },
- {
-  "Constituency\nnumber": 382,
-  "Constituency\nname": "Saiyadraja",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 333280,
-  "Lok Sabha\nconstituency": "Chandauli"
- },
- {
-  "Constituency\nnumber": 383,
-  "Constituency\nname": "Chakia",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 378414,
-  "Lok Sabha\nconstituency": "Robertsganj"
- },
- {
-  "Constituency\nnumber": 384,
-  "Constituency\nname": "Pindra",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 373472,
-  "District[7]": "Varanasi",
-  "Lok Sabha\nconstituency": "Machhlishahr"
- },
- {
-  "Constituency\nnumber": 385,
-  "Constituency\nname": "Ajagara",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 374068,
-  "Lok Sabha\nconstituency": "Chandauli"
- },
- {
-  "Constituency\nnumber": 386,
-  "Constituency\nname": "Shivpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 374563,
-  "Lok Sabha\nconstituency": "Chandauli"
- },
- {
-  "Constituency\nnumber": 387,
-  "Constituency\nname": "Rohaniya",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 408653,
-  "Lok Sabha\nconstituency": "Varanasi"
- },
- {
-  "Constituency\nnumber": 388,
-  "Constituency\nname": "Varanasi North",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 427134,
-  "Lok Sabha\nconstituency": "Varanasi"
- },
- {
-  "Constituency\nnumber": 389,
-  "Constituency\nname": "Varanasi South",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 323551,
-  "Lok Sabha\nconstituency": "Varanasi"
- },
- {
-  "Constituency\nnumber": 390,
-  "Constituency\nname": "Varanasi Cantt.",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 459277,
-  "Lok Sabha\nconstituency": "Varanasi"
- },
- {
-  "Constituency\nnumber": 391,
-  "Constituency\nname": "Sevapuri",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 346090,
-  "Lok Sabha\nconstituency": "Varanasi"
- },
- {
-  "Constituency\nnumber": 392,
-  "Constituency\nname": "Bhadohi",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 429201,
-  "District[7]": "Bhadohi",
-  "Lok Sabha\nconstituency": "Bhadohi"
- },
- {
-  "Constituency\nnumber": 393,
-  "Constituency\nname": "Gyanpur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 390971,
-  "Lok Sabha\nconstituency": "Bhadohi"
- },
- {
-  "Constituency\nnumber": 394,
-  "Constituency\nname": "Aurai",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 377692,
-  "Lok Sabha\nconstituency": "Bhadohi"
- },
- {
-  "Constituency\nnumber": 395,
-  "Constituency\nname": "Chhanbey",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 374291,
-  "District[7]": "Mirzapur",
-  "Lok Sabha\nconstituency": "Mirzapur"
- },
- {
-  "Constituency\nnumber": 396,
-  "Constituency\nname": "Mirzapur",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 403374,
-  "Lok Sabha\nconstituency": "Mirzapur"
- },
- {
-  "Constituency\nnumber": 397,
-  "Constituency\nname": "Majhawan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 397877,
-  "Lok Sabha\nconstituency": "Mirzapur"
- },
- {
-  "Constituency\nnumber": 398,
-  "Constituency\nname": "Chunar",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 354274,
-  "Lok Sabha\nconstituency": "Mirzapur"
- },
- {
-  "Constituency\nnumber": 399,
-  "Constituency\nname": "Marihan",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 366489,
-  "Lok Sabha\nconstituency": "Mirzapur"
- },
- {
-  "Constituency\nnumber": 400,
-  "Constituency\nname": "Ghorawal",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 394231,
-  "District[7]": "Sonbhadra",
-  "Lok Sabha\nconstituency": "Robertsganj"
- },
- {
-  "Constituency\nnumber": 401,
-  "Constituency\nname": "Robertsganj",
-  "Reserved for\n(SC\/STNone)": "None",
-  "Electors\n[6]": 343485,
-  "Lok Sabha\nconstituency": "Robertsganj"
- },
- {
-  "Constituency\nnumber": 402,
-  "Constituency\nname": "Obra",
-  "Reserved for\n(SC\/STNone)": "ST",
-  "Electors\n[6]": 327556,
-  "Lok Sabha\nconstituency": "Robertsganj"
- },
- {
-  "Constituency\nnumber": 403,
-  "Constituency\nname": "Duddhi",
-  "Reserved for\n(SC\/STNone)": "SC",
-  "Electors\n[6]": 332033,
-  "Lok Sabha\nconstituency": "Robertsganj"
- }
+[
+    {
+        "Constituency\nnumber": 1,
+        "Constituency\nname": "Behat",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 372305,
+        "District[7]": "Saharanpur",
+        "Lok Sabha\nconstituency": "Saharanpur"
+    },
+    {
+        "Constituency\nnumber": 2,
+        "Constituency\nname": "Nakur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355632,
+        "Lok Sabha\nconstituency": "Kairana"
+    },
+    {
+        "Constituency\nnumber": 3,
+        "Constituency\nname": "Saharanpur Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 443592,
+        "Lok Sabha\nconstituency": "Saharanpur"
+    },
+    {
+        "Constituency\nnumber": 4,
+        "Constituency\nname": "Saharanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 359546,
+        "Lok Sabha\nconstituency": "Saharanpur"
+    },
+    {
+        "Constituency\nnumber": 5,
+        "Constituency\nname": "Deoband",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 348944,
+        "Lok Sabha\nconstituency": "Saharanpur"
+    },
+    {
+        "Constituency\nnumber": 6,
+        "Constituency\nname": "Rampur Maniharan",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 323830,
+        "Lok Sabha\nconstituency": "Saharanpur"
+    },
+    {
+        "Constituency\nnumber": 7,
+        "Constituency\nname": "Gangoh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 386148,
+        "Lok Sabha\nconstituency": "Kairana"
+    },
+    {
+        "Constituency\nnumber": 8,
+        "Constituency\nname": "Kairana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 322423,
+        "District[7]": "Shamli",
+        "Lok Sabha\nconstituency": "Kairana"
+    },
+    {
+        "Constituency\nnumber": 9,
+        "Constituency\nname": "Thana Bhawan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 326817,
+        "Lok Sabha\nconstituency": "Kairana"
+    },
+    {
+        "Constituency\nnumber": 10,
+        "Constituency\nname": "Shamli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 311974,
+        "Lok Sabha\nconstituency": "Kairana"
+    },
+    {
+        "Constituency\nnumber": 11,
+        "Constituency\nname": "Budhana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 377680,
+        "District[7]": "Muzaffarnagar",
+        "Lok Sabha\nconstituency": "Muzaffarnagar"
+    },
+    {
+        "Constituency\nnumber": 12,
+        "Constituency\nname": "Charthawal",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 331171,
+        "Lok Sabha\nconstituency": "Muzaffarnagar"
+    },
+    {
+        "Constituency\nnumber": 13,
+        "Constituency\nname": "Purqazi",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 329110,
+        "Lok Sabha\nconstituency": "Bijnor"
+    },
+    {
+        "Constituency\nnumber": 14,
+        "Constituency\nname": "Muzaffarnagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 358658,
+        "Lok Sabha\nconstituency": "Muzaffarnagar"
+    },
+    {
+        "Constituency\nnumber": 15,
+        "Constituency\nname": "Khatauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 318047,
+        "Lok Sabha\nconstituency": "Muzaffarnagar"
+    },
+    {
+        "Constituency\nnumber": 16,
+        "Constituency\nname": "Meerapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 314587,
+        "Lok Sabha\nconstituency": "Bijnor"
+    },
+    {
+        "Constituency\nnumber": 17,
+        "Constituency\nname": "Najibabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 346687,
+        "District[7]": "Bijnor",
+        "Lok Sabha\nconstituency": "Nagina"
+    },
+    {
+        "Constituency\nnumber": 18,
+        "Constituency\nname": "Nagina",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 346910,
+        "Lok Sabha\nconstituency": "Nagina"
+    },
+    {
+        "Constituency\nnumber": 19,
+        "Constituency\nname": "Barhapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 359056,
+        "Lok Sabha\nconstituency": "Moradabad"
+    },
+    {
+        "Constituency\nnumber": 20,
+        "Constituency\nname": "Dhampur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 302357,
+        "Lok Sabha\nconstituency": "Nagina"
+    },
+    {
+        "Constituency\nnumber": 21,
+        "Constituency\nname": "Nehtaur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 303720,
+        "Lok Sabha\nconstituency": "Nagina"
+    },
+    {
+        "Constituency\nnumber": 22,
+        "Constituency\nname": "Bijnor",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 390546,
+        "Lok Sabha\nconstituency": "Bijnor"
+    },
+    {
+        "Constituency\nnumber": 23,
+        "Constituency\nname": "Chandpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 325858,
+        "Lok Sabha\nconstituency": "Bijnor"
+    },
+    {
+        "Constituency\nnumber": 24,
+        "Constituency\nname": "Noorpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 324486,
+        "Lok Sabha\nconstituency": "Nagina"
+    },
+    {
+        "Constituency\nnumber": 25,
+        "Constituency\nname": "Kanth",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 390562,
+        "District[7]": "Moradabad",
+        "Lok Sabha\nconstituency": "Moradabad"
+    },
+    {
+        "Constituency\nnumber": 26,
+        "Constituency\nname": "Thakurdwara",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 372490,
+        "Lok Sabha\nconstituency": "Moradabad"
+    },
+    {
+        "Constituency\nnumber": 27,
+        "Constituency\nname": "Moradabad Rural",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 389729,
+        "Lok Sabha\nconstituency": "Moradabad"
+    },
+    {
+        "Constituency\nnumber": 28,
+        "Constituency\nname": "Moradabad Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 529243,
+        "Lok Sabha\nconstituency": "Moradabad"
+    },
+    {
+        "Constituency\nnumber": 29,
+        "Constituency\nname": "Kundarki",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 380673,
+        "Lok Sabha\nconstituency": "Sambhal"
+    },
+    {
+        "Constituency\nnumber": 30,
+        "Constituency\nname": "Bilari[a]",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 359209,
+        "Lok Sabha\nconstituency": "Sambhal"
+    },
+    {
+        "Constituency\nnumber": 31,
+        "Constituency\nname": "Chandausi",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 383406,
+        "District[7]": "Sambhal",
+        "Lok Sabha\nconstituency": "Sambhal"
+    },
+    {
+        "Constituency\nnumber": 32,
+        "Constituency\nname": "Asmoli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 379352,
+        "Lok Sabha\nconstituency": "Sambhal"
+    },
+    {
+        "Constituency\nnumber": 33,
+        "Constituency\nname": "Sambhal",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 379786,
+        "Lok Sabha\nconstituency": "Sambhal"
+    },
+    {
+        "Constituency\nnumber": 34,
+        "Constituency\nname": "Suar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 307421,
+        "District[7]": "Rampur",
+        "Lok Sabha\nconstituency": "Rampur"
+    },
+    {
+        "Constituency\nnumber": 35,
+        "Constituency\nname": "Chamraua",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 307984,
+        "Lok Sabha\nconstituency": "Rampur"
+    },
+    {
+        "Constituency\nnumber": 36,
+        "Constituency\nname": "Bilaspur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 345202,
+        "Lok Sabha\nconstituency": "Rampur"
+    },
+    {
+        "Constituency\nnumber": 37,
+        "Constituency\nname": "Rampur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 388175,
+        "Lok Sabha\nconstituency": "Rampur"
+    },
+    {
+        "Constituency\nnumber": 38,
+        "Constituency\nname": "Milak",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 357452,
+        "Lok Sabha\nconstituency": "Rampur"
+    },
+    {
+        "Constituency\nnumber": 39,
+        "Constituency\nname": "Dhanaura",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 346449,
+        "District[7]": "Amroha",
+        "Lok Sabha\nconstituency": "Amroha"
+    },
+    {
+        "Constituency\nnumber": 40,
+        "Constituency\nname": "Naugawan Sadat",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 328672,
+        "Lok Sabha\nconstituency": "Amroha"
+    },
+    {
+        "Constituency\nnumber": 41,
+        "Constituency\nname": "Amroha",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 313755,
+        "Lok Sabha\nconstituency": "Amroha"
+    },
+    {
+        "Constituency\nnumber": 42,
+        "Constituency\nname": "Hasanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 364215,
+        "Lok Sabha\nconstituency": "Amroha"
+    },
+    {
+        "Constituency\nnumber": 43,
+        "Constituency\nname": "Siwalkhas",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 339738,
+        "District[7]": "Meerut",
+        "Lok Sabha\nconstituency": "Bagpat"
+    },
+    {
+        "Constituency\nnumber": 44,
+        "Constituency\nname": "Sardhana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 361816,
+        "Lok Sabha\nconstituency": "Muzaffarnagar"
+    },
+    {
+        "Constituency\nnumber": 45,
+        "Constituency\nname": "Hastinapur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 344527,
+        "Lok Sabha\nconstituency": "Bijnor"
+    },
+    {
+        "Constituency\nnumber": 46,
+        "Constituency\nname": "Kithore",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 365516,
+        "Lok Sabha\nconstituency": "Meerut"
+    },
+    {
+        "Constituency\nnumber": 47,
+        "Constituency\nname": "Meerut Cantt.",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 430144,
+        "Lok Sabha\nconstituency": "Meerut"
+    },
+    {
+        "Constituency\nnumber": 48,
+        "Constituency\nname": "Meerut",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 312368,
+        "Lok Sabha\nconstituency": "Meerut"
+    },
+    {
+        "Constituency\nnumber": 49,
+        "Constituency\nname": "Meerut South",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 481365,
+        "Lok Sabha\nconstituency": "Meerut"
+    },
+    {
+        "Constituency\nnumber": 50,
+        "Constituency\nname": "Chhaprauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 337033,
+        "District[7]": "Bagpat",
+        "Lok Sabha\nconstituency": "Bagpat"
+    },
+    {
+        "Constituency\nnumber": 51,
+        "Constituency\nname": "Baraut",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 304200,
+        "Lok Sabha\nconstituency": "Bagpat"
+    },
+    {
+        "Constituency\nnumber": 52,
+        "Constituency\nname": "Bagpat",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 316266,
+        "Lok Sabha\nconstituency": "Bagpat"
+    },
+    {
+        "Constituency\nnumber": 53,
+        "Constituency\nname": "Loni",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 513114,
+        "District[7]": "Ghaziabad",
+        "Lok Sabha\nconstituency": "Ghaziabad"
+    },
+    {
+        "Constituency\nnumber": 54,
+        "Constituency\nname": "Muradnagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 457759,
+        "Lok Sabha\nconstituency": "Ghaziabad"
+    },
+    {
+        "Constituency\nnumber": 55,
+        "Constituency\nname": "Sahibabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 1020386,
+        "Lok Sabha\nconstituency": "Ghaziabad"
+    },
+    {
+        "Constituency\nnumber": 56,
+        "Constituency\nname": "Ghaziabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 473009,
+        "Lok Sabha\nconstituency": "Ghaziabad"
+    },
+    {
+        "Constituency\nnumber": 57,
+        "Constituency\nname": "Modinagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 332327,
+        "Lok Sabha\nconstituency": "Bagpat"
+    },
+    {
+        "Constituency\nnumber": 58,
+        "Constituency\nname": "Dhaulana[b]",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 413156,
+        "District[7]": "Hapur",
+        "Lok Sabha\nconstituency": "Ghaziabad"
+    },
+    {
+        "Constituency\nnumber": 59,
+        "Constituency\nname": "Hapur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 368481,
+        "Lok Sabha\nconstituency": "Meerut"
+    },
+    {
+        "Constituency\nnumber": 60,
+        "Constituency\nname": "Garhmukteshwar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 348800,
+        "Lok Sabha\nconstituency": "Amroha"
+    },
+    {
+        "Constituency\nnumber": 61,
+        "Constituency\nname": "Noida",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 714072,
+        "District[7]": "Gautam Budh Nagar",
+        "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
+    },
+    {
+        "Constituency\nnumber": 62,
+        "Constituency\nname": "Dadri",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 606316,
+        "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
+    },
+    {
+        "Constituency\nnumber": 63,
+        "Constituency\nname": "Jewar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 352164,
+        "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
+    },
+    {
+        "Constituency\nnumber": 64,
+        "Constituency\nname": "Sikandrabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 399747,
+        "District[7]": "Bulandshahr",
+        "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
+    },
+    {
+        "Constituency\nnumber": 65,
+        "Constituency\nname": "Bulandshahr",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 399775,
+        "Lok Sabha\nconstituency": "Bulandshahr"
+    },
+    {
+        "Constituency\nnumber": 66,
+        "Constituency\nname": "Syana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 387326,
+        "Lok Sabha\nconstituency": "Bulandshahr"
+    },
+    {
+        "Constituency\nnumber": 67,
+        "Constituency\nname": "Anupshahr",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 379496,
+        "Lok Sabha\nconstituency": "Bulandshahr"
+    },
+    {
+        "Constituency\nnumber": 68,
+        "Constituency\nname": "Debai",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 348309,
+        "Lok Sabha\nconstituency": "Bulandshahr"
+    },
+    {
+        "Constituency\nnumber": 69,
+        "Constituency\nname": "Shikarpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 334480,
+        "Lok Sabha\nconstituency": "Bulandshahr"
+    },
+    {
+        "Constituency\nnumber": 70,
+        "Constituency\nname": "Khurja",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 389211,
+        "Lok Sabha\nconstituency": "Gautam Buddha Nagar"
+    },
+    {
+        "Constituency\nnumber": 71,
+        "Constituency\nname": "Khair",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 407399,
+        "District[7]": "Aligarh",
+        "Lok Sabha\nconstituency": "Aligarh"
+    },
+    {
+        "Constituency\nnumber": 72,
+        "Constituency\nname": "Barauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 380035,
+        "Lok Sabha\nconstituency": "Aligarh"
+    },
+    {
+        "Constituency\nnumber": 73,
+        "Constituency\nname": "Atrauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 402493,
+        "Lok Sabha\nconstituency": "Aligarh"
+    },
+    {
+        "Constituency\nnumber": 74,
+        "Constituency\nname": "Chharra",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 387108,
+        "Lok Sabha\nconstituency": "Hathras"
+    },
+    {
+        "Constituency\nnumber": 75,
+        "Constituency\nname": "Koil",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 404885,
+        "Lok Sabha\nconstituency": "Aligarh"
+    },
+    {
+        "Constituency\nnumber": 76,
+        "Constituency\nname": "Aligarh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 395352,
+        "Lok Sabha\nconstituency": "Aligarh"
+    },
+    {
+        "Constituency\nnumber": 77,
+        "Constituency\nname": "Iglas",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 396755,
+        "Lok Sabha\nconstituency": "Hathras"
+    },
+    {
+        "Constituency\nnumber": 78,
+        "Constituency\nname": "Hathras",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 416253,
+        "District[7]": "Hathras",
+        "Lok Sabha\nconstituency": "Hathras"
+    },
+    {
+        "Constituency\nnumber": 79,
+        "Constituency\nname": "Sadabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 376981,
+        "Lok Sabha\nconstituency": "Hathras"
+    },
+    {
+        "Constituency\nnumber": 80,
+        "Constituency\nname": "Sikandra Rao",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 377684,
+        "Lok Sabha\nconstituency": "Hathras"
+    },
+    {
+        "Constituency\nnumber": 81,
+        "Constituency\nname": "Chhata",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 364870,
+        "District[7]": "Mathura",
+        "Lok Sabha\nconstituency": "Mathura"
+    },
+    {
+        "Constituency\nnumber": 82,
+        "Constituency\nname": "Mant",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 346386,
+        "Lok Sabha\nconstituency": "Mathura"
+    },
+    {
+        "Constituency\nnumber": 83,
+        "Constituency\nname": "Goverdhan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 334234,
+        "Lok Sabha\nconstituency": "Mathura"
+    },
+    {
+        "Constituency\nnumber": 84,
+        "Constituency\nname": "Mathura",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 459369,
+        "Lok Sabha\nconstituency": "Mathura"
+    },
+    {
+        "Constituency\nnumber": 85,
+        "Constituency\nname": "Baldev",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 376964,
+        "Lok Sabha\nconstituency": "Mathura"
+    },
+    {
+        "Constituency\nnumber": 86,
+        "Constituency\nname": "Etmadpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 444849,
+        "District[7]": "Agra",
+        "Lok Sabha\nconstituency": "Agra"
+    },
+    {
+        "Constituency\nnumber": 87,
+        "Constituency\nname": "Agra Cantt.",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 467201,
+        "Lok Sabha\nconstituency": "Agra"
+    },
+    {
+        "Constituency\nnumber": 88,
+        "Constituency\nname": "Agra South",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 367502,
+        "Lok Sabha\nconstituency": "Agra"
+    },
+    {
+        "Constituency\nnumber": 89,
+        "Constituency\nname": "Agra North",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 435557,
+        "Lok Sabha\nconstituency": "Agra"
+    },
+    {
+        "Constituency\nnumber": 90,
+        "Constituency\nname": "Agra Rural",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 427896,
+        "Lok Sabha\nconstituency": "Fatehpur Sikri"
+    },
+    {
+        "Constituency\nnumber": 91,
+        "Constituency\nname": "Fatehpur Sikri",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 359005,
+        "Lok Sabha\nconstituency": "Fatehpur Sikri"
+    },
+    {
+        "Constituency\nnumber": 92,
+        "Constituency\nname": "Kheragarh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 328680,
+        "Lok Sabha\nconstituency": "Fatehpur Sikri"
+    },
+    {
+        "Constituency\nnumber": 93,
+        "Constituency\nname": "Fatehabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 322495,
+        "Lok Sabha\nconstituency": "Fatehpur Sikri"
+    },
+    {
+        "Constituency\nnumber": 94,
+        "Constituency\nname": "Bah",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 334525,
+        "Lok Sabha\nconstituency": "Fatehpur Sikri"
+    },
+    {
+        "Constituency\nnumber": 95,
+        "Constituency\nname": "Tundla",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 372750,
+        "District[7]": "Firozabad",
+        "Lok Sabha\nconstituency": "Firozabad"
+    },
+    {
+        "Constituency\nnumber": 96,
+        "Constituency\nname": "Jasrana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 367280,
+        "Lok Sabha\nconstituency": "Firozabad"
+    },
+    {
+        "Constituency\nnumber": 97,
+        "Constituency\nname": "Firozabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 439689,
+        "Lok Sabha\nconstituency": "Firozabad"
+    },
+    {
+        "Constituency\nnumber": 98,
+        "Constituency\nname": "Shikohabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 357741,
+        "Lok Sabha\nconstituency": "Firozabad"
+    },
+    {
+        "Constituency\nnumber": 99,
+        "Constituency\nname": "Sirsaganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 321298,
+        "Lok Sabha\nconstituency": "Firozabad"
+    },
+    {
+        "Constituency\nnumber": 100,
+        "Constituency\nname": "Kasganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 364023,
+        "District[7]": "Kasganj",
+        "Lok Sabha\nconstituency": "Etah"
+    },
+    {
+        "Constituency\nnumber": 101,
+        "Constituency\nname": "Amanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 310854,
+        "Lok Sabha\nconstituency": "Etah"
+    },
+    {
+        "Constituency\nnumber": 102,
+        "Constituency\nname": "Patiyali",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 359278,
+        "Lok Sabha\nconstituency": "Etah"
+    },
+    {
+        "Constituency\nnumber": 103,
+        "Constituency\nname": "Aliganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 342212,
+        "District[7]": "Etah",
+        "Lok Sabha\nconstituency": "Farrukhabad"
+    },
+    {
+        "Constituency\nnumber": 104,
+        "Constituency\nname": "Etah",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 337616,
+        "Lok Sabha\nconstituency": "Etah"
+    },
+    {
+        "Constituency\nnumber": 105,
+        "Constituency\nname": "Marhara",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 309883,
+        "Lok Sabha\nconstituency": "Etah"
+    },
+    {
+        "Constituency\nnumber": 106,
+        "Constituency\nname": "Jalesar",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 297452,
+        "Lok Sabha\nconstituency": "Agra"
+    },
+    {
+        "Constituency\nnumber": 107,
+        "Constituency\nname": "Mainpuri",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 345335,
+        "District[7]": "Mainpuri",
+        "Lok Sabha\nconstituency": "Mainpuri"
+    },
+    {
+        "Constituency\nnumber": 108,
+        "Constituency\nname": "Bhongaon",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 343606,
+        "Lok Sabha\nconstituency": "Mainpuri"
+    },
+    {
+        "Constituency\nnumber": 109,
+        "Constituency\nname": "Kishni",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 310906,
+        "Lok Sabha\nconstituency": "Mainpuri"
+    },
+    {
+        "Constituency\nnumber": 110,
+        "Constituency\nname": "Karhal",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 373351,
+        "Lok Sabha\nconstituency": "Mainpuri"
+    },
+    {
+        "Constituency\nnumber": 111,
+        "Constituency\nname": "Gunnaur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 411191,
+        "District[7]": "Sambhal",
+        "Lok Sabha\nconstituency": "Badaun"
+    },
+    {
+        "Constituency\nnumber": 112,
+        "Constituency\nname": "Bisauli",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 421258,
+        "District[7]": "Budaun",
+        "Lok Sabha\nconstituency": "Badaun"
+    },
+    {
+        "Constituency\nnumber": 113,
+        "Constituency\nname": "Sahaswan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 426207,
+        "Lok Sabha\nconstituency": "Badaun"
+    },
+    {
+        "Constituency\nnumber": 114,
+        "Constituency\nname": "Bilsi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355234,
+        "Lok Sabha\nconstituency": "Badaun"
+    },
+    {
+        "Constituency\nnumber": 115,
+        "Constituency\nname": "Badaun",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 376111,
+        "Lok Sabha\nconstituency": "Badaun"
+    },
+    {
+        "Constituency\nnumber": 116,
+        "Constituency\nname": "Shekhupur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 403347,
+        "Lok Sabha\nconstituency": "Aonla"
+    },
+    {
+        "Constituency\nnumber": 117,
+        "Constituency\nname": "Dataganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 407118,
+        "Lok Sabha\nconstituency": "Aonla"
+    },
+    {
+        "Constituency\nnumber": 118,
+        "Constituency\nname": "Baheri",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366445,
+        "District[7]": "Bareilly",
+        "Lok Sabha\nconstituency": "Pilibhit"
+    },
+    {
+        "Constituency\nnumber": 119,
+        "Constituency\nname": "Meerganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 339587,
+        "Lok Sabha\nconstituency": "Bareilly"
+    },
+    {
+        "Constituency\nnumber": 120,
+        "Constituency\nname": "Bhojipura",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 378098,
+        "Lok Sabha\nconstituency": "Bareilly"
+    },
+    {
+        "Constituency\nnumber": 121,
+        "Constituency\nname": "Nawabganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 339503,
+        "Lok Sabha\nconstituency": "Bareilly"
+    },
+    {
+        "Constituency\nnumber": 122,
+        "Constituency\nname": "Faridpur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 328070,
+        "Lok Sabha\nconstituency": "Aonla"
+    },
+    {
+        "Constituency\nnumber": 123,
+        "Constituency\nname": "Bithari Chainpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 394190,
+        "Lok Sabha\nconstituency": "Aonla"
+    },
+    {
+        "Constituency\nnumber": 124,
+        "Constituency\nname": "Bareilly",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 457691,
+        "Lok Sabha\nconstituency": "Bareilly"
+    },
+    {
+        "Constituency\nnumber": 125,
+        "Constituency\nname": "Bareilly Cantt.",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 378743,
+        "Lok Sabha\nconstituency": "Bareilly"
+    },
+    {
+        "Constituency\nnumber": 126,
+        "Constituency\nname": "Aonla",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 315035,
+        "Lok Sabha\nconstituency": "Aonla"
+    },
+    {
+        "Constituency\nnumber": 127,
+        "Constituency\nname": "Pilibhit",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 378862,
+        "District[7]": "Pilibhit",
+        "Lok Sabha\nconstituency": "Pilibhit"
+    },
+    {
+        "Constituency\nnumber": 128,
+        "Constituency\nname": "Barkhera",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 323808,
+        "Lok Sabha\nconstituency": "Pilibhit"
+    },
+    {
+        "Constituency\nnumber": 129,
+        "Constituency\nname": "Puranpur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 385107,
+        "Lok Sabha\nconstituency": "Pilibhit"
+    },
+    {
+        "Constituency\nnumber": 130,
+        "Constituency\nname": "Bisalpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 360883,
+        "Lok Sabha\nconstituency": "Pilibhit"
+    },
+    {
+        "Constituency\nnumber": 131,
+        "Constituency\nname": "Katra",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338784,
+        "District[7]": "Shahjahanpur",
+        "Lok Sabha\nconstituency": "Shahjahanpur"
+    },
+    {
+        "Constituency\nnumber": 132,
+        "Constituency\nname": "Jalalabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 367002,
+        "Lok Sabha\nconstituency": "Shahjahanpur"
+    },
+    {
+        "Constituency\nnumber": 133,
+        "Constituency\nname": "Tilhar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355825,
+        "Lok Sabha\nconstituency": "Shahjahanpur"
+    },
+    {
+        "Constituency\nnumber": 134,
+        "Constituency\nname": "Powayan",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 386868,
+        "Lok Sabha\nconstituency": "Shahjahanpur"
+    },
+    {
+        "Constituency\nnumber": 135,
+        "Constituency\nname": "Shahjahanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 411329,
+        "Lok Sabha\nconstituency": "Shahjahanpur"
+    },
+    {
+        "Constituency\nnumber": 136,
+        "Constituency\nname": "Dadraul",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355882,
+        "Lok Sabha\nconstituency": "Shahjahanpur"
+    },
+    {
+        "Constituency\nnumber": 137,
+        "Constituency\nname": "Palia",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 360503,
+        "District[7]": "Lakhimpur Kheri",
+        "Lok Sabha\nconstituency": "Kheri"
+    },
+    {
+        "Constituency\nnumber": 138,
+        "Constituency\nname": "Nighasan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 340374,
+        "Lok Sabha\nconstituency": "Kheri"
+    },
+    {
+        "Constituency\nnumber": 139,
+        "Constituency\nname": "Gola Gokrannath",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 396212,
+        "Lok Sabha\nconstituency": "Kheri"
+    },
+    {
+        "Constituency\nnumber": 140,
+        "Constituency\nname": "Sri Nagar",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 319314,
+        "Lok Sabha\nconstituency": "Kheri"
+    },
+    {
+        "Constituency\nnumber": 141,
+        "Constituency\nname": "Dhaurahra",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 332131,
+        "Lok Sabha\nconstituency": "Dhaurahra"
+    },
+    {
+        "Constituency\nnumber": 142,
+        "Constituency\nname": "Lakhimpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 411807,
+        "Lok Sabha\nconstituency": "Kheri"
+    },
+    {
+        "Constituency\nnumber": 143,
+        "Constituency\nname": "Kasta",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 309700,
+        "Lok Sabha\nconstituency": "Dhaurahra"
+    },
+    {
+        "Constituency\nnumber": 144,
+        "Constituency\nname": "Mohammdi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338672,
+        "Lok Sabha\nconstituency": "Dhaurahra"
+    },
+    {
+        "Constituency\nnumber": 145,
+        "Constituency\nname": "Maholi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 378908,
+        "District[7]": "Sitapur",
+        "Lok Sabha\nconstituency": "Dhaurahra"
+    },
+    {
+        "Constituency\nnumber": 146,
+        "Constituency\nname": "Sitapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 399285,
+        "Lok Sabha\nconstituency": "Sitapur"
+    },
+    {
+        "Constituency\nnumber": 147,
+        "Constituency\nname": "Hargaon",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 326771,
+        "Lok Sabha\nconstituency": "Dhaurahra"
+    },
+    {
+        "Constituency\nnumber": 148,
+        "Constituency\nname": "Laharpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 354502,
+        "Lok Sabha\nconstituency": "Sitapur"
+    },
+    {
+        "Constituency\nnumber": 149,
+        "Constituency\nname": "Biswan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 337785,
+        "Lok Sabha\nconstituency": "Sitapur"
+    },
+    {
+        "Constituency\nnumber": 150,
+        "Constituency\nname": "Sevata",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 314101,
+        "Lok Sabha\nconstituency": "Sitapur"
+    },
+    {
+        "Constituency\nnumber": 151,
+        "Constituency\nname": "Mahmoodabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 315617,
+        "Lok Sabha\nconstituency": "Sitapur"
+    },
+    {
+        "Constituency\nnumber": 152,
+        "Constituency\nname": "Sidhauli",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 355182,
+        "Lok Sabha\nconstituency": "Mohanlalganj"
+    },
+    {
+        "Constituency\nnumber": 153,
+        "Constituency\nname": "Misrikh",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 359505,
+        "Lok Sabha\nconstituency": "Misrikh"
+    },
+    {
+        "Constituency\nnumber": 154,
+        "Constituency\nname": "Sawayazpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 403324,
+        "District[7]": "Hardoi",
+        "Lok Sabha\nconstituency": "Hardoi"
+    },
+    {
+        "Constituency\nnumber": 155,
+        "Constituency\nname": "Shahabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355083,
+        "Lok Sabha\nconstituency": "Hardoi"
+    },
+    {
+        "Constituency\nnumber": 156,
+        "Constituency\nname": "Hardoi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 414295,
+        "Lok Sabha\nconstituency": "Hardoi"
+    },
+    {
+        "Constituency\nnumber": 157,
+        "Constituency\nname": "Gopamau",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 343678,
+        "Lok Sabha\nconstituency": "Hardoi"
+    },
+    {
+        "Constituency\nnumber": 158,
+        "Constituency\nname": "Sandi",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 332011,
+        "Lok Sabha\nconstituency": "Hardoi"
+    },
+    {
+        "Constituency\nnumber": 159,
+        "Constituency\nname": "Bilgram-Mallanwan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 381886,
+        "Lok Sabha\nconstituency": "Misrikh"
+    },
+    {
+        "Constituency\nnumber": 160,
+        "Constituency\nname": "Balamau",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 347218,
+        "Lok Sabha\nconstituency": "Misrikh"
+    },
+    {
+        "Constituency\nnumber": 161,
+        "Constituency\nname": "Sandila",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 341211,
+        "Lok Sabha\nconstituency": "Misrikh"
+    },
+    {
+        "Constituency\nnumber": 162,
+        "Constituency\nname": "Bangarmau",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 357452,
+        "District[7]": "Unnao",
+        "Lok Sabha\nconstituency": "Unnao"
+    },
+    {
+        "Constituency\nnumber": 163,
+        "Constituency\nname": "Safipur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 346258,
+        "Lok Sabha\nconstituency": "Unnao"
+    },
+    {
+        "Constituency\nnumber": 164,
+        "Constituency\nname": "Mohan",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 342858,
+        "Lok Sabha\nconstituency": "Unnao"
+    },
+    {
+        "Constituency\nnumber": 165,
+        "Constituency\nname": "Unnao",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 409927,
+        "Lok Sabha\nconstituency": "Unnao"
+    },
+    {
+        "Constituency\nnumber": 166,
+        "Constituency\nname": "Bhagwantnagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 417945,
+        "Lok Sabha\nconstituency": "Unnao"
+    },
+    {
+        "Constituency\nnumber": 167,
+        "Constituency\nname": "Purwa",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 415472,
+        "Lok Sabha\nconstituency": "Unnao"
+    },
+    {
+        "Constituency\nnumber": 168,
+        "Constituency\nname": "Malihabad",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 360275,
+        "District[7]": "Lucknow",
+        "Lok Sabha\nconstituency": "Mohanlalganj"
+    },
+    {
+        "Constituency\nnumber": 169,
+        "Constituency\nname": "Bakshi Kaa Talab",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 456965,
+        "Lok Sabha\nconstituency": "Mohanlalganj"
+    },
+    {
+        "Constituency\nnumber": 170,
+        "Constituency\nname": "Sarojini Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 567252,
+        "Lok Sabha\nconstituency": "Mohanlalganj"
+    },
+    {
+        "Constituency\nnumber": 171,
+        "Constituency\nname": "Lucknow West",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 443178,
+        "Lok Sabha\nconstituency": "Lucknow"
+    },
+    {
+        "Constituency\nnumber": 172,
+        "Constituency\nname": "Lucknow North",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 463839,
+        "Lok Sabha\nconstituency": "Lucknow"
+    },
+    {
+        "Constituency\nnumber": 173,
+        "Constituency\nname": "Lucknow East",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 457521,
+        "Lok Sabha\nconstituency": "Lucknow"
+    },
+    {
+        "Constituency\nnumber": 174,
+        "Constituency\nname": "Lucknow Central",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 370629,
+        "Lok Sabha\nconstituency": "Lucknow"
+    },
+    {
+        "Constituency\nnumber": 175,
+        "Constituency\nname": "Lucknow Cantonment",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 368156,
+        "Lok Sabha\nconstituency": "Lucknow"
+    },
+    {
+        "Constituency\nnumber": 176,
+        "Constituency\nname": "Mohanlalganj",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 363044,
+        "Lok Sabha\nconstituency": "Mohanlalganj"
+    },
+    {
+        "Constituency\nnumber": 177,
+        "Constituency\nname": "Bachhrawan",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 337025,
+        "District[7]": "Raebareli",
+        "Lok Sabha\nconstituency": "Rae Bareli"
+    },
+    {
+        "Constituency\nnumber": 178,
+        "Constituency\nname": "Tiloi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 351462,
+        "District[7]": "Amethi",
+        "Lok Sabha\nconstituency": "Amethi"
+    },
+    {
+        "Constituency\nnumber": 179,
+        "Constituency\nname": "Harchandpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 319603,
+        "District[7]": "Raebareli",
+        "Lok Sabha\nconstituency": "Rae Bareli"
+    },
+    {
+        "Constituency\nnumber": 180,
+        "Constituency\nname": "Rae Bareli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366267,
+        "Lok Sabha\nconstituency": "Rae Bareli"
+    },
+    {
+        "Constituency\nnumber": 181,
+        "Constituency\nname": "Salon",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 349294,
+        "District[7]": "Amethi",
+        "Lok Sabha\nconstituency": "Amethi"
+    },
+    {
+        "Constituency\nnumber": 182,
+        "Constituency\nname": "Saren",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 371469,
+        "District[7]": "Raebareli",
+        "Lok Sabha\nconstituency": "Rae Bareli"
+    },
+    {
+        "Constituency\nnumber": 183,
+        "Constituency\nname": "Unchahar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 339043,
+        "Lok Sabha\nconstituency": "Rae Bareli"
+    },
+    {
+        "Constituency\nnumber": 184,
+        "Constituency\nname": "Jagdishpur[c]",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 378415,
+        "Lok Sabha\nconstituency": "Amethi"
+    },
+    {
+        "Constituency\nnumber": 185,
+        "Constituency\nname": "Gauriganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 350093,
+        "District[7]": "Amethi",
+        "Lok Sabha\nconstituency": "Amethi"
+    },
+    {
+        "Constituency\nnumber": 186,
+        "Constituency\nname": "Amethi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 349837,
+        "District[7]": "Amethi",
+        "Lok Sabha\nconstituency": "Amethi"
+    },
+    {
+        "Constituency\nnumber": 187,
+        "Constituency\nname": "Isauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 358604,
+        "District[7]": "Sultanpur",
+        "Lok Sabha\nconstituency": "Sultanpur"
+    },
+    {
+        "Constituency\nnumber": 188,
+        "Constituency\nname": "Sultanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 380581,
+        "Lok Sabha\nconstituency": "Sultanpur"
+    },
+    {
+        "Constituency\nnumber": 189,
+        "Constituency\nname": "Sadar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 344326,
+        "Lok Sabha\nconstituency": "Sultanpur"
+    },
+    {
+        "Constituency\nnumber": 190,
+        "Constituency\nname": "Lambhua",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 369085,
+        "Lok Sabha\nconstituency": "Sultanpur"
+    },
+    {
+        "Constituency\nnumber": 191,
+        "Constituency\nname": "Kadipur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 379507,
+        "Lok Sabha\nconstituency": "Sultanpur"
+    },
+    {
+        "Constituency\nnumber": 192,
+        "Constituency\nname": "Kaimganj",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 392514,
+        "District[7]": "Farrukhabad",
+        "Lok Sabha\nconstituency": "Farrukhabad"
+    },
+    {
+        "Constituency\nnumber": 193,
+        "Constituency\nname": "Amritpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 314663,
+        "Lok Sabha\nconstituency": "Farrukhabad"
+    },
+    {
+        "Constituency\nnumber": 194,
+        "Constituency\nname": "Farrukhabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 372555,
+        "Lok Sabha\nconstituency": "Farrukhabad"
+    },
+    {
+        "Constituency\nnumber": 195,
+        "Constituency\nname": "Bhojpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 319917,
+        "Lok Sabha\nconstituency": "Farrukhabad"
+    },
+    {
+        "Constituency\nnumber": 196,
+        "Constituency\nname": "Chhibramau",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 463433,
+        "District[7]": "Kannauj",
+        "Lok Sabha\nconstituency": "Kannauj"
+    },
+    {
+        "Constituency\nnumber": 197,
+        "Constituency\nname": "Tirwa",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 380571,
+        "Lok Sabha\nconstituency": "Kannauj"
+    },
+    {
+        "Constituency\nnumber": 198,
+        "Constituency\nname": "Kannauj",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 428851,
+        "Lok Sabha\nconstituency": "Kannauj"
+    },
+    {
+        "Constituency\nnumber": 199,
+        "Constituency\nname": "Jaswantnagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 392072,
+        "District[7]": "Etawah",
+        "Lok Sabha\nconstituency": "Mainpuri"
+    },
+    {
+        "Constituency\nnumber": 200,
+        "Constituency\nname": "Etawah",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 406509,
+        "Lok Sabha\nconstituency": "Etawah"
+    },
+    {
+        "Constituency\nnumber": 201,
+        "Constituency\nname": "Bharthana",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 407642,
+        "Lok Sabha\nconstituency": "Etawah"
+    },
+    {
+        "Constituency\nnumber": 202,
+        "Constituency\nname": "Bidhuna",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 364682,
+        "District[7]": "Auraiya",
+        "Lok Sabha\nconstituency": "Kannauj"
+    },
+    {
+        "Constituency\nnumber": 203,
+        "Constituency\nname": "Dibiyapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 323150,
+        "Lok Sabha\nconstituency": "Etawah"
+    },
+    {
+        "Constituency\nnumber": 204,
+        "Constituency\nname": "Auraiya",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 332885,
+        "Lok Sabha\nconstituency": "Etawah"
+    },
+    {
+        "Constituency\nnumber": 205,
+        "Constituency\nname": "Rasulabad",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 323657,
+        "District[7]": "Kanpur Dehat",
+        "Lok Sabha\nconstituency": "Kannauj"
+    },
+    {
+        "Constituency\nnumber": 206,
+        "Constituency\nname": "Akbarpur-Raniya",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 327275,
+        "Lok Sabha\nconstituency": "Akbarpur"
+    },
+    {
+        "Constituency\nnumber": 207,
+        "Constituency\nname": "Sikandra",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 331601,
+        "Lok Sabha\nconstituency": "Etawah"
+    },
+    {
+        "Constituency\nnumber": 208,
+        "Constituency\nname": "Bhognipur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 350293,
+        "Lok Sabha\nconstituency": "Jalaun"
+    },
+    {
+        "Constituency\nnumber": 209,
+        "Constituency\nname": "Bilhaur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 392993,
+        "District[7]": "Kanpur Nagar",
+        "Lok Sabha\nconstituency": "Misrikh"
+    },
+    {
+        "Constituency\nnumber": 210,
+        "Constituency\nname": "Bithoor",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 368419,
+        "Lok Sabha\nconstituency": "Akbarpur"
+    },
+    {
+        "Constituency\nnumber": 211,
+        "Constituency\nname": "Kalyanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355100,
+        "Lok Sabha\nconstituency": "Akbarpur"
+    },
+    {
+        "Constituency\nnumber": 212,
+        "Constituency\nname": "Govind Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 351663,
+        "Lok Sabha\nconstituency": "Kanpur"
+    },
+    {
+        "Constituency\nnumber": 213,
+        "Constituency\nname": "Sishamau",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 274888,
+        "Lok Sabha\nconstituency": "Kanpur"
+    },
+    {
+        "Constituency\nnumber": 214,
+        "Constituency\nname": "Arya Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 298520,
+        "Lok Sabha\nconstituency": "Kanpur"
+    },
+    {
+        "Constituency\nnumber": 215,
+        "Constituency\nname": "Kidwai Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 348846,
+        "Lok Sabha\nconstituency": "Kanpur"
+    },
+    {
+        "Constituency\nnumber": 216,
+        "Constituency\nname": "Kanpur Cantonment",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 361855,
+        "Lok Sabha\nconstituency": "Kanpur"
+    },
+    {
+        "Constituency\nnumber": 217,
+        "Constituency\nname": "Maharajpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 448458,
+        "Lok Sabha\nconstituency": "Akbarpur"
+    },
+    {
+        "Constituency\nnumber": 218,
+        "Constituency\nname": "Ghatampur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 324443,
+        "Lok Sabha\nconstituency": "Akbarpur"
+    },
+    {
+        "Constituency\nnumber": 219,
+        "Constituency\nname": "Madhogarh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 445421,
+        "District[7]": "Jalaun",
+        "Lok Sabha\nconstituency": "Jalaun"
+    },
+    {
+        "Constituency\nnumber": 220,
+        "Constituency\nname": "Kalpi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 394653,
+        "Lok Sabha\nconstituency": "Jalaun"
+    },
+    {
+        "Constituency\nnumber": 221,
+        "Constituency\nname": "Orai",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 444977,
+        "Lok Sabha\nconstituency": "Jalaun"
+    },
+    {
+        "Constituency\nnumber": 222,
+        "Constituency\nname": "Babina",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 331743,
+        "District[7]": "Jhansi",
+        "Lok Sabha\nconstituency": "Jhansi"
+    },
+    {
+        "Constituency\nnumber": 223,
+        "Constituency\nname": "Jhansi Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 422164,
+        "Lok Sabha\nconstituency": "Jhansi"
+    },
+    {
+        "Constituency\nnumber": 224,
+        "Constituency\nname": "Mauranipur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 413770,
+        "Lok Sabha\nconstituency": "Jhansi"
+    },
+    {
+        "Constituency\nnumber": 225,
+        "Constituency\nname": "Garautha",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 351859,
+        "Lok Sabha\nconstituency": "Jalaun"
+    },
+    {
+        "Constituency\nnumber": 226,
+        "Constituency\nname": "Lalitpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 487976,
+        "District[7]": "Lalitpur",
+        "Lok Sabha\nconstituency": "Jhansi"
+    },
+    {
+        "Constituency\nnumber": 227,
+        "Constituency\nname": "Mehroni",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 449905,
+        "Lok Sabha\nconstituency": "Jhansi"
+    },
+    {
+        "Constituency\nnumber": 228,
+        "Constituency\nname": "Hamirpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 412700,
+        "District[7]": "Hamirpur",
+        "Lok Sabha\nconstituency": "Hamirpur"
+    },
+    {
+        "Constituency\nnumber": 229,
+        "Constituency\nname": "Rath",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 399594,
+        "Lok Sabha\nconstituency": "Hamirpur"
+    },
+    {
+        "Constituency\nnumber": 230,
+        "Constituency\nname": "Mahoba",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 316799,
+        "District[7]": "Mahoba",
+        "Lok Sabha\nconstituency": "Hamirpur"
+    },
+    {
+        "Constituency\nnumber": 231,
+        "Constituency\nname": "Charkhari",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 346471,
+        "Lok Sabha\nconstituency": "Hamirpur"
+    },
+    {
+        "Constituency\nnumber": 232,
+        "Constituency\nname": "Tindwari",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 318385,
+        "District[7]": "Banda",
+        "Lok Sabha\nconstituency": "Hamirpur"
+    },
+    {
+        "Constituency\nnumber": 233,
+        "Constituency\nname": "Baberu",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338211,
+        "Lok Sabha\nconstituency": "Banda"
+    },
+    {
+        "Constituency\nnumber": 234,
+        "Constituency\nname": "Naraini",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 342361,
+        "Lok Sabha\nconstituency": "Banda"
+    },
+    {
+        "Constituency\nnumber": 235,
+        "Constituency\nname": "Banda",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 310282,
+        "Lok Sabha\nconstituency": "Banda"
+    },
+    {
+        "Constituency\nnumber": 236,
+        "Constituency\nname": "Chitrakoot",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 375123,
+        "District[7]": "Chitrakoot",
+        "Lok Sabha\nconstituency": "Banda"
+    },
+    {
+        "Constituency\nnumber": 237,
+        "Constituency\nname": "Manikpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338989,
+        "Lok Sabha\nconstituency": "Banda"
+    },
+    {
+        "Constituency\nnumber": 238,
+        "Constituency\nname": "Jahanabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 311482,
+        "District[7]": "Fatehpur",
+        "Lok Sabha\nconstituency": "Fatehpur"
+    },
+    {
+        "Constituency\nnumber": 239,
+        "Constituency\nname": "Bindki",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 312930,
+        "Lok Sabha\nconstituency": "Fatehpur"
+    },
+    {
+        "Constituency\nnumber": 240,
+        "Constituency\nname": "Fatehpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 357518,
+        "Lok Sabha\nconstituency": "Fatehpur"
+    },
+    {
+        "Constituency\nnumber": 241,
+        "Constituency\nname": "Ayah Shah",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 274485,
+        "Lok Sabha\nconstituency": "Fatehpur"
+    },
+    {
+        "Constituency\nnumber": 242,
+        "Constituency\nname": "Husainganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 304518,
+        "Lok Sabha\nconstituency": "Fatehpur"
+    },
+    {
+        "Constituency\nnumber": 243,
+        "Constituency\nname": "Khaga",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 342812,
+        "Lok Sabha\nconstituency": "Fatehpur"
+    },
+    {
+        "Constituency\nnumber": 244,
+        "Constituency\nname": "Rampur Khas",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 320772,
+        "District[7]": "Pratapgarh",
+        "Lok Sabha\nconstituency": "Pratapgarh"
+    },
+    {
+        "Constituency\nnumber": 245,
+        "Constituency\nname": "Babaganj",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 319665,
+        "Lok Sabha\nconstituency": "Kaushambi"
+    },
+    {
+        "Constituency\nnumber": 246,
+        "Constituency\nname": "Kunda",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 357938,
+        "Lok Sabha\nconstituency": "Kaushambi"
+    },
+    {
+        "Constituency\nnumber": 247,
+        "Constituency\nname": "Vishwanathganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 399623,
+        "Lok Sabha\nconstituency": "Pratapgarh"
+    },
+    {
+        "Constituency\nnumber": 248,
+        "Constituency\nname": "Pratapgarh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355158,
+        "Lok Sabha\nconstituency": "Pratapgarh"
+    },
+    {
+        "Constituency\nnumber": 249,
+        "Constituency\nname": "Patti",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366452,
+        "Lok Sabha\nconstituency": "Pratapgarh"
+    },
+    {
+        "Constituency\nnumber": 250,
+        "Constituency\nname": "Raniganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 336072,
+        "Lok Sabha\nconstituency": "Pratapgarh"
+    },
+    {
+        "Constituency\nnumber": 251,
+        "Constituency\nname": "Sirathu",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 381662,
+        "District[7]": "Kaushambi",
+        "Lok Sabha\nconstituency": "Kaushambi"
+    },
+    {
+        "Constituency\nnumber": 252,
+        "Constituency\nname": "Manjhanpur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 416731,
+        "Lok Sabha\nconstituency": "Kaushambi"
+    },
+    {
+        "Constituency\nnumber": 253,
+        "Constituency\nname": "Chail",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 387838,
+        "Lok Sabha\nconstituency": "Kaushambi"
+    },
+    {
+        "Constituency\nnumber": 254,
+        "Constituency\nname": "Phaphamau",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366164,
+        "District[7]": "Prayagraj",
+        "Lok Sabha\nconstituency": "Phulpur"
+    },
+    {
+        "Constituency\nnumber": 255,
+        "Constituency\nname": "Soraon",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 380283,
+        "Lok Sabha\nconstituency": "Phulpur"
+    },
+    {
+        "Constituency\nnumber": 256,
+        "Constituency\nname": "Phulpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 408793,
+        "Lok Sabha\nconstituency": "Phulpur"
+    },
+    {
+        "Constituency\nnumber": 257,
+        "Constituency\nname": "Pratappur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 406567,
+        "Lok Sabha\nconstituency": "Bhadohi"
+    },
+    {
+        "Constituency\nnumber": 258,
+        "Constituency\nname": "Handia",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 401042,
+        "Lok Sabha\nconstituency": "Bhadohi"
+    },
+    {
+        "Constituency\nnumber": 259,
+        "Constituency\nname": "Meja",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 325904,
+        "Lok Sabha\nconstituency": "Prayagraj"
+    },
+    {
+        "Constituency\nnumber": 260,
+        "Constituency\nname": "Karachhana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 349959,
+        "Lok Sabha\nconstituency": "Prayagraj"
+    },
+    {
+        "Constituency\nnumber": 261,
+        "Constituency\nname": "Prayagraj West",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 459599,
+        "Lok Sabha\nconstituency": "Phulpur"
+    },
+    {
+        "Constituency\nnumber": 262,
+        "Constituency\nname": "Prayagraj North",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 442351,
+        "Lok Sabha\nconstituency": "Phulpur"
+    },
+    {
+        "Constituency\nnumber": 263,
+        "Constituency\nname": "Prayagraj South",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 408293,
+        "Lok Sabha\nconstituency": "Prayagraj"
+    },
+    {
+        "Constituency\nnumber": 264,
+        "Constituency\nname": "Bara",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 334880,
+        "Lok Sabha\nconstituency": "Prayagraj"
+    },
+    {
+        "Constituency\nnumber": 265,
+        "Constituency\nname": "Koraon",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 351637,
+        "Lok Sabha\nconstituency": "Prayagraj"
+    },
+    {
+        "Constituency\nnumber": 266,
+        "Constituency\nname": "Kursi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 395071,
+        "District[7]": "Barabanki",
+        "Lok Sabha\nconstituency": "Barabanki"
+    },
+    {
+        "Constituency\nnumber": 267,
+        "Constituency\nname": "Ram Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338326,
+        "Lok Sabha\nconstituency": "Barabanki"
+    },
+    {
+        "Constituency\nnumber": 268,
+        "Constituency\nname": "Barabanki",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 392184,
+        "Lok Sabha\nconstituency": "Barabanki"
+    },
+    {
+        "Constituency\nnumber": 269,
+        "Constituency\nname": "Zaidpur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 396995,
+        "Lok Sabha\nconstituency": "Barabanki"
+    },
+    {
+        "Constituency\nnumber": 270,
+        "Constituency\nname": "Dariyabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 412472,
+        "Lok Sabha\nconstituency": "Ayodhya"
+    },
+    {
+        "Constituency\nnumber": 271,
+        "Constituency\nname": "Rudauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 356678,
+        "District[7]": "Ayodhya",
+        "Lok Sabha\nconstituency": "Ayodhya"
+    },
+    {
+        "Constituency\nnumber": 272,
+        "Constituency\nname": "Haidergarh",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 349784,
+        "District[7]": "Barabanki",
+        "Lok Sabha\nconstituency": "Barabanki"
+    },
+    {
+        "Constituency\nnumber": 273,
+        "Constituency\nname": "Milkipur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 358203,
+        "District[7]": "Ayodhya",
+        "Lok Sabha\nconstituency": "Ayodhya"
+    },
+    {
+        "Constituency\nnumber": 274,
+        "Constituency\nname": "Bikapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 380107,
+        "Lok Sabha\nconstituency": "Ayodhya"
+    },
+    {
+        "Constituency\nnumber": 275,
+        "Constituency\nname": "Ayodhya",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 382056,
+        "Lok Sabha\nconstituency": "Ayodhya"
+    },
+    {
+        "Constituency\nnumber": 276,
+        "Constituency\nname": "Goshainganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 395118,
+        "Lok Sabha\nconstituency": "Ambedkar Nagar"
+    },
+    {
+        "Constituency\nnumber": 277,
+        "Constituency\nname": "Katehari",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 394267,
+        "District[7]": "Ambedkar Nagar",
+        "Lok Sabha\nconstituency": "Ambedkar Nagar"
+    },
+    {
+        "Constituency\nnumber": 278,
+        "Constituency\nname": "Tanda",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 329754,
+        "Lok Sabha\nconstituency": "Ambedkar Nagar"
+    },
+    {
+        "Constituency\nnumber": 279,
+        "Constituency\nname": "Alapur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 339969,
+        "Lok Sabha\nconstituency": "Sant Kabir Nagar"
+    },
+    {
+        "Constituency\nnumber": 280,
+        "Constituency\nname": "Jalalpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 407064,
+        "Lok Sabha\nconstituency": "Ambedkar Nagar"
+    },
+    {
+        "Constituency\nnumber": 281,
+        "Constituency\nname": "Akbarpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 332577,
+        "Lok Sabha\nconstituency": "Ambedkar Nagar"
+    },
+    {
+        "Constituency\nnumber": 282,
+        "Constituency\nname": "Balha",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 362718,
+        "District[7]": "Bahraich",
+        "Lok Sabha\nconstituency": "Bahraich"
+    },
+    {
+        "Constituency\nnumber": 283,
+        "Constituency\nname": "Nanpara",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 343881,
+        "Lok Sabha\nconstituency": "Bahraich"
+    },
+    {
+        "Constituency\nnumber": 284,
+        "Constituency\nname": "Matera",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 342204,
+        "Lok Sabha\nconstituency": "Bahraich"
+    },
+    {
+        "Constituency\nnumber": 285,
+        "Constituency\nname": "Mahasi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 339363,
+        "Lok Sabha\nconstituency": "Bahraich"
+    },
+    {
+        "Constituency\nnumber": 286,
+        "Constituency\nname": "Bahraich",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 391794,
+        "Lok Sabha\nconstituency": "Bahraich"
+    },
+    {
+        "Constituency\nnumber": 287,
+        "Constituency\nname": "Payagpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 390097,
+        "Lok Sabha\nconstituency": "Kaiserganj"
+    },
+    {
+        "Constituency\nnumber": 288,
+        "Constituency\nname": "Kaiserganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 390653,
+        "Lok Sabha\nconstituency": "Kaiserganj"
+    },
+    {
+        "Constituency\nnumber": 289,
+        "Constituency\nname": "Bhinga",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 393315,
+        "District[7]": "Shrawasti",
+        "Lok Sabha\nconstituency": "Shrawasti"
+    },
+    {
+        "Constituency\nnumber": 290,
+        "Constituency\nname": "Shrawasti",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 416147,
+        "Lok Sabha\nconstituency": "Shrawasti"
+    },
+    {
+        "Constituency\nnumber": 291,
+        "Constituency\nname": "Tulsipur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 383960,
+        "District[7]": "Balrampur",
+        "Lok Sabha\nconstituency": "Shrawasti"
+    },
+    {
+        "Constituency\nnumber": 292,
+        "Constituency\nname": "Gainsari",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 365598,
+        "Lok Sabha\nconstituency": "Shrawasti"
+    },
+    {
+        "Constituency\nnumber": 293,
+        "Constituency\nname": "Utraula",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 435310,
+        "Lok Sabha\nconstituency": "Gonda"
+    },
+    {
+        "Constituency\nnumber": 294,
+        "Constituency\nname": "Balrampur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 428009,
+        "Lok Sabha\nconstituency": "Shrawasti"
+    },
+    {
+        "Constituency\nnumber": 295,
+        "Constituency\nname": "Mehnaun",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366079,
+        "District[7]": "Gonda",
+        "Lok Sabha\nconstituency": "Gonda"
+    },
+    {
+        "Constituency\nnumber": 296,
+        "Constituency\nname": "Gonda",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 347946,
+        "Lok Sabha\nconstituency": "Gonda"
+    },
+    {
+        "Constituency\nnumber": 297,
+        "Constituency\nname": "Katra Bazar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 387612,
+        "Lok Sabha\nconstituency": "Kaiserganj"
+    },
+    {
+        "Constituency\nnumber": 298,
+        "Constituency\nname": "Colonelganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 330403,
+        "Lok Sabha\nconstituency": "Kaiserganj"
+    },
+    {
+        "Constituency\nnumber": 299,
+        "Constituency\nname": "Tarabganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 367243,
+        "Lok Sabha\nconstituency": "Kaiserganj"
+    },
+    {
+        "Constituency\nnumber": 300,
+        "Constituency\nname": "Mankapur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 331841,
+        "Lok Sabha\nconstituency": "Gonda"
+    },
+    {
+        "Constituency\nnumber": 301,
+        "Constituency\nname": "Gaura",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 320821,
+        "Lok Sabha\nconstituency": "Gonda"
+    },
+    {
+        "Constituency\nnumber": 302,
+        "Constituency\nname": "Shohratgarh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 359244,
+        "District[7]": "Siddharthnagar",
+        "Lok Sabha\nconstituency": "Domariyaganj"
+    },
+    {
+        "Constituency\nnumber": 303,
+        "Constituency\nname": "Kapilvastu",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 452988,
+        "Lok Sabha\nconstituency": "Domariyaganj"
+    },
+    {
+        "Constituency\nnumber": 304,
+        "Constituency\nname": "Bansi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 381240,
+        "Lok Sabha\nconstituency": "Domariyaganj"
+    },
+    {
+        "Constituency\nnumber": 305,
+        "Constituency\nname": "Itwa",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 336392,
+        "Lok Sabha\nconstituency": "Domariyaganj"
+    },
+    {
+        "Constituency\nnumber": 306,
+        "Constituency\nname": "Domariyaganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 409760,
+        "Lok Sabha\nconstituency": "Domariyaganj"
+    },
+    {
+        "Constituency\nnumber": 307,
+        "Constituency\nname": "Harraiya",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 388924,
+        "District[7]": "Basti",
+        "Lok Sabha\nconstituency": "Basti"
+    },
+    {
+        "Constituency\nnumber": 308,
+        "Constituency\nname": "Kaptanganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 365410,
+        "Lok Sabha\nconstituency": "Basti"
+    },
+    {
+        "Constituency\nnumber": 309,
+        "Constituency\nname": "Rudhauli",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 430608,
+        "Lok Sabha\nconstituency": "Basti"
+    },
+    {
+        "Constituency\nnumber": 310,
+        "Constituency\nname": "Basti Sadar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 371546,
+        "Lok Sabha\nconstituency": "Basti"
+    },
+    {
+        "Constituency\nnumber": 311,
+        "Constituency\nname": "Mahadewa",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 360632,
+        "Lok Sabha\nconstituency": "Basti"
+    },
+    {
+        "Constituency\nnumber": 312,
+        "Constituency\nname": "Menhdawal",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 457864,
+        "District[7]": "Sant Kabir Nagar",
+        "Lok Sabha\nconstituency": "Sant Kabir Nagar"
+    },
+    {
+        "Constituency\nnumber": 313,
+        "Constituency\nname": "Khalilabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 457995,
+        "Lok Sabha\nconstituency": "Sant Kabir Nagar"
+    },
+    {
+        "Constituency\nnumber": 314,
+        "Constituency\nname": "Dhanghata",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 387446,
+        "Lok Sabha\nconstituency": "Sant Kabir Nagar"
+    },
+    {
+        "Constituency\nnumber": 315,
+        "Constituency\nname": "Pharenda",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 351362,
+        "District[7]": "Maharajganj",
+        "Lok Sabha\nconstituency": "Maharajganj"
+    },
+    {
+        "Constituency\nnumber": 316,
+        "Constituency\nname": "Nautanwa",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366588,
+        "Lok Sabha\nconstituency": "Maharajganj"
+    },
+    {
+        "Constituency\nnumber": 317,
+        "Constituency\nname": "Siswa",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 389369,
+        "Lok Sabha\nconstituency": "Maharajganj"
+    },
+    {
+        "Constituency\nnumber": 318,
+        "Constituency\nname": "Maharajganj",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 413958,
+        "Lok Sabha\nconstituency": "Maharajganj"
+    },
+    {
+        "Constituency\nnumber": 319,
+        "Constituency\nname": "Paniyara",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 423585,
+        "Lok Sabha\nconstituency": "Maharajganj"
+    },
+    {
+        "Constituency\nnumber": 320,
+        "Constituency\nname": "Caimpiyarganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 383702,
+        "District[7]": "Gorakhpur",
+        "Lok Sabha\nconstituency": "Gorakhpur"
+    },
+    {
+        "Constituency\nnumber": 321,
+        "Constituency\nname": "Pipraich",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 406778,
+        "Lok Sabha\nconstituency": "Gorakhpur"
+    },
+    {
+        "Constituency\nnumber": 322,
+        "Constituency\nname": "Gorakhpur Urban",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 464784,
+        "Lok Sabha\nconstituency": "Gorakhpur"
+    },
+    {
+        "Constituency\nnumber": 323,
+        "Constituency\nname": "Gorakhpur Rural",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 419269,
+        "Lok Sabha\nconstituency": "Gorakhpur"
+    },
+    {
+        "Constituency\nnumber": 324,
+        "Constituency\nname": "Sahajanwa",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 379627,
+        "Lok Sabha\nconstituency": "Gorakhpur"
+    },
+    {
+        "Constituency\nnumber": 325,
+        "Constituency\nname": "Khajani",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 380081,
+        "Lok Sabha\nconstituency": "Sant Kabir Nagar"
+    },
+    {
+        "Constituency\nnumber": 326,
+        "Constituency\nname": "Chauri-Chaura",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 355127,
+        "Lok Sabha\nconstituency": "Bansgaon"
+    },
+    {
+        "Constituency\nnumber": 327,
+        "Constituency\nname": "Bansgaon",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 381065,
+        "Lok Sabha\nconstituency": "Bansgaon"
+    },
+    {
+        "Constituency\nnumber": 328,
+        "Constituency\nname": "Chillupar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 429908,
+        "Lok Sabha\nconstituency": "Bansgaon"
+    },
+    {
+        "Constituency\nnumber": 329,
+        "Constituency\nname": "Khadda",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 340053,
+        "District[7]": "Kushinagar",
+        "Lok Sabha\nconstituency": "Kushi Nagar"
+    },
+    {
+        "Constituency\nnumber": 330,
+        "Constituency\nname": "Padrauna",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 382530,
+        "Lok Sabha\nconstituency": "Kushi Nagar"
+    },
+    {
+        "Constituency\nnumber": 331,
+        "Constituency\nname": "Tamkuhi Raj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 400300,
+        "Lok Sabha\nconstituency": "Deoria"
+    },
+    {
+        "Constituency\nnumber": 332,
+        "Constituency\nname": "Fazilnagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 400053,
+        "Lok Sabha\nconstituency": "Deoria"
+    },
+    {
+        "Constituency\nnumber": 333,
+        "Constituency\nname": "Kushinagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 373232,
+        "Lok Sabha\nconstituency": "Kushi Nagar"
+    },
+    {
+        "Constituency\nnumber": 334,
+        "Constituency\nname": "Hata",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 373470,
+        "Lok Sabha\nconstituency": "Kushi Nagar"
+    },
+    {
+        "Constituency\nnumber": 335,
+        "Constituency\nname": "Ramkola",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 371916,
+        "Lok Sabha\nconstituency": "Kushi Nagar"
+    },
+    {
+        "Constituency\nnumber": 336,
+        "Constituency\nname": "Rudrapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 321349,
+        "District[7]": "Deoria",
+        "Lok Sabha\nconstituency": "Bansgaon"
+    },
+    {
+        "Constituency\nnumber": 337,
+        "Constituency\nname": "Deoria",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 351651,
+        "Lok Sabha\nconstituency": "Deoria"
+    },
+    {
+        "Constituency\nnumber": 338,
+        "Constituency\nname": "Pathardeva",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338872,
+        "Lok Sabha\nconstituency": "Deoria"
+    },
+    {
+        "Constituency\nnumber": 339,
+        "Constituency\nname": "Rampur Karkhana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 356278,
+        "Lok Sabha\nconstituency": "Deoria"
+    },
+    {
+        "Constituency\nnumber": 340,
+        "Constituency\nname": "Bhatpar Rani",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 338287,
+        "Lok Sabha\nconstituency": "Salempur"
+    },
+    {
+        "Constituency\nnumber": 341,
+        "Constituency\nname": "Salempur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 344224,
+        "Lok Sabha\nconstituency": "Salempur"
+    },
+    {
+        "Constituency\nnumber": 342,
+        "Constituency\nname": "Barhaj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 318521,
+        "Lok Sabha\nconstituency": "Bansgaon"
+    },
+    {
+        "Constituency\nnumber": 343,
+        "Constituency\nname": "Atrauliya",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 380092,
+        "District[7]": "Azamgarh",
+        "Lok Sabha\nconstituency": "Lalganj"
+    },
+    {
+        "Constituency\nnumber": 344,
+        "Constituency\nname": "Gopalpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 350363,
+        "Lok Sabha\nconstituency": "Azamgarh"
+    },
+    {
+        "Constituency\nnumber": 345,
+        "Constituency\nname": "Sagri",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 336378,
+        "Lok Sabha\nconstituency": "Azamgarh"
+    },
+    {
+        "Constituency\nnumber": 346,
+        "Constituency\nname": "Mubarakpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 354153,
+        "Lok Sabha\nconstituency": "Azamgarh"
+    },
+    {
+        "Constituency\nnumber": 347,
+        "Constituency\nname": "Azamgarh",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 396271,
+        "Lok Sabha\nconstituency": "Azamgarh"
+    },
+    {
+        "Constituency\nnumber": 348,
+        "Constituency\nname": "Nizamabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 327480,
+        "Lok Sabha\nconstituency": "Lalganj"
+    },
+    {
+        "Constituency\nnumber": 349,
+        "Constituency\nname": "Phoolpur Pawai",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 328807,
+        "Lok Sabha\nconstituency": "Lalganj"
+    },
+    {
+        "Constituency\nnumber": 350,
+        "Constituency\nname": "Didarganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 365522,
+        "Lok Sabha\nconstituency": "Lalganj"
+    },
+    {
+        "Constituency\nnumber": 351,
+        "Constituency\nname": "Lalganj",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 407539,
+        "Lok Sabha\nconstituency": "Lalganj"
+    },
+    {
+        "Constituency\nnumber": 352,
+        "Constituency\nname": "Mehnagar",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 404280,
+        "Lok Sabha\nconstituency": "Azamgarh"
+    },
+    {
+        "Constituency\nnumber": 353,
+        "Constituency\nname": "Madhuban",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 403798,
+        "District[7]": "Mau",
+        "Lok Sabha\nconstituency": "Ghosi"
+    },
+    {
+        "Constituency\nnumber": 354,
+        "Constituency\nname": "Ghosi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 438832,
+        "Lok Sabha\nconstituency": "Ghosi"
+    },
+    {
+        "Constituency\nnumber": 355,
+        "Constituency\nname": "Muhammadabad-Gohna",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 380470,
+        "Lok Sabha\nconstituency": "Ghosi"
+    },
+    {
+        "Constituency\nnumber": 356,
+        "Constituency\nname": "Mau",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 481715,
+        "Lok Sabha\nconstituency": "Ghosi"
+    },
+    {
+        "Constituency\nnumber": 357,
+        "Constituency\nname": "Belthara Road",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 358231,
+        "District[7]": "Ballia",
+        "Lok Sabha\nconstituency": "Salempur"
+    },
+    {
+        "Constituency\nnumber": 358,
+        "Constituency\nname": "Rasara",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 356377,
+        "Lok Sabha\nconstituency": "Ghosi"
+    },
+    {
+        "Constituency\nnumber": 359,
+        "Constituency\nname": "Sikanderpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 307974,
+        "Lok Sabha\nconstituency": "Salempur"
+    },
+    {
+        "Constituency\nnumber": 360,
+        "Constituency\nname": "Phephana",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 331153,
+        "Lok Sabha\nconstituency": "Ballia"
+    },
+    {
+        "Constituency\nnumber": 361,
+        "Constituency\nname": "Ballia Nagar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 375300,
+        "Lok Sabha\nconstituency": "Ballia"
+    },
+    {
+        "Constituency\nnumber": 362,
+        "Constituency\nname": "Bansdih",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 408263,
+        "Lok Sabha\nconstituency": "Salempur"
+    },
+    {
+        "Constituency\nnumber": 363,
+        "Constituency\nname": "Bairia",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 367176,
+        "Lok Sabha\nconstituency": "Ballia"
+    },
+    {
+        "Constituency\nnumber": 364,
+        "Constituency\nname": "Badlapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 351356,
+        "District[7]": "Jaunpur",
+        "Lok Sabha\nconstituency": "Jaunpur"
+    },
+    {
+        "Constituency\nnumber": 365,
+        "Constituency\nname": "Shahganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 407439,
+        "Lok Sabha\nconstituency": "Jaunpur"
+    },
+    {
+        "Constituency\nnumber": 366,
+        "Constituency\nname": "Jaunpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 435634,
+        "Lok Sabha\nconstituency": "Jaunpur"
+    },
+    {
+        "Constituency\nnumber": 367,
+        "Constituency\nname": "Malhani",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 379389,
+        "Lok Sabha\nconstituency": "Jaunpur"
+    },
+    {
+        "Constituency\nnumber": 368,
+        "Constituency\nname": "Mungra Badshahpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 386422,
+        "Lok Sabha\nconstituency": "Jaunpur"
+    },
+    {
+        "Constituency\nnumber": 369,
+        "Constituency\nname": "Machhlishahr",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 402078,
+        "Lok Sabha\nconstituency": "Machhlishahr"
+    },
+    {
+        "Constituency\nnumber": 370,
+        "Constituency\nname": "Mariyahu",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 337483,
+        "Lok Sabha\nconstituency": "Machhlishahr"
+    },
+    {
+        "Constituency\nnumber": 371,
+        "Constituency\nname": "Zafrabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 398511,
+        "Lok Sabha\nconstituency": "Machhlishahr"
+    },
+    {
+        "Constituency\nnumber": 372,
+        "Constituency\nname": "Kerakat",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 416720,
+        "Lok Sabha\nconstituency": "Machhlishahr"
+    },
+    {
+        "Constituency\nnumber": 373,
+        "Constituency\nname": "Jakhanian",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 432337,
+        "District[7]": "Ghazipur",
+        "Lok Sabha\nconstituency": "Ghazipur"
+    },
+    {
+        "Constituency\nnumber": 374,
+        "Constituency\nname": "Saidpur",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 400659,
+        "Lok Sabha\nconstituency": "Ghazipur"
+    },
+    {
+        "Constituency\nnumber": 375,
+        "Constituency\nname": "Ghazipur Sadar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 365238,
+        "Lok Sabha\nconstituency": "Ghazipur"
+    },
+    {
+        "Constituency\nnumber": 376,
+        "Constituency\nname": "Jangipur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 376819,
+        "Lok Sabha\nconstituency": "Ghazipur"
+    },
+    {
+        "Constituency\nnumber": 377,
+        "Constituency\nname": "Zahoorabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 407091,
+        "Lok Sabha\nconstituency": "Ballia"
+    },
+    {
+        "Constituency\nnumber": 378,
+        "Constituency\nname": "Mohammadabad",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 424837,
+        "Lok Sabha\nconstituency": "Ballia"
+    },
+    {
+        "Constituency\nnumber": 379,
+        "Constituency\nname": "Zamania",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 425978,
+        "Lok Sabha\nconstituency": "Ghazipur"
+    },
+    {
+        "Constituency\nnumber": 380,
+        "Constituency\nname": "Mughalsarai",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 400830,
+        "District[7]": "Chandauli",
+        "Lok Sabha\nconstituency": "Chandauli"
+    },
+    {
+        "Constituency\nnumber": 381,
+        "Constituency\nname": "Sakaldiha",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 335828,
+        "Lok Sabha\nconstituency": "Chandauli"
+    },
+    {
+        "Constituency\nnumber": 382,
+        "Constituency\nname": "Saiyadraja",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 333280,
+        "Lok Sabha\nconstituency": "Chandauli"
+    },
+    {
+        "Constituency\nnumber": 383,
+        "Constituency\nname": "Chakia",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 378414,
+        "Lok Sabha\nconstituency": "Robertsganj"
+    },
+    {
+        "Constituency\nnumber": 384,
+        "Constituency\nname": "Pindra",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 373472,
+        "District[7]": "Varanasi",
+        "Lok Sabha\nconstituency": "Machhlishahr"
+    },
+    {
+        "Constituency\nnumber": 385,
+        "Constituency\nname": "Ajagara",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 374068,
+        "Lok Sabha\nconstituency": "Chandauli"
+    },
+    {
+        "Constituency\nnumber": 386,
+        "Constituency\nname": "Shivpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 374563,
+        "Lok Sabha\nconstituency": "Chandauli"
+    },
+    {
+        "Constituency\nnumber": 387,
+        "Constituency\nname": "Rohaniya",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 408653,
+        "Lok Sabha\nconstituency": "Varanasi"
+    },
+    {
+        "Constituency\nnumber": 388,
+        "Constituency\nname": "Varanasi North",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 427134,
+        "Lok Sabha\nconstituency": "Varanasi"
+    },
+    {
+        "Constituency\nnumber": 389,
+        "Constituency\nname": "Varanasi South",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 323551,
+        "Lok Sabha\nconstituency": "Varanasi"
+    },
+    {
+        "Constituency\nnumber": 390,
+        "Constituency\nname": "Varanasi Cantt.",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 459277,
+        "Lok Sabha\nconstituency": "Varanasi"
+    },
+    {
+        "Constituency\nnumber": 391,
+        "Constituency\nname": "Sevapuri",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 346090,
+        "Lok Sabha\nconstituency": "Varanasi"
+    },
+    {
+        "Constituency\nnumber": 392,
+        "Constituency\nname": "Bhadohi",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 429201,
+        "District[7]": "Bhadohi",
+        "Lok Sabha\nconstituency": "Bhadohi"
+    },
+    {
+        "Constituency\nnumber": 393,
+        "Constituency\nname": "Gyanpur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 390971,
+        "Lok Sabha\nconstituency": "Bhadohi"
+    },
+    {
+        "Constituency\nnumber": 394,
+        "Constituency\nname": "Aurai",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 377692,
+        "Lok Sabha\nconstituency": "Bhadohi"
+    },
+    {
+        "Constituency\nnumber": 395,
+        "Constituency\nname": "Chhanbey",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 374291,
+        "District[7]": "Mirzapur",
+        "Lok Sabha\nconstituency": "Mirzapur"
+    },
+    {
+        "Constituency\nnumber": 396,
+        "Constituency\nname": "Mirzapur",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 403374,
+        "Lok Sabha\nconstituency": "Mirzapur"
+    },
+    {
+        "Constituency\nnumber": 397,
+        "Constituency\nname": "Majhawan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 397877,
+        "Lok Sabha\nconstituency": "Mirzapur"
+    },
+    {
+        "Constituency\nnumber": 398,
+        "Constituency\nname": "Chunar",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 354274,
+        "Lok Sabha\nconstituency": "Mirzapur"
+    },
+    {
+        "Constituency\nnumber": 399,
+        "Constituency\nname": "Marihan",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 366489,
+        "Lok Sabha\nconstituency": "Mirzapur"
+    },
+    {
+        "Constituency\nnumber": 400,
+        "Constituency\nname": "Ghorawal",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 394231,
+        "District[7]": "Sonbhadra",
+        "Lok Sabha\nconstituency": "Robertsganj"
+    },
+    {
+        "Constituency\nnumber": 401,
+        "Constituency\nname": "Robertsganj",
+        "Reserved for\n(SC\/STNone)": "None",
+        "Electors\n[6]": 343485,
+        "Lok Sabha\nconstituency": "Robertsganj"
+    },
+    {
+        "Constituency\nnumber": 402,
+        "Constituency\nname": "Obra",
+        "Reserved for\n(SC\/STNone)": "ST",
+        "Electors\n[6]": 327556,
+        "Lok Sabha\nconstituency": "Robertsganj"
+    },
+    {
+        "Constituency\nnumber": 403,
+        "Constituency\nname": "Duddhi",
+        "Reserved for\n(SC\/STNone)": "SC",
+        "Electors\n[6]": 332033,
+        "Lok Sabha\nconstituency": "Robertsganj"
+    }
+]

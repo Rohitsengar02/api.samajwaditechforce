@@ -52,6 +52,11 @@ const userSchema = new mongoose.Schema({
     socialMedia: [String],
     qualification: String,
     canVisitLucknow: { type: String, enum: ['Yes', 'No'] },
+    electionPreparation: {
+        type: String,
+        enum: ['Zila Panchayat', 'Gram Pradhan', 'Vidhansabha', 'Other', 'No', ''],
+        default: ''
+    },
     mindset: String,
     whatsappGroupAdded: { type: String, enum: ['Yes', 'No'] },
     verificationStatus: {
