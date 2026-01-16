@@ -4,6 +4,8 @@ const AdminApproval = require('../models/AdminApproval');
 const PointActivity = require('../models/PointActivity');
 const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
 // Helper to handle referral points for the REFERRER
@@ -940,5 +942,141 @@ const getReferralStats = async (req, res) => {
     }
 };
 
-module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists, getVerifiedMembers, getReferralStats };
+// @desc    Forgot Password - Send Reset Link
+// @route   POST /api/auth/forgot-password
+// @access  Public
+const forgotPassword = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Generate Reset Token
+        const resetToken = crypto.randomBytes(20).toString('hex');
+
+        // Hash and set to resetPasswordToken
+        user.resetPasswordToken = crypto
+            .createHash('sha256')
+            .update(resetToken)
+            .digest('hex');
+
+        // Set expire (10 minutes)
+        user.resetPasswordExpire = Date.now() + 10 * 60 * 1000;
+
+        await user.save();
+
+        // Create reset URL
+        // Determining frontend URL based on origin or default
+        const frontendUrl = req.headers.origin || 'http://localhost:8081';
+
+        // Explicitly reload env vars to be sure
+        const path = require('path');
+        const envPath = path.resolve(__dirname, '../.env');
+        require('dotenv').config({ path: envPath, override: true });
+
+        const resetUrl = `${frontendUrl}/reset-password?token=${resetToken}`;
+
+        console.log('---------------------------------------------------');
+        console.log('🔑 PASSWORD RESET REQUESTED');
+        console.log('📧 To:', user.email);
+        console.log('🔗 Link:', resetUrl);
+        console.log('👤 Sender Config:', process.env.EMAIL_USER || 'Not Set');
+        console.log('---------------------------------------------------');
+
+        const message = `
+            You have requested a password reset.
+            Please go to this link to reset your password:
+            \n\n
+            ${resetUrl}
+            \n\n
+            If you did not request this, please ignore this email.
+        `;
+
+        try {
+            // Check if email config exists
+            if (process.env.EMAIL_USER && process.env.EMAIL_APP_PASSWORD) {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: process.env.EMAIL_USER,
+                        pass: process.env.EMAIL_APP_PASSWORD,
+                    },
+                });
+
+                await transporter.sendMail({
+                    from: `"Samajwadi Tech Force" <${process.env.EMAIL_USER}>`,
+                    to: user.email,
+                    subject: 'Password Reset Request',
+                    text: message,
+                });
+
+                console.log(`✅ Email successfully sent to ${user.email}`);
+                res.json({ success: true, message: 'Email sent' });
+            } else {
+                console.log('⚠️ No Email Config Found. Use the link logged above.');
+                res.json({
+                    success: true,
+                    message: 'Email sent (Logged to console strictly for dev)',
+                    devLink: resetUrl
+                });
+            }
+        } catch (error) {
+            console.error('Email send error:', error);
+            user.resetPasswordToken = undefined;
+            user.resetPasswordExpire = undefined;
+            await user.save();
+            return res.status(500).json({ message: 'Email could not be sent' });
+        }
+
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// @desc    Reset Password
+// @route   PUT /api/auth/reset-password
+// @access  Public
+const resetPassword = async (req, res) => {
+    const { token, password } = req.body;
+
+    // Get hashed token
+    const resetPasswordToken = crypto
+        .createHash('sha256')
+        .update(token)
+        .digest('hex');
+
+    try {
+        const user = await User.findOne({
+            resetPasswordToken,
+            resetPasswordExpire: { $gt: Date.now() },
+        });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Invalid or expired token' });
+        }
+
+        // Set new password
+        user.password = password;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpire = undefined;
+
+        await user.save();
+
+        res.json({
+            success: true,
+            message: 'Password Updated Success',
+            token: generateToken(user._id),
+        });
+
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile, requestVerification, updateLanguage, getLeaderboard, registerAdmin, sendOTP, verifyOTP, googleLogin, getAllUsers, deleteUser, updateUser, checkUserExists, getVerifiedMembers, getReferralStats, forgotPassword, resetPassword };
+
 
