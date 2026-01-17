@@ -994,11 +994,16 @@ const forgotPassword = async (req, res) => {
         try {
             // Check if email config exists
             if (process.env.EMAIL_USER && process.env.EMAIL_APP_PASSWORD) {
+
+                // Sanitize password (remove spaces if copied directly from Google)
+                const cleanPassword = process.env.EMAIL_APP_PASSWORD.replace(/\s+/g, '');
+                console.log(`📧 Attempting to send email from: ${process.env.EMAIL_USER}`);
+
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
                         user: process.env.EMAIL_USER,
-                        pass: process.env.EMAIL_APP_PASSWORD,
+                        pass: cleanPassword, // usage of sanitized password
                     },
                 });
 
