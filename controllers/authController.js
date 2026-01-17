@@ -995,15 +995,16 @@ const forgotPassword = async (req, res) => {
             // Check if email config exists
             if (process.env.EMAIL_USER && process.env.EMAIL_APP_PASSWORD) {
 
-                // Sanitize password (remove spaces if copied directly from Google)
-                const cleanPassword = process.env.EMAIL_APP_PASSWORD.replace(/\s+/g, '');
+                // Sanitize password (safely)
+                const rawPassword = process.env.EMAIL_APP_PASSWORD || '';
+                const cleanPassword = rawPassword.replace(/\s+/g, '');
                 console.log(`📧 Attempting to send email from: ${process.env.EMAIL_USER}`);
 
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
                         user: process.env.EMAIL_USER,
-                        pass: cleanPassword, // usage of sanitized password
+                        pass: cleanPassword,
                     },
                 });
 
@@ -1038,6 +1039,7 @@ const forgotPassword = async (req, res) => {
         }
 
     } catch (error) {
+        console.error('❌ Forgot Password Fatal Error:', error);
         res.status(500).json({ message: error.message });
     }
 };
