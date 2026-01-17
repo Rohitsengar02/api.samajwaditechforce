@@ -5,7 +5,10 @@ const PointActivity = require('../models/PointActivity');
 const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
+
+// Initialize Resend with API Key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Helper to handle referral points for the REFERRER
 const handleReferral = async (newUser, referralCode) => {
@@ -992,43 +995,35 @@ const forgotPassword = async (req, res) => {
         `;
 
         try {
-            // Check if email config exists
-            if (process.env.EMAIL_USER && process.env.EMAIL_APP_PASSWORD) {
+            // Using Resend for reliable email delivery
+            console.log('📧 Attempting to send email via Resend...');
 
-                // Sanitize password (safely)
-                const rawPassword = process.env.EMAIL_APP_PASSWORD || '';
-                const cleanPassword = rawPassword.replace(/\s+/g, '');
-                console.log(`📧 Attempting to send email from: ${process.env.EMAIL_USER}`);
+            const emailResponse = await resend.emails.send({
+                from: 'Samajwadi Tech Force <admin@samajwaditechforce.com>',
+                to: user.email,
+                subject: 'Password Reset Request',
+                html: `
+                    <div style="font-family: Arial, sans-serif; color: #333;">
+                        <h2>Password Reset Request</h2>
+                        <p>You have requested a password reset for your Samajwadi Tech Force account.</p>
+                        <p>Please click the button below to reset your password:</p>
+                        <a href="${resetUrl}" style="background-color: #E30613; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Reset Password</a>
+                        <p style="margin-top: 20px;">Or copy this link:</p>
+                        <p>${resetUrl}</p>
+                        <p style="color: #666; font-size: 12px; margin-top: 30px;">If you did not request this, please ignore this email.</p>
+                    </div>
+                `
+            });
 
-                const transporter = nodemailer.createTransport({
-                    host: 'smtp.gmail.com',
-                    port: 587,
-                    secure: false, // use STARTTLS
-                    auth: {
-                        user: process.env.EMAIL_USER,
-                        pass: cleanPassword,
-                    },
-                });
-
-                await transporter.sendMail({
-                    from: `"Samajwadi Tech Force" <${process.env.EMAIL_USER}>`,
-                    to: user.email,
-                    subject: 'Password Reset Request',
-                    text: message,
-                });
-
-                console.log(`✅ Email successfully sent to ${user.email}`);
-                res.json({ success: true, message: 'Email sent' });
-            } else {
-                console.log('⚠️ No Email Config Found. Use the link logged above.');
-                res.json({
-                    success: true,
-                    message: 'Email sent (Logged to console strictly for dev)',
-                    devLink: resetUrl
-                });
+            if (emailResponse.error) {
+                throw new Error(emailResponse.error.message);
             }
+
+            console.log('✅ Email successfully sent via Resend:', emailResponse);
+            res.json({ success: true, message: 'Email sent successfully codes' });
+
         } catch (error) {
-            console.error('❌ EMAIL SENDING FAILED (Likely Render blocking Gmail ports).');
+            console.error('❌ EMAIL SENDING FAILED:', error);
             console.log('---------------------------------------------------');
             console.log('⚠️ FALLBACK: USE THIS LINK TO RESET PASSWORD:');
             console.log('🔗 Link:', resetUrl);
@@ -1038,13 +1033,12 @@ const forgotPassword = async (req, res) => {
             user.resetPasswordExpire = undefined;
             await user.save();
 
-            // Return actual error to frontend for debugging
+            // Return actual error and fallback instructions
             return res.status(500).json({
-                message: 'Email blocked by server firewall. Check server logs for manual link.',
+                message: 'Email service error. Check server logs for manual reset link.',
                 error: error.message
             });
         }
-
     } catch (error) {
         console.error('❌ Forgot Password Fatal Error:', error);
         res.status(500).json({ message: error.message });
