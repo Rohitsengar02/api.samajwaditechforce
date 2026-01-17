@@ -1028,14 +1028,19 @@ const forgotPassword = async (req, res) => {
                 });
             }
         } catch (error) {
-            console.error('Email send error:', error);
+            console.error('❌ EMAIL SENDING FAILED (Likely Render blocking Gmail ports).');
+            console.log('---------------------------------------------------');
+            console.log('⚠️ FALLBACK: USE THIS LINK TO RESET PASSWORD:');
+            console.log('🔗 Link:', resetUrl);
+            console.log('---------------------------------------------------');
+
             user.resetPasswordToken = undefined;
             user.resetPasswordExpire = undefined;
             await user.save();
 
             // Return actual error to frontend for debugging
             return res.status(500).json({
-                message: 'Email could not be sent',
+                message: 'Email blocked by server firewall. Check server logs for manual link.',
                 error: error.message
             });
         }
