@@ -1024,7 +1024,12 @@ const forgotPassword = async (req, res) => {
             user.resetPasswordToken = undefined;
             user.resetPasswordExpire = undefined;
             await user.save();
-            return res.status(500).json({ message: 'Email could not be sent' });
+
+            // Return actual error to frontend for debugging
+            return res.status(500).json({
+                message: 'Email could not be sent',
+                error: error.message
+            });
         }
 
     } catch (error) {
