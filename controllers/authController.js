@@ -1001,7 +1001,9 @@ const forgotPassword = async (req, res) => {
                 console.log(`📧 Attempting to send email from: ${process.env.EMAIL_USER}`);
 
                 const transporter = nodemailer.createTransport({
-                    service: 'gmail',
+                    host: 'smtp.gmail.com',
+                    port: 587,
+                    secure: false, // use STARTTLS
                     auth: {
                         user: process.env.EMAIL_USER,
                         pass: cleanPassword,
