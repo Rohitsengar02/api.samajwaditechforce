@@ -34,6 +34,7 @@
     "pdf-parse": "^2.4.5",
     "puppeteer": "^24.34.0",
     "redis": "^5.10.0",
+    "resend": "^6.7.0",
     "socket.io": "^4.8.1"
   },
   "devDependencies": {

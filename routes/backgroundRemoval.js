@@ -71,6 +71,11 @@ router.post('/remove', async (req, res) => {
 
             const buildoraResponse = await fetch('https://api.buildora.cloud/api/remove-bg', {
                 method: 'POST',
+                headers: {
+                    'x-api-key': process.env.BUILDORA_API_KEY || 'sk_dnbdt1qqsp3wfj9e20ro6',
+                    'Origin': req.headers.origin || 'https://www.samajwaditechforce.com',
+                    'Referer': req.headers.referer || 'https://www.samajwaditechforce.com'
+                },
                 body: buildoraFormData
             });
 
