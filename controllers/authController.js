@@ -6,7 +6,6 @@ const generateToken = require('../utils/generateToken');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
 // Helper to handle referral points for the REFERRER
 const handleReferral = async (newUser, referralCode) => {
@@ -946,6 +945,7 @@ const getReferralStats = async (req, res) => {
 // @route   POST /api/auth/forgot-password
 // @access  Public
 const forgotPassword = async (req, res) => {
+    console.log('➡️ Forgot Password Controller HIT with email:', req.body.email);
     const { email } = req.body;
 
     try {
