@@ -98,10 +98,23 @@ const authUser = async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
+            phone: user.phone,
             role: user.role,
             points: user.points || 0,
             referralCode: user.referralCode,
             token: generateToken(user._id),
+            // Include profile fields for pre-filling on login
+            district: user.district,
+            vidhanSabha: user.vidhanSabha,
+            isPartyMember: user.isPartyMember,
+            partyRole: user.partyRole,
+            partyJoiningDate: user.partyJoiningDate,
+            socialMedia: user.socialMedia,
+            qualification: user.qualification,
+            canVisitLucknow: user.canVisitLucknow,
+            electionPreparation: user.electionPreparation,
+            verificationStatus: user.verificationStatus,
+            adminVerification: user.adminVerification,
         });
     } else {
         console.log('❌ Invalid password for:', email);
@@ -217,6 +230,7 @@ const getUserProfile = async (req, res) => {
             language: user.language,
             points: user.points || 0,
             referralCode: user.referralCode || `SP${user._id.toString().substring(0, 6).toUpperCase()}`,
+            electionPreparation: user.electionPreparation || '',
         });
 
         // Background save if code was missing
@@ -295,6 +309,7 @@ const updateUserProfile = async (req, res) => {
             language: updatedUser.language,
             points: updatedUser.points || 0,
             referralCode: updatedUser.referralCode,
+            electionPreparation: updatedUser.electionPreparation || '',
             token: generateToken(updatedUser._id),
         });
     } else {
