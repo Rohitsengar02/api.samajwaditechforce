@@ -301,14 +301,26 @@ router.get('/reels/:id', async (req, res) => {
         // Force https to satisfy social platforms
         const shareUrl = `https://${currentHost}${req.originalUrl}`;
 
-        // Dynamic Image Preview
-        let imageUrl = reel.thumbnailUrl || 'https://samajwaditechforce.com/assets/images/logo.png';
+        // Dynamic Image Preview logic
+        let imageUrl = reel.thumbnailUrl;
+
+        // If no thumbnail, try to generate one from Cloudinary video
+        if (!imageUrl && reel.videoUrl && reel.videoUrl.includes('cloudinary.com')) {
+            imageUrl = reel.videoUrl.replace(/\.(mp4|mov|avi|wmv)$/, '.jpg');
+        }
+
+        // Fallback to logo if still no image
+        if (!imageUrl) {
+            imageUrl = 'https://www.samajwaditechforce.com/assets/images/logo.png';
+        }
+
         if (imageUrl.startsWith('/')) {
             imageUrl = `https://${currentHost}${imageUrl}`;
         }
 
-        // Optimize Cloudinary images for WhatsApp/FB (Standard: 600x600 for square or 1200x630 for landscape)
+        // Optimize Cloudinary images (Standard: 600x600 for square or 1200x630 for landscape)
         if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
+            // Ensure we use the latest version and fit it
             imageUrl = imageUrl.replace('/upload/', '/upload/c_fill,w_600,h_600,q_auto,f_jpg/');
         }
 
@@ -328,7 +340,7 @@ router.get('/reels/:id', async (req, res) => {
     <meta name="description" content="${description}">
     
     <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="video.other">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="${shareUrl}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
@@ -338,11 +350,6 @@ router.get('/reels/:id', async (req, res) => {
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
     <meta property="og:site_name" content="Samajwadi Tech Force">
-    
-    <!-- Video Specific -->
-    <meta property="og:video" content="${reel.videoUrl}">
-    <meta property="og:video:secure_url" content="${reel.videoUrl}">
-    <meta property="og:video:type" content="video/mp4">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
