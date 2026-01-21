@@ -295,21 +295,29 @@ router.get('/reels/:id', async (req, res) => {
         }
 
         const appUrl = process.env.APP_URL || 'https://samajwaditechforce.com';
-        // Redirect to the reels page with the ID so the frontend can open it
         const redirectUrl = `${appUrl}/reels?id=${reel._id}`;
 
-        // STF Logo URL (Served from backend public folder or similar)
-        // Since we copied it to backend/public/stf-logo.png, we can serve it.
-        // Assuming backend serves 'public' folder statically or we use a known URL
-        const backendUrl = `https://${req.get('host')}`;
-        const imageUrl = `${backendUrl}/stf-logo.png`;
+        const currentHost = req.get('host');
+        // Force https to satisfy social platforms
+        const shareUrl = `https://${currentHost}${req.originalUrl}`;
+
+        // Dynamic Image Preview
+        let imageUrl = reel.thumbnailUrl || 'https://samajwaditechforce.com/assets/images/logo.png';
+        if (imageUrl.startsWith('/')) {
+            imageUrl = `https://${currentHost}${imageUrl}`;
+        }
+
+        // Optimize Cloudinary images for WhatsApp/FB (Standard: 600x600 for square or 1200x630 for landscape)
+        if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
+            imageUrl = imageUrl.replace('/upload/', '/upload/c_fill,w_600,h_600,q_auto,f_jpg/');
+        }
 
         const title = reel.title || 'Samajwadi Tech Force Reel';
         const description = reel.description || 'Watch this reel on Samajwadi Tech Force';
 
         const html = `
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -319,20 +327,26 @@ router.get('/reels/:id', async (req, res) => {
     <meta name="title" content="${title}">
     <meta name="description" content="${description}">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="video.other">
-    <meta property="og:url" content="${backendUrl}${req.originalUrl}">
+    <meta property="og:url" content="${shareUrl}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${imageUrl}">
     <meta property="og:image:secure_url" content="${imageUrl}">
-    <meta property="og:image:width" content="500">
-    <meta property="og:image:height" content="500">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
     <meta property="og:site_name" content="Samajwadi Tech Force">
+    
+    <!-- Video Specific -->
+    <meta property="og:video" content="${reel.videoUrl}">
+    <meta property="og:video:secure_url" content="${reel.videoUrl}">
+    <meta property="og:video:type" content="video/mp4">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="${backendUrl}${req.originalUrl}">
+    <meta name="twitter:url" content="${shareUrl}">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${imageUrl}">
