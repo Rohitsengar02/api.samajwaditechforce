@@ -31,36 +31,7 @@ router.post('/remove', async (req, res) => {
         // Optional: Resize if too large (to avoid 413 on downstream APIs)
         // For now, we rely on the APIs themselves or the frontend resizing.
 
-        // 1. Check for Remove.bg Key (Commercial Grade)
-        const REMOVE_BG_API_KEY = process.env.REMOVE_BG_API_KEY;
-        if (REMOVE_BG_API_KEY) {
-            try {
-                console.log('🎨 Using Remove.bg API...');
-                const formData = new FormData();
-                formData.append('image_file_b64', imageBuffer.toString('base64'));
-
-                const removeBgResponse = await fetch('https://api.remove.bg/v1.0/removebg', {
-                    method: 'POST',
-                    headers: { 'X-Api-Key': REMOVE_BG_API_KEY },
-                    body: formData
-                });
-
-                if (removeBgResponse.ok) {
-                    const buffer = await removeBgResponse.arrayBuffer();
-                    const base64Image = `data:image/png;base64,${Buffer.from(buffer).toString('base64')}`;
-                    return res.json({
-                        success: true,
-                        message: 'Background removed with Remove.bg',
-                        imageUrl: base64Image
-                    });
-                }
-                console.warn('Remove.bg failed, falling back...');
-            } catch (err) {
-                console.error('Remove.bg Error:', err);
-            }
-        }
-
-        // 2. Try Buildora API (User Service)
+        // 1. Try Buildora API (User Service) - PRIORITIZED
         try {
             console.log('🎨 Using Buildora API...');
             const buildoraFormData = new FormData();
@@ -93,6 +64,35 @@ router.post('/remove', async (req, res) => {
             console.warn('Buildora failed or returned error, falling back...');
         } catch (bError) {
             console.error('Buildora API Error:', bError);
+        }
+
+        // 2. Check for Remove.bg Key (Fallback 1)
+        const REMOVE_BG_API_KEY = process.env.REMOVE_BG_API_KEY;
+        if (REMOVE_BG_API_KEY) {
+            try {
+                console.log('🎨 Using Remove.bg API...');
+                const formData = new FormData();
+                formData.append('image_file_b64', imageBuffer.toString('base64'));
+
+                const removeBgResponse = await fetch('https://api.remove.bg/v1.0/removebg', {
+                    method: 'POST',
+                    headers: { 'X-Api-Key': REMOVE_BG_API_KEY },
+                    body: formData
+                });
+
+                if (removeBgResponse.ok) {
+                    const buffer = await removeBgResponse.arrayBuffer();
+                    const base64Image = `data:image/png;base64,${Buffer.from(buffer).toString('base64')}`;
+                    return res.json({
+                        success: true,
+                        message: 'Background removed with Remove.bg',
+                        imageUrl: base64Image
+                    });
+                }
+                console.warn('Remove.bg failed, falling back...');
+            } catch (err) {
+                console.error('Remove.bg Error:', err);
+            }
         }
 
         // 3. Fallback to Hugging Face
