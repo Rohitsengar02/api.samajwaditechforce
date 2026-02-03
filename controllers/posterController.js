@@ -24,10 +24,15 @@ exports.uploadPoster = async (req, res) => {
             return res.status(400).json({ message: 'Poster image is required' });
         }
 
-        // Upload base64 image to Cloudinary
+        // Upload base64 image to Cloudinary with OPTIMIZATION
         const result = await cloudinary.uploader.upload(imageBase64, {
             folder: 'sp-posters',
-            resource_type: 'image'
+            resource_type: 'image',
+            // Optimize on upload - reduces storage by 60-80%
+            transformation: [
+                { quality: 'auto:best' },
+                { fetch_format: 'auto' }
+            ]
         });
 
         // Create poster in database
@@ -174,10 +179,14 @@ exports.updatePoster = async (req, res) => {
                 await cloudinary.uploader.destroy(poster.cloudinaryPublicId);
             }
 
-            // Upload new image
+            // Upload new image with OPTIMIZATION
             const result = await cloudinary.uploader.upload(imageBase64, {
                 folder: 'sp-posters',
-                resource_type: 'image'
+                resource_type: 'image',
+                transformation: [
+                    { quality: 'auto:best' },
+                    { fetch_format: 'auto' }
+                ]
             });
 
             poster.imageUrl = result.secure_url;
