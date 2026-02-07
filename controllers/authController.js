@@ -643,53 +643,79 @@ const googleLogin = async (req, res) => {
     const { email, name, photo, googleId } = req.body;
 
     try {
-        // Check if user exists
-        let user = await User.findOne({ email });
+        // 1. Check if user exists by googleId OR email
+        let user;
+        if (googleId) {
+            user = await User.findOne({ googleId });
+        }
+
+        if (!user && email) {
+            user = await User.findOne({ email });
+        }
 
         if (user) {
             // User exists - Log them in
-            console.log('✅ Google Login - User found:', email);
+            console.log('✅ Google Login - User found:', user.email);
+
+            // Sync googleId/photo if missing
+            let updated = false;
+            if (googleId && !user.googleId) { user.googleId = googleId; updated = true; }
+            if (photo && !user.profileImage) { user.profileImage = photo; updated = true; }
+            if (updated) await user.save();
+
             const loginResp = {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
                 role: user.role,
                 points: user.points || 0,
-                referralCode: user.referralCode || `SP${user._id.toString().substring(0, 6).toUpperCase()}`,
+                referralCode: user.referralCode,
                 token: generateToken(user._id),
                 profileImage: user.profileImage
             };
-            console.log('📤 Sending Login Response');
-            res.json(loginResp);
 
-            // Background save if code was missing
-            if (!user.referralCode) {
-                try {
-                    console.log('ℹ️ Generating missing referral code');
-                    user.referralCode = `SP${user._id.toString().substring(0, 6).toUpperCase()}`;
-                    await user.save();
-                    console.log('✅ Referral code saved');
-                } catch (err) {
-                    console.error('⚠️ Background referral save failed:', err.message);
-                }
-            }
+            console.log('📤 Sending Login Response');
+            return res.json(loginResp);
         } else {
             // User doesn't exist - Register them
             console.log('🆕 Google Login - Creating new user:', email);
 
             // Generate a random password for Google users
-            const randomPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+            const randomPassword = crypto.randomBytes(16).toString('hex');
+            // More unique placeholder phone
+            const tempPhone = `G-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 
-            user = await User.create({
-                name,
-                email,
-                phone: `G-${Date.now()}`, // Placeholder phone since it's required
-                password: randomPassword, // Secure random password
-                profileImage: photo,
-                role: 'member', // Default role matching enum
-                isGoogleUser: true, // Flag to identify google users
-                adminVerification: true // Auto-verify regular users
-            });
+            try {
+                user = await User.create({
+                    name,
+                    email,
+                    phone: tempPhone,
+                    password: randomPassword,
+                    profileImage: photo,
+                    role: 'member',
+                    isGoogleUser: true,
+                    googleId: googleId,
+                    adminVerification: true
+                });
+            } catch (createErr) {
+                // Handle rare race condition if user was created between find and create
+                if (createErr.code === 11000) {
+                    user = await User.findOne({ email });
+                    if (user) {
+                        return res.json({
+                            _id: user._id,
+                            name: user.name,
+                            email: user.email,
+                            role: user.role,
+                            points: user.points || 0,
+                            referralCode: user.referralCode,
+                            token: generateToken(user._id),
+                            profileImage: user.profileImage
+                        });
+                    }
+                }
+                throw createErr;
+            }
 
             console.log('👤 User created:', user._id);
 
@@ -703,7 +729,7 @@ const googleLogin = async (req, res) => {
                     referralCode: user.referralCode,
                     token: generateToken(user._id),
                     profileImage: user.profileImage,
-                    isNewUser: true // Explicitly flag as new user for frontend flow
+                    isNewUser: true
                 };
                 console.log('📤 Sending Registration Response');
                 res.status(201).json(regResp);
@@ -713,7 +739,9 @@ const googleLogin = async (req, res) => {
         }
     } catch (error) {
         console.error('❌ Google Login Error:', error);
-        res.status(500).json({ message: error.message });
+        res.status(500).json({
+            message: error.code === 11000 ? 'A user with this detail already exists. Please try logging in.' : error.message
+        });
     }
 };
 

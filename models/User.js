@@ -68,6 +68,15 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    isGoogleUser: {
+        type: Boolean,
+        default: false
+    },
+    googleId: {
+        type: String,
+        unique: true,
+        sparse: true,
+    },
     language: {
         type: String,
         default: 'en'
@@ -104,7 +113,10 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 userSchema.pre('save', async function () {
     // Generate referral code if it doesn't exist
     if (!this.referralCode) {
-        this.referralCode = `SP${this._id.toString().substring(0, 6).toUpperCase()}`;
+        // Use a more unique combination: Last 6 of ID + 2 random chars
+        const randomStr = Math.random().toString(36).substring(2, 4).toUpperCase();
+        const idPart = this._id.toString().slice(-6).toUpperCase();
+        this.referralCode = `SP${idPart}${randomStr}`;
     }
 
     if (!this.isModified('password')) {
