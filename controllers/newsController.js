@@ -5,12 +5,26 @@ const News = require('../models/News');
 // @access  Public
 exports.getNews = async (req, res, next) => {
     try {
-        const news = await News.find().sort({ createdAt: -1 });
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+
+        const news = await News.find()
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit);
+
+        const total = await News.countDocuments();
 
         res.status(200).json({
             success: true,
             count: news.length,
-            data: news
+            data: news,
+            pagination: {
+                current: page,
+                total: Math.ceil(total / limit),
+                totalItems: total
+            }
         });
     } catch (err) {
         res.status(500).json({ success: false, error: 'Server Error' });

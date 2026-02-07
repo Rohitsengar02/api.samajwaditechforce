@@ -8,8 +8,27 @@ const { protect, admin } = require('../middleware/authMiddleware');
 // @access  Public
 router.get('/', async (req, res) => {
     try {
-        const reels = await Reel.find({}).sort({ createdAt: -1 });
-        res.json({ success: true, data: reels });
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+
+        const reels = await Reel.find({})
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit);
+
+        const total = await Reel.countDocuments({});
+
+        res.json({
+            success: true,
+            data: reels,
+            pagination: {
+                current: page,
+                total: Math.ceil(total / limit),
+                count: reels.length,
+                totalItems: total
+            }
+        });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Server Error', error: error.message });
     }
