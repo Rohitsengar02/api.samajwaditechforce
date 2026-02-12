@@ -12,7 +12,7 @@ const posterSchema = new mongoose.Schema({
     },
     cloudinaryPublicId: {
         type: String,
-        required: true
+        required: false // Optional now as we migrate to R2
     },
     downloadCount: {
         type: Number,
