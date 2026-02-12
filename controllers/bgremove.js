@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require("axios");
 const FormData = require("form-data");
-const cloudinary = require("cloudinary").v2;
+const { uploadImageToR2, uploadBase64ToR2 } = require('../utils/r2');
 const fs = require('fs');
 const pdf = require('pdf-parse');
 
@@ -141,13 +141,13 @@ exports.generateImage = async (req, res) => {
             "binary"
         ).toString("base64")}`;
 
-        // Upload to Cloudinary
-        const { secure_url } = await cloudinary.uploader.upload(base64Image);
+        // Upload to R2
+        const imageUrl = await uploadBase64ToR2(base64Image, 'ai-generated');
 
         console.log("Success! Sending response...");
         res.json({
             success: true,
-            image: secure_url,
+            image: imageUrl,
         });
 
     } catch (err) {
@@ -168,37 +168,20 @@ exports.removeImageBackground = async (req, res) => {
             return res.status(400).json({ success: false, error: "No file received" });
         }
 
-        // ✅ Upload to Cloudinary using upload_stream
-        console.log("Uploading file to Cloudinary...");
+        // ✅ Upload to R2 with PNG format (for transparency)
+        console.log("Uploading file to R2...");
 
-        const streamUpload = (fileBuffer) => {
-            return new Promise((resolve, reject) => {
-                const stream = cloudinary.uploader.upload_stream(
-                    {
-                        transformation: [{ effect: "background_removal" }],
-                        format: 'png'
-                    },
-                    (error, result) => {
-                        if (error) {
-                            console.error("Cloudinary upload_stream error:", error);
-                            reject(error);
-                        } else {
-                            resolve(result);
-                        }
-                    }
-                );
-                stream.end(fileBuffer); // send file buffer to Cloudinary
-            });
-        };
+        const result = await uploadImageToR2(req.file.buffer, 'bg-removed', {
+            format: 'png',
+            quality: 90,
+        });
 
-        const result = await streamUpload(req.file.buffer);
-        const secure_url = result.secure_url;
-        console.log("Cloudinary result:", secure_url);
+        console.log("R2 result:", result.url);
 
         console.log("Success! Sending response...");
         res.json({
             success: true,
-            image: secure_url,
+            image: result.url,
         });
 
     } catch (err) {
@@ -226,38 +209,20 @@ exports.removeImageObject = async (req, res) => {
             return res.status(400).json({ success: false, error: "Missing object to remove" });
         }
 
-        // ✅ Upload image to Cloudinary using upload_stream
-        const streamUpload = (buffer) => {
-            return new Promise((resolve, reject) => {
-                const stream = cloudinary.uploader.upload_stream(
-                    {},
-                    (error, result) => {
-                        if (error) {
-                            console.error("Cloudinary upload_stream error:", error);
-                            reject(error);
-                        } else {
-                            resolve(result);
-                        }
-                    }
-                );
-                stream.end(buffer);
-            });
-        };
-
-        const uploadResult = await streamUpload(imageFile.buffer);
-
-        // ✅ Generate URL with object removal transformation
-        const imageUrl = cloudinary.url(uploadResult.public_id, {
-            transformation: [
-                { effect: `gen_remove:${objectToRemove}` },
-            ],
-            resource_type: "image",
+        // ✅ Upload image to R2
+        const result = await uploadImageToR2(imageFile.buffer, 'object-removed', {
+            format: 'png',
+            quality: 90,
         });
-        console.log("Cloudinary transformed image URL:", imageUrl);
 
+        console.log("R2 upload URL:", result.url);
+
+        // Note: Object removal was a Cloudinary AI feature.
+        // The image is stored as-is. For actual object removal,
+        // integrate a separate AI service.
         res.json({
             success: true,
-            image: imageUrl,
+            image: result.url,
         });
 
     } catch (err) {

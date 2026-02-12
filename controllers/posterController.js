@@ -1,14 +1,7 @@
 const Poster = require('../models/Poster');
-const cloudinary = require('cloudinary').v2;
+const { uploadImageToR2, deleteFromR2 } = require('../utils/r2');
 const PointActivity = require('../models/PointActivity');
 const User = require('../models/User');
-
-// Configure Cloudinary (if not already configured in your main app)
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-});
 
 // Upload a new poster
 exports.uploadPoster = async (req, res) => {
@@ -24,22 +17,14 @@ exports.uploadPoster = async (req, res) => {
             return res.status(400).json({ message: 'Poster image is required' });
         }
 
-        // Upload base64 image to Cloudinary with OPTIMIZATION
-        const result = await cloudinary.uploader.upload(imageBase64, {
-            folder: 'sp-posters',
-            resource_type: 'image',
-            // Optimize on upload - reduces storage by 60-80%
-            transformation: [
-                { quality: 'auto:best' },
-                { fetch_format: 'auto' }
-            ]
-        });
+        // Upload base64 image to R2 with Sharp compression
+        const result = await uploadImageToR2(imageBase64, 'posters');
 
         // Create poster in database
         const poster = new Poster({
             title,
-            imageUrl: result.secure_url,
-            cloudinaryPublicId: result.public_id,
+            imageUrl: result.url,
+            cloudinaryPublicId: result.key,
             uploadedBy: userId
         });
 
@@ -172,25 +157,18 @@ exports.updatePoster = async (req, res) => {
         if (title) poster.title = title;
         if (typeof isActive !== 'undefined') poster.isActive = isActive;
 
-        // If new image is provided, upload to Cloudinary
+        // If new image is provided, upload to R2
         if (imageBase64) {
-            // Delete old image from Cloudinary
+            // Delete old image from R2
             if (poster.cloudinaryPublicId) {
-                await cloudinary.uploader.destroy(poster.cloudinaryPublicId);
+                await deleteFromR2(poster.cloudinaryPublicId);
             }
 
-            // Upload new image with OPTIMIZATION
-            const result = await cloudinary.uploader.upload(imageBase64, {
-                folder: 'sp-posters',
-                resource_type: 'image',
-                transformation: [
-                    { quality: 'auto:best' },
-                    { fetch_format: 'auto' }
-                ]
-            });
+            // Upload new image with Sharp compression
+            const result = await uploadImageToR2(imageBase64, 'posters');
 
-            poster.imageUrl = result.secure_url;
-            poster.cloudinaryPublicId = result.public_id;
+            poster.imageUrl = result.url;
+            poster.cloudinaryPublicId = result.key;
         }
 
         await poster.save();
@@ -216,8 +194,10 @@ exports.deletePoster = async (req, res) => {
             return res.status(404).json({ message: 'Poster not found' });
         }
 
-        // Delete from Cloudinary
-        await cloudinary.uploader.destroy(poster.cloudinaryPublicId);
+        // Delete from R2
+        if (poster.cloudinaryPublicId) {
+            await deleteFromR2(poster.cloudinaryPublicId);
+        }
 
         // Delete from database
         await Poster.findByIdAndDelete(posterId);

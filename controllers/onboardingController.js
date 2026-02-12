@@ -1,5 +1,5 @@
 const Onboarding = require('../models/Onboarding');
-const cloudinary = require('cloudinary').v2;
+const { uploadImageToR2 } = require('../utils/r2');
 
 // Get all slides
 exports.getSlides = async (req, res) => {
@@ -23,18 +23,9 @@ exports.addSlide = async (req, res) => {
         let imageUrl = '';
 
         if (req.file) {
-            // Upload to Cloudinary
-            const result = await new Promise((resolve, reject) => {
-                const stream = cloudinary.uploader.upload_stream(
-                    { folder: 'onboarding' },
-                    (error, result) => {
-                        if (error) reject(error);
-                        else resolve(result);
-                    }
-                );
-                stream.end(req.file.buffer);
-            });
-            imageUrl = result.secure_url;
+            // Upload to R2 with compression
+            const result = await uploadImageToR2(req.file.buffer, 'onboarding');
+            imageUrl = result.url;
         } else if (req.body.imageUrl) {
             imageUrl = req.body.imageUrl;
         }
@@ -69,17 +60,8 @@ exports.updateSlide = async (req, res) => {
         if (gradient) updateData.gradient = JSON.parse(gradient);
 
         if (req.file) {
-            const result = await new Promise((resolve, reject) => {
-                const stream = cloudinary.uploader.upload_stream(
-                    { folder: 'onboarding' },
-                    (error, result) => {
-                        if (error) reject(error);
-                        else resolve(result);
-                    }
-                );
-                stream.end(req.file.buffer);
-            });
-            updateData.imageUrl = result.secure_url;
+            const result = await uploadImageToR2(req.file.buffer, 'onboarding');
+            updateData.imageUrl = result.url;
         }
 
         const slide = await Onboarding.findByIdAndUpdate(id, updateData, { new: true });

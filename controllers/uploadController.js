@@ -1,14 +1,6 @@
-const cloudinary = require('cloudinary').v2;
-const { uploadImageOptimized, uploadVideoOptimized } = require('../utils/cloudinary');
+const { uploadImageToR2, uploadVideoToR2 } = require('../utils/r2');
 
-// Configure Cloudinary
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-// @desc    Upload image to cloudinary (OPTIMIZED)
+// @desc    Upload image to R2 (OPTIMIZED with Sharp)
 // @route   POST /api/upload/image
 // @access  Private/Admin
 const uploadImage = async (req, res) => {
@@ -22,15 +14,15 @@ const uploadImage = async (req, res) => {
             });
         }
 
-        // Upload with optimization - reduces size by 60-80%
-        const result = await uploadImageOptimized(image, `samajwadi-party/${folder}`);
+        // Upload with Sharp compression - reduces size by 60-80%
+        const result = await uploadImageToR2(image, folder);
 
         res.json({
             success: true,
             message: 'Image uploaded successfully (optimized)',
             data: {
                 url: result.url,
-                publicId: result.publicId,
+                publicId: result.key,
                 bytes: result.bytes
             }
         });
@@ -44,7 +36,7 @@ const uploadImage = async (req, res) => {
     }
 };
 
-// @desc    Upload video to cloudinary (OPTIMIZED)
+// @desc    Upload video to R2
 // @route   POST /api/upload/video
 // @access  Private/Admin
 const uploadVideo = async (req, res) => {
@@ -58,17 +50,15 @@ const uploadVideo = async (req, res) => {
             });
         }
 
-        // Upload with optimization - 20MB video becomes ~4-8MB
-        const result = await uploadVideoOptimized(video, `samajwadi-party/${folder}`);
+        const result = await uploadVideoToR2(video, folder);
 
         res.json({
             success: true,
-            message: 'Video uploaded successfully (optimized with H.265/VP9)',
+            message: 'Video uploaded successfully',
             data: {
                 url: result.url,
                 optimizedUrl: result.optimizedUrl,
-                publicId: result.publicId,
-                duration: result.duration,
+                publicId: result.key,
                 bytes: result.bytes
             }
         });
@@ -97,14 +87,14 @@ const uploadPosterForShare = async (req, res) => {
         }
 
         // Upload with optimization
-        const result = await uploadImageOptimized(image, 'samajwadi-party/shared-posters');
+        const result = await uploadImageToR2(image, 'shared-posters');
 
         res.json({
             success: true,
             message: 'Poster uploaded for sharing (optimized)',
             data: {
                 url: result.url,
-                publicId: result.publicId,
+                publicId: result.key,
                 bytes: result.bytes
             }
         });

@@ -25,10 +25,8 @@ router.get('/news/:id', async (req, res) => {
             imageUrl = `https://${currentHost}${imageUrl}`;
         }
 
-        // Optimize Cloudinary images for Facebook (Standard: 1200x630)
-        if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
-            imageUrl = imageUrl.replace('/upload/', '/upload/c_fill,w_1200,h_630,q_auto,f_jpg/');
-        } else if (!imageUrl.startsWith('http')) {
+        // Images from R2 are already optimized during upload
+        if (!imageUrl.startsWith('http')) {
             imageUrl = `https://${currentHost}/${imageUrl}`;
         }
 
@@ -188,12 +186,8 @@ router.get('/poster', async (req, res) => {
         // Force HTTPS for production (Render uses reverse proxy)
         const pageUrl = `https://${req.get('host')}${req.originalUrl}`;
 
-        // Optimize image for social media preview (Cloudinary only)
-        // Resize to 1200x630 (Standard social size) and compress
+        // Images from R2 are already optimized during upload
         let previewImage = image;
-        if (image.includes('cloudinary.com') && image.includes('/upload/')) {
-            previewImage = image.replace('/upload/', '/upload/c_limit,w_1000,h_1000,q_auto,f_jpg/');
-        }
 
         const html = `
 <!DOCTYPE html>
@@ -304,9 +298,10 @@ router.get('/reels/:id', async (req, res) => {
         // Dynamic Image Preview logic
         let imageUrl = reel.thumbnailUrl;
 
-        // If no thumbnail, try to generate one from Cloudinary video
-        if (!imageUrl && reel.videoUrl && reel.videoUrl.includes('cloudinary.com')) {
-            imageUrl = reel.videoUrl.replace(/\.(mp4|mov|avi|wmv)$/, '.jpg');
+        // If no thumbnail, use logo as fallback
+        if (!imageUrl && reel.videoUrl) {
+            // For R2 videos, no automatic thumbnail extraction
+            imageUrl = 'https://www.samajwaditechforce.com/assets/images/logo.png';
         }
 
         // Fallback to logo if still no image
@@ -316,12 +311,6 @@ router.get('/reels/:id', async (req, res) => {
 
         if (imageUrl.startsWith('/')) {
             imageUrl = `https://${currentHost}${imageUrl}`;
-        }
-
-        // Optimize Cloudinary images (Standard: 600x600 for square or 1200x630 for landscape)
-        if (imageUrl.includes('cloudinary.com') && imageUrl.includes('/upload/')) {
-            // Ensure we use the latest version and fit it
-            imageUrl = imageUrl.replace('/upload/', '/upload/c_fill,w_600,h_600,q_auto,f_jpg/');
         }
 
         const title = reel.title || 'Samajwadi Tech Force Reel';

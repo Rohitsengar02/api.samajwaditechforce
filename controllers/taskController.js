@@ -1,7 +1,7 @@
 const Task = require('../models/Task');
 const UserTask = require('../models/UserTask');
 const User = require('../models/User');
-const { uploadBase64ToCloudinary } = require('../utils/cloudinary');
+const { uploadBase64ToR2 } = require('../utils/r2');
 
 // @desc    Get all tasks
 // @route   GET /api/tasks
@@ -270,8 +270,8 @@ const completeTask = async (req, res) => {
 
         if (proofImage) {
             try {
-                console.log('📸 Uploading proof image to Cloudinary...');
-                proofImageUrl = await uploadBase64ToCloudinary(proofImage, 'samajwadi-task-proofs');
+                console.log('📸 Uploading proof image to R2...');
+                proofImageUrl = await uploadBase64ToR2(proofImage, 'task-proofs');
                 console.log('✅ Image uploaded:', proofImageUrl);
             } catch (uploadError) {
                 console.error('❌ Failed to upload proof image:', uploadError);

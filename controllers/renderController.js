@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const cloudinary = require('cloudinary').v2;
+const { uploadImageToR2 } = require('../utils/r2');
 const PointActivity = require('../models/PointActivity');
 const User = require('../models/User');
 
@@ -60,21 +60,15 @@ exports.renderPoster = async (req, res) => {
             fullPage: false
         });
 
-        // OPTIONAL: Upload to Cloudinary for sharing link
-        const uploadResult = await new Promise((resolve, reject) => {
-            const uploadStream = cloudinary.uploader.upload_stream(
-                { folder: 'pro-renders', resource_type: 'image' },
-                (error, result) => {
-                    if (error) reject(error);
-                    else resolve(result);
-                }
-            );
-            uploadStream.end(screenshot);
+        // Upload to R2
+        const uploadResult = await uploadImageToR2(screenshot, 'pro-renders', {
+            format: 'png',
+            quality: 95,
         });
 
         res.status(200).json({
             success: true,
-            imageUrl: uploadResult.secure_url,
+            imageUrl: uploadResult.url,
             message: 'Master Render Generated Successfully'
         });
 
