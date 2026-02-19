@@ -6,16 +6,18 @@ const { uploadImageToR2, uploadVideoToR2 } = require('../utils/r2');
 const uploadImage = async (req, res) => {
     try {
         const { image, folder = 'events' } = req.body;
+        const file = req.file;
 
-        if (!image) {
+        if (!image && !file) {
             return res.status(400).json({
                 success: false,
                 message: 'No image provided'
             });
         }
 
-        // Upload with Sharp compression - reduces size by 60-80%
-        const result = await uploadImageToR2(image, folder);
+        // Upload with Sharp compression
+        // use file buffer if present, otherwise fallback to base64 from body
+        const result = await uploadImageToR2(file ? file.buffer : image, folder);
 
         res.json({
             success: true,
@@ -78,8 +80,9 @@ const uploadVideo = async (req, res) => {
 const uploadPosterForShare = async (req, res) => {
     try {
         const { image } = req.body;
+        const file = req.file;
 
-        if (!image) {
+        if (!image && !file) {
             return res.status(400).json({
                 success: false,
                 message: 'No image provided'
@@ -87,7 +90,7 @@ const uploadPosterForShare = async (req, res) => {
         }
 
         // Upload with optimization
-        const result = await uploadImageToR2(image, 'shared-posters');
+        const result = await uploadImageToR2(file ? file.buffer : image, 'shared-posters');
 
         res.json({
             success: true,

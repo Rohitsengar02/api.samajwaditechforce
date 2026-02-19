@@ -1,17 +1,19 @@
 const express = require('express');
 const router = express.Router();
-// const fetch = require('node-fetch'); // Built-in fetch used in Node 18+
+const multer = require('multer');
+const upload = multer();
 
 /**
  * POST /api/background-removal/remove
  * Proxy endpoint for Hugging Face background removal
  * Solves CORS issues when calling from web browsers
  */
-router.post('/remove', async (req, res) => {
+router.post('/remove', upload.single('image'), async (req, res) => {
     try {
         const { imageUrl, imageBase64 } = req.body;
+        const file = req.file;
 
-        if (!imageUrl && !imageBase64) {
+        if (!imageUrl && !imageBase64 && !file) {
             return res.status(400).json({
                 success: false,
                 message: 'Image data is required'
@@ -20,7 +22,9 @@ router.post('/remove', async (req, res) => {
 
         // Prepare image buffer
         let imageBuffer;
-        if (imageBase64) {
+        if (file) {
+            imageBuffer = file.buffer;
+        } else if (imageBase64) {
             imageBuffer = Buffer.from(imageBase64.includes(',') ? imageBase64.split(',')[1] : imageBase64, 'base64');
         } else {
             const imageResponse = await fetch(imageUrl);
