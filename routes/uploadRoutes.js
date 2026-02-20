@@ -10,7 +10,7 @@ const upload = multer();
 router.post('/image', protect, upload.single('image'), uploadImage);
 
 // Admin routes
-router.post('/video', protect, admin, uploadVideo);
+router.post('/video', protect, admin, upload.single('video'), uploadVideo);
 
 // Public route for poster sharing (anyone can share their poster)
 router.post('/poster-share', upload.single('image'), uploadPosterForShare);

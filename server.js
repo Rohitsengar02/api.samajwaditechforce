@@ -75,16 +75,30 @@ io.on('connection', (socket) => {
     });
 });
 
-// CORS configuration - Allow all origins for development
+// CORS configuration
 const corsOptions = {
-    origin: true, // Allow all origins in development
+    origin: [
+        'http://localhost:8081',
+        'http://localhost:3000',
+        'http://localhost:19006',
+        'https://admin.samajwaditechforce.com',
+        'https://samajwaditechforce.com',
+        'https://www.samajwaditechforce.com'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
     credentials: true,
     optionsSuccessStatus: 200
 };
 
+// If in development, allow all origins
+if (process.env.NODE_ENV === 'development') {
+    corsOptions.origin = true;
+}
+
 app.use(cors(corsOptions));
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
 app.use(morgan('dev'));
 
 // Mount routers
