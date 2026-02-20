@@ -44,15 +44,16 @@ const uploadImage = async (req, res) => {
 const uploadVideo = async (req, res) => {
     try {
         const { video, folder = 'reels' } = req.body;
+        const file = req.file;
 
-        if (!video) {
+        if (!video && !file) {
             return res.status(400).json({
                 success: false,
                 message: 'No video provided'
             });
         }
 
-        const result = await uploadVideoToR2(video, folder);
+        const result = await uploadVideoToR2(file ? file.buffer : video, folder);
 
         res.json({
             success: true,
