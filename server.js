@@ -44,6 +44,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.set('trust proxy', 1); // Tell Express to trust the proxy (Nginx)
 const server = http.createServer(app);
 
 // Socket.IO setup
