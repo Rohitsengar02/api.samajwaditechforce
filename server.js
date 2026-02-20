@@ -76,27 +76,35 @@ io.on('connection', (socket) => {
 });
 
 // CORS configuration
+const allowedOrigins = [
+    'http://localhost:8081',
+    'http://localhost:3000',
+    'http://localhost:19006',
+    'https://admin.samajwaditechforce.com',
+    'https://samajwaditechforce.com',
+    'https://www.samajwaditechforce.com'
+];
+
 const corsOptions = {
-    origin: [
-        'http://localhost:8081',
-        'http://localhost:3000',
-        'http://localhost:19006',
-        'https://admin.samajwaditechforce.com',
-        'https://samajwaditechforce.com',
-        'https://www.samajwaditechforce.com'
-    ],
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
     credentials: true,
     optionsSuccessStatus: 200
 };
 
-// If in development, allow all origins
-if (process.env.NODE_ENV === 'development') {
-    corsOptions.origin = true;
-}
-
 app.use(cors(corsOptions));
+// Handle preflight for all routes
+app.options('*', cors(corsOptions));
+
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
 app.use(morgan('dev'));
